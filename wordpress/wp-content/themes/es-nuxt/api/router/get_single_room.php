@@ -1,5 +1,5 @@
 <?php
-function get_page_custom($request)
+function get_single_room($request)
 {
     $parameters = $request->get_params();
     $response['status'] = 404;
@@ -8,7 +8,15 @@ function get_page_custom($request)
         $page_id = get_option('page_on_front'); // 取得首頁的 ID
         $post = get_post($page_id);
     } else {
-        $post = get_page_by_path($parameters['slug']);
+        $args = array(
+            'name' => $parameters['slug'],
+            'post_type' => 'room',
+            'post_status' => 'publish',
+            'numberposts' => 1
+        );
+
+        $posts = get_posts($args);
+        $post = isset($posts[0]) ? $posts[0] : null;
     }
 
     if ($post) {

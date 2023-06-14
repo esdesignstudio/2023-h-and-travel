@@ -3,6 +3,132 @@
     "title": "網站設定",
     "fields": [
         {
+            "key": "field_62fa6d1334995",
+            "label": "基本設定",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_648991ef1a143",
+            "label": "快訊",
+            "name": "top_bar",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "sub_fields": [
+                {
+                    "key": "field_648992431a144",
+                    "label": "是否為連結",
+                    "name": "is_link",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_648992511a145",
+                    "label": "連結",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_648992431a144",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_6489925d1a146",
+                    "label": "文字",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_648992431a144",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_648991df1a142",
+            "label": "網站名稱",
+            "name": "site_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_62fa6c689e98b",
             "label": "主要選單",
             "name": "",
@@ -17,6 +143,21 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_648991a93e7be",
+            "label": "右上連結",
+            "name": "right_top_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         },
         {
             "key": "field_62fa6cb656111",
@@ -56,8 +197,8 @@
             ]
         },
         {
-            "key": "field_62fa6d1334995",
-            "label": "共通",
+            "key": "field_648992a109401",
+            "label": "頁尾設定",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -72,9 +213,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_62fa6d4334998",
-            "label": "聯絡資訊",
-            "name": "site_info",
+            "key": "field_648993b2ae827",
+            "label": "頁尾",
+            "name": "footer",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -88,6 +229,32 @@
             "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
             "sub_fields": [
+                {
+                    "key": "field_6489939bae826",
+                    "label": "標誌",
+                    "name": "logo",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "",
+                    "acfe_thumbnail": 0,
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "0.5",
+                    "mime_types": "",
+                    "library": "all"
+                },
                 {
                     "key": "field_62fa6d5834999",
                     "label": "電話",
@@ -146,25 +313,6 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_62fa6d9b3499e",
-                    "label": "Copyright",
-                    "name": "copyright",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_6374b7418ebf2",
                     "label": "社群媒體",
                     "name": "socials",
@@ -185,29 +333,10 @@
                     "button_label": "",
                     "sub_fields": [
                         {
-                            "key": "field_6374b7588ebf3",
-                            "label": "名稱",
-                            "name": "name",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_6374b75e8ebf4",
+                            "key": "field_64899370ae825",
                             "label": "連結",
-                            "name": "url",
-                            "type": "url",
+                            "name": "link",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -216,10 +345,47 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": ""
+                            "return_format": "array"
                         }
                     ]
+                },
+                {
+                    "key": "field_62fa6d9b3499e",
+                    "label": "Copyright",
+                    "name": "copyright",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_648993ebc942f",
+                    "label": "裝飾跑馬燈",
+                    "name": "marquee",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ],
             "acfe_group_modal_close": 0,
@@ -252,5 +418,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1668661556
+    "modified": 1686737949
 }

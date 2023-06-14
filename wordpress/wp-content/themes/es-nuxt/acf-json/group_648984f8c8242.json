@@ -1,0 +1,1367 @@
+{
+    "key": "group_648984f8c8242",
+    "title": "頁面版型設定",
+    "fields": [
+        {
+            "key": "field_648985c79f268",
+            "label": "主視覺設定",
+            "name": "key_visual",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "sub_fields": [
+                {
+                    "key": "field_648986699f26d",
+                    "label": "樣式選擇",
+                    "name": "style",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "a": "小圖大字",
+                        "b": "滿版背景"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                },
+                {
+                    "key": "field_6489862a9f269",
+                    "label": "標題",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_648986349f26a",
+                    "label": "裝飾標題",
+                    "name": "deco_title",
+                    "type": "text",
+                    "instructions": "使用逗號斷行，ex: RAINBOW,MANOR",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6489864c9f26b",
+                    "label": "圖片",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "uploader": "",
+                    "acfe_thumbnail": 0
+                }
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_648986f85ed8d",
+            "label": "區塊版型設定",
+            "name": "flex",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_flexible_advanced": 1,
+            "acfe_flexible_stylised_button": 1,
+            "acfe_flexible_layouts_templates": 0,
+            "acfe_flexible_layouts_placeholder": 0,
+            "acfe_flexible_layouts_thumbnails": 1,
+            "acfe_flexible_layouts_settings": 0,
+            "acfe_flexible_async": [],
+            "acfe_flexible_add_actions": [],
+            "acfe_flexible_remove_button": [],
+            "acfe_flexible_modal_edit": {
+                "acfe_flexible_modal_edit_enabled": "1",
+                "acfe_flexible_modal_edit_size": "large"
+            },
+            "acfe_flexible_modal": {
+                "acfe_flexible_modal_enabled": "0",
+                "acfe_flexible_modal_title": false,
+                "acfe_flexible_modal_size": "full",
+                "acfe_flexible_modal_col": "4",
+                "acfe_flexible_modal_categories": false
+            },
+            "layouts": {
+                "layout_648986fd2f2a3": {
+                    "key": "layout_648986fd2f2a3",
+                    "name": "full_cards",
+                    "label": "滿版固定特效",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_648987605ed8e",
+                            "label": "卡片設定",
+                            "name": "cards",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "acfe_repeater_stylised_button": 0,
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "row",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6489877d5ed90",
+                                    "label": "裝飾標題",
+                                    "name": "deco_title",
+                                    "type": "text",
+                                    "instructions": "使用逗號斷行，ex: Best for your,vacation",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_648987745ed8f",
+                                    "label": "標題",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_648987885ed91",
+                                    "label": "描述文字",
+                                    "name": "des",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": "",
+                                    "new_lines": "wpautop",
+                                    "acfe_textarea_code": 0
+                                },
+                                {
+                                    "key": "field_648987945ed92",
+                                    "label": "背景圖片",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "library": "all"
+                                },
+                                {
+                                    "key": "field_648987c05ed93",
+                                    "label": "背景圖片透明度",
+                                    "name": "bg_opacity",
+                                    "type": "number",
+                                    "instructions": "透明度數值請輸入 0~1 之間，ex: 0.3",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "min": 0,
+                                    "max": 1,
+                                    "step": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                },
+                "layout_6489887cba4a9": {
+                    "key": "layout_6489887cba4a9",
+                    "name": "ani_number",
+                    "label": "數字版型",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_64898889ba4aa",
+                            "label": "標題",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6489888fba4ab",
+                            "label": "裝飾標題",
+                            "name": "deco_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64898898ba4ac",
+                            "label": "數字展示",
+                            "name": "number",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "acfe_repeater_stylised_button": 0,
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 2,
+                            "layout": "row",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_648988b8ba4ad",
+                                    "label": "Logo標誌",
+                                    "name": "logo_img",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "0.8",
+                                    "mime_types": "",
+                                    "library": "all"
+                                },
+                                {
+                                    "key": "field_648988f0ba4ae",
+                                    "label": "數字",
+                                    "name": "num",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "min": "",
+                                    "max": "",
+                                    "step": ""
+                                },
+                                {
+                                    "key": "field_648988feba4af",
+                                    "label": "短描述",
+                                    "name": "des",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                },
+                "layout_64898a4e4bea5": {
+                    "key": "layout_64898a4e4bea5",
+                    "name": "ig_show",
+                    "label": "IG卡片展示",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_64898b7a4beaf",
+                            "label": "標題",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64898b984beb0",
+                            "label": "裝飾標題",
+                            "name": "deco_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64898b564beae",
+                            "label": "背景圖片",
+                            "name": "bg_img",
+                            "type": "image",
+                            "instructions": "建議 1920*1080",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "acfe_thumbnail": 0,
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": 2,
+                            "mime_types": "",
+                            "library": "all"
+                        },
+                        {
+                            "key": "field_64898b274bead",
+                            "label": "IG卡片",
+                            "name": "ig_cards",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "acfe_repeater_stylised_button": 0,
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "row",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_64898a544bea6",
+                                    "label": "使用者圖片",
+                                    "name": "user_img",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "0.5",
+                                    "mime_types": "",
+                                    "library": "all"
+                                },
+                                {
+                                    "key": "field_64898a7b4bea7",
+                                    "label": "使用者名稱",
+                                    "name": "user_name",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_64898a844bea8",
+                                    "label": "圖片",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "library": "all"
+                                },
+                                {
+                                    "key": "field_64898a904bea9",
+                                    "label": "讚數",
+                                    "name": "like",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "min": "",
+                                    "max": "",
+                                    "step": ""
+                                },
+                                {
+                                    "key": "field_64898a9f4beaa",
+                                    "label": "描述",
+                                    "name": "text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_64898ab44beab",
+                                    "label": "小描述",
+                                    "name": "s_text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                },
+                "layout_64898b194beac": {
+                    "key": "layout_64898b194beac",
+                    "name": "room_show",
+                    "label": "房型一覽",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_64898e2d5c183",
+                            "label": "標題",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64898e345c184",
+                            "label": "裝飾標題",
+                            "name": "deco_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64898e3d5c185",
+                            "label": "房型列表",
+                            "name": "rooms",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "acfe_repeater_stylised_button": 0,
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_64898e485c186",
+                                    "label": "選擇房型",
+                                    "name": "room_type",
+                                    "type": "taxonomy",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "taxonomy": "room-type",
+                                    "field_type": "select",
+                                    "allow_null": 0,
+                                    "add_term": 1,
+                                    "save_terms": 0,
+                                    "load_terms": 0,
+                                    "return_format": "object",
+                                    "acfe_bidirectional": {
+                                        "acfe_bidirectional_enabled": "0"
+                                    },
+                                    "multiple": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                },
+                "layout_64899138ea7d9": {
+                    "key": "layout_64899138ea7d9",
+                    "name": "big_slider",
+                    "label": "大圖輪播",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_64899156ea7da",
+                            "label": "標題",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64899163ea7db",
+                            "label": "裝飾標題",
+                            "name": "deco_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6489916eea7dc",
+                            "label": "輪播圖片",
+                            "name": "sliders",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "all",
+                            "min": "",
+                            "max": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                },
+                "layout_6489946f0b02a": {
+                    "key": "layout_6489946f0b02a",
+                    "name": "half_layout",
+                    "label": "左右圖文",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_648994970b02b",
+                            "label": "左右區塊",
+                            "name": "block",
+                            "type": "repeater",
+                            "instructions": "此區塊會按照單雙數自動排列成左圖右文、左文右圖",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "acfe_repeater_stylised_button": 0,
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_648994d10b02c",
+                                    "label": "圖片",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": 2,
+                                    "mime_types": "",
+                                    "library": "all"
+                                },
+                                {
+                                    "key": "field_648994dd0b02d",
+                                    "label": "標題",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_648994f10b02f",
+                                    "label": "描述文字",
+                                    "name": "des",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": "",
+                                    "new_lines": "wpautop",
+                                    "acfe_textarea_code": 0
+                                },
+                                {
+                                    "key": "field_648995010b030",
+                                    "label": "小圖片",
+                                    "name": "s_img",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "0.5",
+                                    "mime_types": "",
+                                    "library": "all"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                },
+                "layout_648995a923602": {
+                    "key": "layout_648995a923602",
+                    "name": "full_bg",
+                    "label": "滿版底圖",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_648995d423603",
+                            "label": "裝飾標題",
+                            "name": "deco_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_648995dc23604",
+                            "label": "標題",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_648995e423605",
+                            "label": "描述",
+                            "name": "des",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "wpautop",
+                            "acfe_textarea_code": 0
+                        },
+                        {
+                            "key": "field_648995f423606",
+                            "label": "連結",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                },
+                "layout_648997a574a5e": {
+                    "key": "layout_648997a574a5e",
+                    "name": "title_double",
+                    "label": "雙圖標題",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_648997d874a5f",
+                            "label": "標題",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_648997e074a60",
+                            "label": "裝飾標題",
+                            "name": "deco_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_648997e874a61",
+                            "label": "雙圖片",
+                            "name": "two_images",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "all",
+                            "min": "",
+                            "max": 2,
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_64899a428d15e",
+                            "label": "編輯器",
+                            "name": "editor",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                },
+                "layout_64899a678d15f": {
+                    "key": "layout_64899a678d15f",
+                    "name": "title_big_img",
+                    "label": "標題大圖",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_64899a748d160",
+                            "label": "標題",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64899a818d161",
+                            "label": "裝飾標題",
+                            "name": "deco_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_64899cf58d162",
+                            "label": "圖片",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "acfe_thumbnail": 0,
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "library": "all"
+                        },
+                        {
+                            "key": "field_64899d0c8d163",
+                            "label": "點擊圖片是否外連",
+                            "name": "is_link",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_64899d258d164",
+                            "label": "連結",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_64899d0c8d163",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_modal_edit_size": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_category": false
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": "",
+            "acfe_flexible_hide_empty_message": false,
+            "acfe_flexible_empty_message": "",
+            "acfe_flexible_layouts_previews": false,
+            "acfe_flexible_layouts_state": false
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "block_editor",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1686741809
+}

@@ -452,17 +452,26 @@ a.acf-icon:hover {
 element.style {
 }
 .wp-core-ui.media-modal .image-editor .imgedit-help-toggle, .wp-core-ui.media-modal .image-editor .imgedit-help-toggle:active, .wp-core-ui.media-modal .image-editor .imgedit-help-toggle:hover {
-   
-	color: #000;}
+	color: #000;
+}
 .acf-fc-popup a:hover {
-    background: #ead800 !important;
-    color: #000 !important;
+
+    opacity: 0.5;
+    background: none !important;
+    /* color: #000 !important; */
 }
 .acf-tooltip {
-	background: #000;}
+	background: #000;
+}
 .acf-tooltip.-confirm a[data-event=confirm] {
     color: #FF4A0B;
 }
+.acf-tooltip.acf-fc-popup > ul {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 
 .mce-toolbar .mce-btn-group .mce-btn.mce-primary {
     min-width: 0 !important;

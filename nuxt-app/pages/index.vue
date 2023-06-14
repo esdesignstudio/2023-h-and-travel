@@ -16,8 +16,7 @@
         () => $fetch( useRuntimeConfig().apiUrl + '/get_page_custom', {
             method: 'POST',
             body: {
-                id: 47,
-                // locale: locale.value 多國語言要自帶
+                slug: '/',
             }
         })
     )
