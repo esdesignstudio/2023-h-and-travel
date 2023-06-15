@@ -35,7 +35,9 @@ function get_rooms_by_cate($request)
             $rooms[] = $room;
         }
 
-        $response[$room_type->slug] = $rooms;
+        $response[$room_type->slug]['rooms'] = $rooms;
+        $response[$room_type->slug]['title']['title'] = $room_type->name;
+        $response[$room_type->slug]['title']['deco_title'] = get_field('deco_title', $room_type);
     }
 
     return new WP_REST_Response($response);
