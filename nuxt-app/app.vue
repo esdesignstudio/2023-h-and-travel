@@ -51,7 +51,7 @@ $class-name: loading;
         z-index: 0;
         position: absolute;
         transform-origin: 0 0;
-        background-color: map-get($colors, black-1);
+        background-color: map-get($colors, brand-1);
         transition: transform 1s .1s cubic-bezier(0.87, 0, 0.13, 1);
     }
 

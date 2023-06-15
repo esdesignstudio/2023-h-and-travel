@@ -1,38 +1,55 @@
 <template>
-    <div class="header-index">
+    <header 
+        id="header"
+        class="header-index"
+        :class="{ 'is-scrolled': isScrolled}"
+    >
+        <HeaderTopbar 
+            :data="global.top_bar"
+        />
         <div class="container">
             <div class="header-index__wrap">
+                <div class="header-index__navigation">
+                    <HeaderNavigation :data="global.main_menu" />
+                </div>
                 <NuxtLink 
                     to="/"
                     class="header-index__logo"
                 >
-                    <nuxt-icon name="logo" />
-                    ES TEMPLATE
+                    <img :src="global.logo.url" :alt="global.logo.alt">
                 </NuxtLink>
-                <div class="header-index__navigation">
-                    <HeaderNavigation />
+                <div class="header-index__right">
+                    測試右邊
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 </template>
 <script setup>
-    const props = defineProps({
-        template: {
-            type: Object,
-            default: {},
-        },
+    const global = useGlobal()
+    const isScrolled = ref(false)
+    onMounted(() => {
+        window.addEventListener('scroll', (e) => {
+            const scrollY = window.scrollY
+            scrollY > 50 ?
+            isScrolled.value = true :
+            isScrolled.value = false
+        })
     })
 </script>
 <style lang="scss">
 $class-name: header-index;
 .#{$class-name} {
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid map-get($colors, gray-line);
+    background-color: map-get($colors, brand-2);
+
     &__wrap {
         display: flex;
-        padding: 2rem 0;
         align-items: center;
+        position: relative;
         justify-content: space-between;
-        border-bottom: 1px solid rgba(0,0,0,.2);
 
         span {
             margin-right: 1rem;
@@ -40,7 +57,10 @@ $class-name: header-index;
         }
     }
     &__logo {
-        @include typo('display', 2);
+        @include size(auto, 4rem);
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
     }
 }
 </style>

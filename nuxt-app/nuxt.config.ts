@@ -73,19 +73,6 @@ export default defineNuxtConfig({
         '@formkit/nuxt',
         'nuxt-icons'
     ],
-    i18n: {
-        defaultLocale: 'zh',
-        detectBrowserLanguage: {
-            useCookie: false
-        },
-        vueI18n: {
-            messages: {
-                en: en,
-                zh: zh
-            },
-          fallbackLocale: 'zh',
-        }
-    },
     runtimeConfig: {
         public: {
             siteUrl: process.env.SITE_URL,

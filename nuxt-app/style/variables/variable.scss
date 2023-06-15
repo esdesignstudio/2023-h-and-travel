@@ -1,6 +1,7 @@
 $grid-columns: 12;
 $grid-row-columns: 6;
-$grid-gutter-width: 25px;
+$grid-gutter-width: 2.4rem;
+
 $grid-breakpoints: (
     mobile: 0,
     tablet: 768px,
@@ -19,15 +20,22 @@ $container-max-widths: (
 $container-padding: (
     mobile: 20px,
     tablet: 80px,
-    desktop: 120px,
+    desktop: 4.8rem,
 );
 
 $colors: (
-    brand-1: #ffe800,
+    brand-1: #534A40,
+    brand-2: #ECE8E4,
+    brand-3: #9B815A,
     black-1: #000000,
-    gray: #cec8c2,
-    gray-line: #a5a09c,
+    black-2: #313032,
+    gray-1: #5B5B5B,
+    gray-2: #979797,
+    gray-line: #CEC8C2,
     white: #ffffff,
+    error: #FF503F,
+    warning: #FFCF53,
+    success: #A3C1C3,
 );
 
 $header-height: (

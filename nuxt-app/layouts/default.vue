@@ -2,7 +2,7 @@
     <div id="wrapper" class="wrapper">
         <NuxtLoadingIndicator />
         <Header />
-        <main data-scroll-container>
+        <main id="mainBox">
             <NuxtPage />
         </main>
         <PageDev/>
@@ -10,19 +10,9 @@
 </template>
 
 <script setup>
-    // watch(() => isLoading.value, (val) => {
-    //     if (!val) {
-    //         setTimeout(() => {
-    //             document.body.classList.add('landed')
-    //         }, 1200)
-    //     }
-    // })
-
-    // onMounted(() => {
-    //     let vh = window.innerHeight * 0.01
-    //     document.documentElement.style.setProperty('--vh', `${vh}px`)
-
-    //     store.addLoadingStack(store.loadImage())
-    //     store.waitLoading()
-    // })
+    onMounted(() => {
+        document.getElementById('mainBox').style.paddingTop = document.getElementById('header').offsetHeight + 'px'
+    })
 </script>
+<style lang="scss">
+</style>

@@ -2,14 +2,16 @@
     <div class="navigation-main">
         <ul>
             <li
-                v-for="(item, index) in navs"
+                v-for="(item, index) in data"
                 :key="index"
             >
+            
                 <NuxtLink
-                    :to="item.link"
-                    :title="item.title"
+                    :to="item.item.url"
+                    :title="item.item.title"
+                    :target="item.item.target"
                 >
-                    {{ item.name }}
+                    {{ item.item.title }}
                 </NuxtLink>
             </li>
         </ul>
@@ -17,7 +19,7 @@
 </template>
 <script setup>
     const props = defineProps({
-        template: {
+        data: {
             type: Object,
             default: {},
         },
@@ -43,13 +45,11 @@ $class-name: navigation-main;
 .#{$class-name} {
     ul {
         display: flex;
+        gap: 1rem;
 
         li {
             a {
-                @include typo('head', 2);
-
-                padding-left: 1rem;
-
+                padding: 3rem 0;
                 &:hover {
                     opacity: .5;
                 }

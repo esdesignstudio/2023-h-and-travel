@@ -35,15 +35,11 @@ export const ESinit = (data:{ scroll: Function }) => {
 //         console.lang('page:finish')
 //     })
 }
-// export const useGlobal = () => useState<Object>('globalOption', () => {
-//     const { data } = useAsyncData(
-//         'get_globa_api',
-//         () => $fetch( useRuntimeConfig().apiBase + '/get_global'), {
-//             transform: (res) => {
-//                 return res['data'] // res['data'] typescript
-//             }
-//         }
-//     )
-//     return data 
-// })
 
+export const useGlobal = () => useState<Object>('globalOption',  () => {
+    const { data } = useAsyncData(
+        'get_globa_api',
+        () => $fetch( useRuntimeConfig().public.apiUrl + '/get_global')
+    )
+    return data
+})

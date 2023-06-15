@@ -32,7 +32,7 @@
             position: relative;
 
             > * {
-                margin-bottom: 24px;
+                margin-bottom: 2.4rem;
             }
         }
 
@@ -47,11 +47,11 @@
             pointer-events: none;
 
             &-col {
-                background-color: rgba(255,255,255,.8);
+                background-color: rgba(60, 60, 60, 0.7);
                 opacity: 0.1;
 
                 &.-desktop {
-                    @include size(calc((100% - (11 * 24px)) / 12), 100%);
+                    @include size(calc((100% - (11 * 2.4rem)) / 12), 100%);
 
                     @include media-breakpoint-down(medium) {
                         display: none;
@@ -59,7 +59,7 @@
                 }
 
                 &.-tablet {
-                    @include size(calc((100% - (7 * 24px)) / 8), 100%);
+                    @include size(calc((100% - (7 * 2.4rem)) / 8), 100%);
 
                     display: none;
 
@@ -72,7 +72,7 @@
                 }
 
                 &.-mobile {
-                    @include size(calc((100% - (3 * 24px)) / 4), 100%);
+                    @include size(calc((100% - (3 * 2.4rem)) / 4), 100%);
 
                     display: none;
 

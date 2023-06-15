@@ -29,14 +29,15 @@ textarea {
     -moz-osx-font-smoothing: grayscale;
 }
 
-html,
-body {
-    @include typo('body', 1);
 
-    min-width: 320px;
-    min-height: 100vh;
+html {
+    font-size: 62.5%;
+    scrollbar-width: none;
+}
+body {
+    font-size: 1.6rem;
     overscroll-behavior: none;
-    background-color: map-get($colors, gray);
+    background-color: map-get($colors, brand-2);
 
     @include media-breakpoint-down(tablet) {
         height: 100%;
