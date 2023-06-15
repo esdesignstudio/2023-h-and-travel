@@ -3,7 +3,7 @@ require_once 'router/get_page_custom.php';
 require_once 'router/get_global.php';
 
 require_once 'router/get_single_room.php';
-
+require_once 'router/get_rooms_by_cate.php';
 
 /**
  * origin api

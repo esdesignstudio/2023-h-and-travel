@@ -2,6 +2,7 @@
 function get_rooms_by_cate($request)
 {
     $response = array();
+    
     $room_types = get_terms(array(
         'taxonomy' => 'room-type',
         'hide_empty' => false,
@@ -28,6 +29,7 @@ function get_rooms_by_cate($request)
                 'title' => $post->post_title,
                 'slug' => $post->post_name,
                 'content' => $post->post_content,
+                'fields' => get_fields($post->ID),
                 // 其他需要的欄位
             );
             $rooms[] = $room;
