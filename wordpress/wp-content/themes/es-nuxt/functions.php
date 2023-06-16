@@ -24,3 +24,48 @@ include_once "setting/acf.php";
 include_once "setting/dashboard.php"; 
 include_once "setting/admin.php"; 
 include_once "api/index.php"; 
+
+add_filter('acfe/flexible/thumbnail/layout=full_cards', 'full_cards_thumbnail', 10, 3);
+function full_cards_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}
+
+add_filter('acfe/flexible/thumbnail/layout=ani_number', 'ani_number_thumbnail', 10, 3);
+function ani_number_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}
+
+add_filter('acfe/flexible/thumbnail/layout=ig_show', 'ig_show_thumbnail', 10, 3);
+function ig_show_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}
+
+add_filter('acfe/flexible/thumbnail/layout=room_show', 'room_show_thumbnail', 10, 3);
+function room_show_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}
+
+add_filter('acfe/flexible/thumbnail/layout=big_slider', 'big_slider_thumbnail', 10, 3);
+function big_slider_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}
+
+add_filter('acfe/flexible/thumbnail/layout=half_layout', 'half_layout_thumbnail', 10, 3);
+function half_layout_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}
+
+add_filter('acfe/flexible/thumbnail/layout=full_bg', 'full_bg_thumbnail', 10, 3);
+function full_bg_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}
+
+add_filter('acfe/flexible/thumbnail/layout=title_double', 'title_double_thumbnail', 10, 3);
+function title_double_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}
+
+add_filter('acfe/flexible/thumbnail/layout=title_big_img', 'title_big_img_thumbnail', 10, 3);
+function title_big_img_thumbnail($thumbnail, $field, $layout){
+    return 'http://localhost:3000/thumbnail/test1.png';
+}

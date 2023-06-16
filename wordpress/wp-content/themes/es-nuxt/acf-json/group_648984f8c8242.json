@@ -286,7 +286,7 @@
                     "min": "",
                     "max": "",
                     "acfe_flexible_modal_edit_size": "",
-                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_thumbnail": "2184",
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
                     "acfe_flexible_render_script": false,
@@ -1363,5 +1363,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1686741809
+    "modified": 1686883577
 }
