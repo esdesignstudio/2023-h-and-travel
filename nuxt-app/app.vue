@@ -31,7 +31,7 @@ $class-name: loading;
 
     > div {
         @include size(100%);
-        @include typo('head', 2);
+        @include typo('heading', 48);
 
         color: map-get($colors, white);
         z-index: 1;
