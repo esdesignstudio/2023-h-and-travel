@@ -44,6 +44,7 @@ $class-name: header-index;
     position: fixed;
     border-bottom: 1px solid map-get($colors, gray-line);
     background-color: map-get($colors, brand-2);
+    z-index: 999;
 
     &__wrap {
         display: flex;
