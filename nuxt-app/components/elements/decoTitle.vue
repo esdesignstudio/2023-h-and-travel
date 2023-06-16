@@ -1,5 +1,10 @@
 <template>
-    <div class="elements-deco-title">
+    <div
+        class="elements-deco-title"
+        :class="{
+            '-hero': hero,
+        }"
+    >
         <span
             v-for="(item, key) in data?.split(',')"
             :key="key"
@@ -12,9 +17,13 @@
 <script setup>
     const props = defineProps({
         data: {
-            type: Object,
+            type: String,
             default: {},
         },
+        hero: {
+            type: Boolean,
+            default: false,
+        }
     })
 </script>
 <style lang="scss">
@@ -24,11 +33,17 @@
 
         display: flex;
         flex-direction: column;
-        align-items: center;
+        
+        &.-hero {
+            align-items: center;
+
+            > span {
+                @include typo('display', 180);
+            }
+        }
 
         > span {
-            @include typo('display', 180);
-
+            @include typo('display', 80);
             overflow: hidden;
 
             @for $i from 1 through 10 {

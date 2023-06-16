@@ -9,7 +9,10 @@
         >
             <h2 v-text="data?.title"></h2>
             <div class="elements-key-visual__typea-title">
-                <ElementsDecoTitle :data="data?.deco_title"/>
+                <ElementsDecoTitle
+                    :data="data?.deco_title"
+                    :hero="true"
+                />
             </div>
             <div class="elements-key-visual__typea-icon">
                 <nuxt-icon name="arrow_down" />
@@ -53,8 +56,6 @@
             default: {},
         },
     })
-
-    console.log(props.data)
 
     const keyVisualRef = ref(null)
     const imgRef = ref(null)
@@ -151,7 +152,7 @@
         }
 
         &__typeb {
-            @include size(100%, 100vh);
+            @include size(100%, calc(100vh - map-get($header-height, desktop)));
 
             display: flex;
             flex-direction: column;
