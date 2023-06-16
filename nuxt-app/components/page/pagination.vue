@@ -38,7 +38,7 @@
             display: flex;
 
             &-item {
-                @include typo('head', 2);
+                @include typo('heading', 48);
 
                 margin-right: 12px;
                 opacity: 0.5;

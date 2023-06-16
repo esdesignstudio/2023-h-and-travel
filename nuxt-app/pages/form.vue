@@ -127,7 +127,7 @@
             display: flex;
             
             h2 {
-                @include typo('head', 2);
+                @include typo('heading', 48);
 
                 margin-bottom: 2rem;
             }

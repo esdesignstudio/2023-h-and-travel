@@ -21,7 +21,7 @@ body,
 button,
 input,
 textarea {
-    @include typo('body', 1);
+    @include typo('body', 16);
 
     color: map-get($colors, black);
     font-family: map-get($font-family, default);
@@ -47,7 +47,7 @@ body {
 
 input,
 textarea {
-    @include typo('body', 1);
+    @include typo('body', 16);
 
     border: none;
     appearance: none;
@@ -78,7 +78,7 @@ a {
 }
 
 button {
-    @include typo('button', 1);
+    @include typo('body', 16);
 
     color: currentColor;
     background-color: transparent;
