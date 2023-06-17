@@ -46,6 +46,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            background-color: map-get($colors, brand-1);
 
             &::after {
                 @include size(100%);
@@ -93,7 +94,7 @@
                 @include set-col(4, 12, 0);
                 @include set-col-offset(7, 12, 1);
                 @include typo('body', 16);
-                
+
                 white-space: pre-line;
             }
         }

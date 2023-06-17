@@ -4,6 +4,7 @@
         :class="{
             '-hero': hero,
         }"
+        v-inview
     >
         <span
             v-for="(item, key) in data?.split(',')"
@@ -42,22 +43,27 @@
             }
         }
 
+        &.is-inview {
+            > span {
+                .isLoaded & {
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            
+                            h1 {
+                                transform: translateY(0);
+                                transition: transform 1s #{$i * 0.1}s cubic-bezier(0.77, 0, 0.175, 1);
+                            }
+        
+                            
+                        }
+                    }       
+                }
+            }
+        }
+
         > span {
             @include typo('display', 80);
             overflow: hidden;
-
-            @for $i from 1 through 10 {
-                &:nth-child(#{$i}) {
-                    .isLoaded & {
-                        > h1 {
-                            transform: translateY(0);
-                            transition: transform 1s #{$i * 0.1}s cubic-bezier(0.77, 0, 0.175, 1);
-                        }
-                    }
-                }
-            }
-
-            
 
             > h1 {
                 transform: translateY(100%);
