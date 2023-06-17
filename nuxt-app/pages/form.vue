@@ -118,7 +118,7 @@
         padding: 5rem 0;
 
         h1 {
-            @include typo('head', 1);
+            @include typo('heading', 64);
 
             margin-bottom: 2rem;
         }
