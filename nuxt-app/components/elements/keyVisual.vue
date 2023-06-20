@@ -86,7 +86,7 @@
     $class-name: elements-key-visual;
     .#{$class-name} {
         &__typea {
-            @include size(100%, 150vh);
+            @include size(100%, 200vh);
 
             position: relative;
             display: flex;

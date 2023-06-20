@@ -15,6 +15,20 @@ function get_page_custom($request)
         $fields = get_fields($post->ID);
         $fields['post'] = $post;
 
+        if (isset($fields['flex'])) {
+            foreach ($fields['flex'] as $flex) {
+                if ($flex['acf_fc_layout'] === 'room_show') {
+                    foreach ($flex['rooms'] as $room) {
+                        $id = $room['room_type']->term_id;
+                        $image = get_field('image', 'term_' . $id);
+                        $deco_title = get_field('deco_title', 'term_' . $id);
+                        $room['room_type']->image = $image;
+                        $room['room_type']->deco_title = $deco_title;
+                    }
+                }
+            }
+        }
+
         $response['data'] = $fields;
         $response['status'] = 200;
     }

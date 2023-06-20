@@ -1,12 +1,22 @@
 <template>
     <div class="flexible-ani-number">
-        <p v-text="data?.title"></p>
-        <h2 v-text="data?.deco_title"></h2>
+        <p
+            v-text="data?.title"
+            v-inview
+            v-fade
+        ></p>
+        <h2
+            v-text="data?.deco_title"
+            v-inview
+            v-fade
+        ></h2>
         <div class="flexible-ani-number__row">
             <div
                 class="flexible-ani-number__row-item"
                 v-for="(item, key) in data?.number"
                 :key="key"
+                v-inview
+                v-fade
             >
                 <figure>
                     <img
@@ -44,7 +54,8 @@
                 roundProps: {
                     'innerHTML': 0.1
                 },
-                duration: 1,
+                duration: 1.5,
+                delay: 0.5,
                 ease: 'power4.out',
                 scrollTrigger: {
                     trigger: item,

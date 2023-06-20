@@ -3,7 +3,11 @@
         <div class="flexible-ig-show__bg"></div>
         <div class="flexible-ig-show__wrapper">
             <div class="flexible-ig-show__wrapper-title">
-                <p v-text="data?.title"></p>
+                <p
+                    v-text="data?.title"
+                    v-inview
+                    v-fade
+                ></p>
                 <ElementsDecoTitle :data="data?.deco_title"/>
             </div>
             <div class="flexible-ig-show__wrapper-ig">
@@ -11,6 +15,8 @@
                     class="flexible-ig-show__wrapper-ig-wrapper"
                     v-for="(card, key) in data?.ig_cards"
                     :key="key"
+                    v-inview
+                    v-fade
                 >
                     <ElementsIgCard :data="card" />
                 </div>

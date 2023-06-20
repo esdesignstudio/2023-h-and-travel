@@ -1,11 +1,17 @@
 <template>
     <div class="flexible-big-slider">
         <div class="flexible-big-slider__title">
-            <h2 v-text="data?.title"></h2>
+            <h2
+                v-text="data?.title"
+                v-inview
+                v-fade
+            ></h2>
             <ElementsDecoTitle :data="data?.deco_title"/>
         </div>
         <ElementsCarousel
             :data="data.sliders"
+            v-inview
+            v-fade
         />
     </div>
 </template>
