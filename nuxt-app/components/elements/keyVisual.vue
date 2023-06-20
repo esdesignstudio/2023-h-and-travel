@@ -67,8 +67,8 @@
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: imgRef.value,
-                    start: 'center center',
-                    end: 'bottom center',
+                    start: 'top center',
+                    end: `bottom+=${window.innerHeight} center`,
                     scrub: true,
                     anticipatePin: 1,
                     // markers: true,
@@ -77,7 +77,7 @@
     
             tl.to(imgRef.value, {
                 width: window.innerWidth,
-                height: '100vh',
+                height: 'calc(100vh - 84px)',
             })
         }
     })
@@ -86,7 +86,7 @@
     $class-name: elements-key-visual;
     .#{$class-name} {
         &__typea {
-            @include size(100%, 200vh);
+            @include size(100%, 250vh);
 
             position: relative;
             display: flex;
@@ -129,7 +129,7 @@
                 display: flex;
                 justify-content: center;
                 max-width: none !important;
-                top: 0;
+                top: map-get($header-height, desktop);
                 margin-top: -20rem;
     
                 > figure {
