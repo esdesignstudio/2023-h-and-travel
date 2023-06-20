@@ -1,0 +1,44 @@
+<template>
+    <div class="flexible-big-slider">
+        <div class="flexible-big-slider__title">
+            <h2 v-text="data?.title"></h2>
+            <ElementsDecoTitle :data="data?.deco_title"/>
+        </div>
+        <ElementsCarousel
+            :data="data.sliders"
+        />
+    </div>
+</template>
+<script setup>
+    const props = defineProps({
+        data: {
+            type: Object,
+            default: {},
+        },
+    })
+</script>
+<style lang="scss">
+    $class-name: flexible-big-slider;
+    .#{$class-name} {
+        @include size(100%, auto);
+
+        padding-top: 16rem;
+        padding-bottom: 24rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 8.6rem;
+
+            > h2 {
+                @include typo('heading', 32);
+
+                margin-bottom: 2rem;
+            }
+        }
+    }
+</style>
