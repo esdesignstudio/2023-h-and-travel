@@ -154,6 +154,7 @@
         &__typeb {
             @include size(100%, calc(100vh - map-get($header-height, desktop)));
 
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
