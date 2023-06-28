@@ -3,6 +3,7 @@
         class="elements-deco-title"
         :class="{
             '-hero': hero,
+            'large': large
         }"
         v-inview
     >
@@ -24,7 +25,11 @@
         hero: {
             type: Boolean,
             default: false,
-        }
+        },
+        large: {
+            type: Boolean,
+            default: false,
+        },
     })
 </script>
 <style lang="scss">
@@ -40,6 +45,12 @@
 
             > span {
                 @include typo('display', 180);
+            }
+        }
+
+        &.large {
+            > span {
+                @include typo('display', 140);
             }
         }
 

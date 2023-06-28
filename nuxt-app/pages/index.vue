@@ -30,6 +30,22 @@
                 v-if="flex.acf_fc_layout === 'big_slider'"
                 :data="flex"
             />
+            <FlexibleHalfLayout
+                v-if="flex.acf_fc_layout === 'half_layout'"
+                :data="flex"
+            />
+            <FlexibleTitleBigImg
+                v-if="flex.acf_fc_layout === 'title_big_img'"
+                :data="flex"
+            />
+            <FlexibleFullBg
+                v-if="flex.acf_fc_layout === 'full_bg'"
+                :data="flex"
+            />
+            <FlexibleTitleDouble
+                v-if="flex.acf_fc_layout === 'title_double'"
+                :data="flex"
+            />
         </section>
         <Footer />
     </div>
