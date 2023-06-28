@@ -168,8 +168,6 @@
             }
 
             &-title {
-                @include size(100%, auto);
-    
                 margin-bottom: 5.2rem;
                 z-index: 1;
             }

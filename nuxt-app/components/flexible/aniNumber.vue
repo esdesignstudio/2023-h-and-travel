@@ -69,7 +69,7 @@
 <style lang="scss">
     $class-name: flexible-ani-number;
     .#{$class-name} {
-        @include size(100%);
+        @include size(100%, calc(100vh - map-get($header-height, desktop)));
 
         display: flex;
         flex-direction: column;

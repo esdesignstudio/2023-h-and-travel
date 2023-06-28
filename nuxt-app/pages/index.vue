@@ -10,55 +10,26 @@
             v-for="(flex, key) in pageData?.data?.flex"
             :key="key"
         >
-            <div
-                class="page-index__flex-full"
+            <FlexibleFullCards
                 v-if="flex.acf_fc_layout === 'full_cards'"
-            >
-                <div
-                    class="page-index__flex-full-cards" 
-                    v-for="(item, key) in flex.cards"
-                    :key="key"
-                    :ref="el => cardRef[key] = el"
-                >
-                    <div class="page-index__flex-full-cards-sticky">
-                        <FlexibleFullCards
-                            :data="item"
-                        />
-                    </div>
-                </div>
-            </div>
-            <div
-                class="page-index__flex-number"
+                :data="flex"
+            />
+            <FlexibleAniNumber
                 v-if="flex.acf_fc_layout === 'ani_number'"
-            >
-                <FlexibleAniNumber
-                    :data="flex"
-                />
-            </div>
-            <div
-                class="page-index__flex-ig"
+                :data="flex"
+            />
+            <FlexibleIgShow
                 v-if="flex.acf_fc_layout === 'ig_show'"
-            >
-                <FlexibleIgShow
-                    :data="flex"
-                />
-            </div>
-            <div
-                class="page-index__flex-room"
+                :data="flex"
+            />
+            <FlexibleRoomShow
                 v-if="flex.acf_fc_layout === 'room_show'"
-            >
-                <FlexibleRoomShow
-                    :data="flex"
-                />
-            </div>
-            <div
-                class="page-index__flex-slider"
+                :data="flex"
+            />
+            <FlexibleBigSlider
                 v-if="flex.acf_fc_layout === 'big_slider'"
-            >
-                <FlexibleBigSlider
-                    :data="flex"
-                />
-            </div>
+                :data="flex"
+            />
         </section>
         <Footer />
     </div>
@@ -84,18 +55,18 @@
         navigateTo('/404')
     }
 
-    const cardRef = ref([])
-    const cardLength = ref(0)
+    // const cardRef = ref([])
+    // const cardLength = ref(0)
 
-    onMounted(() => {
-        cardLength.value = cardRef.value.length
-        cardRef.value.forEach((el, i) => {
-            if (i > 0) {
-                el.style.marginTop = - 100 * (cardLength.value - i) + 'vh'
-            }
-            el.style.height = 100 * (cardLength.value - i) + 'vh'
-        })
-    })
+    // onMounted(() => {
+    //     cardLength.value = cardRef.value.length
+    //     cardRef.value.forEach((el, i) => {
+    //         if (i > 0) {
+    //             el.style.marginTop = - 100 * (cardLength.value - i) + 'vh'
+    //         }
+    //         el.style.height = 100 * (cardLength.value - i) + 'vh'
+    //     })
+    // })
 </script>
 <style lang="scss">
     $class-name: page-index;
@@ -121,14 +92,6 @@
                     }
                 }
             }
-
-            &-number {
-                @include size(100%, calc(100vh - map-get($header-height, desktop)));
-            }
-        }
-
-        &__ig {
-            @include size(100%, auto);
         }
     }
 </style>
