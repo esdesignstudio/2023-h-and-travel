@@ -31,7 +31,8 @@
                 </div>
             </div>
             <FlexibleRoomFacilities :data="pageData.data?.room_settings" />
-            <div class="container">
+            <FlexibleTitleDouble :data="pageData.data?.checkin_list"/>
+            <!-- <div class="container">
                 <div class="rooms-sigle__wrap__paragragh">
                     <div class="rooms-sigle__wrap__paragragh-title">
                         <h4 v-inview v-fade>入住須知</h4>
@@ -41,7 +42,7 @@
                         <div v-html="pageData.data?.checkin_list" />
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -79,13 +80,15 @@
     .#{$class-name} {
         &__wrap {
             padding: 5rem 0;
-            text-align:center;
-            
-            h1 {
-                @include typo('heading', 64);
 
-                padding: 0 0 1rem;
+            .container {
+                > h1 {
+                    @include typo('heading', 64);
+    
+                    padding: 0 0 1rem;
+                }
             }
+            
 
             .deco {
                 @include typo('heading', 32);
@@ -95,6 +98,7 @@
 
             &__hero {
                 padding: 8rem 0;
+                text-align:center;
 
                 > div {
                     padding: 0 0 2rem;
