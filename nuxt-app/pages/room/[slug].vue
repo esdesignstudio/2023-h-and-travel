@@ -1,7 +1,7 @@
 <template>
     <div class="rooms-sigle">
         <div class="rooms-sigle__wrap">
-            <div class="container">
+            <div class="rooms-sigle__wrap-title container">
                 <h1 v-if="pageData.data?.post?.post_title">
                     {{ pageData.data?.post?.post_title }}
                 </h1>
@@ -32,18 +32,9 @@
             </div>
             <FlexibleRoomFacilities :data="pageData.data?.room_settings" />
             <FlexibleTitleDouble :data="pageData.data?.checkin_list"/>
-            <!-- <div class="container">
-                <div class="rooms-sigle__wrap__paragragh">
-                    <div class="rooms-sigle__wrap__paragragh-title">
-                        <h4 v-inview v-fade>入住須知</h4>
-                        <span v-inview v-fade>INFORMATION</span>
-                    </div>
-                    <div class="rooms-sigle__wrap__paragragh__inner">
-                        <div v-html="pageData.data?.checkin_list" />
-                    </div>
-                </div>
-            </div> -->
+            <FlexibleFullBg :data="pageData.data?.more_rooms"/>
         </div>
+        <Footer />
     </div>
 </template>
 <script setup>
@@ -79,9 +70,11 @@
     $class-name: rooms-sigle;
     .#{$class-name} {
         &__wrap {
-            padding: 5rem 0;
+            padding-top: 5rem;
 
-            .container {
+            &-title {
+                text-align: center;
+
                 > h1 {
                     @include typo('heading', 64);
     

@@ -5,7 +5,7 @@
         </figure>
         <div class="elements-room-card-info">
             <h3>{{ data.title }}</h3>
-            <nuxt-link :to="'/rooms/' + data.slug">
+            <nuxt-link :to="'/room/' + data.slug">
                 查看房型
                 <nuxt-icon name="arrow_right"/>
             </nuxt-link>
