@@ -47,6 +47,7 @@
     $class-name: flexible-room-facilities;
     .#{$class-name} {
         background-color: map-get($colors, brand-1);
+        text-align:center;
 
         &__wrap {
             padding-top: 8rem;
