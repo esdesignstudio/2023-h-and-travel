@@ -286,7 +286,7 @@
                     "min": "",
                     "max": "",
                     "acfe_flexible_modal_edit_size": "",
-                    "acfe_flexible_thumbnail": "2184",
+                    "acfe_flexible_thumbnail": "",
                     "acfe_flexible_render_template": false,
                     "acfe_flexible_render_style": false,
                     "acfe_flexible_render_script": false,
@@ -324,7 +324,7 @@
                             "label": "裝飾標題",
                             "name": "deco_title",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "使用逗號斷行，ex: RAINBOW,MANOR",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -468,7 +468,7 @@
                             "label": "裝飾標題",
                             "name": "deco_title",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "使用逗號斷行，ex: RAINBOW,MANOR",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -702,7 +702,7 @@
                             "label": "裝飾標題",
                             "name": "deco_title",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "使用逗號斷行，ex: RAINBOW,MANOR",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -805,7 +805,7 @@
                             "label": "裝飾標題",
                             "name": "deco_title",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "使用逗號斷行，ex: RAINBOW,MANOR",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -930,6 +930,25 @@
                                     "maxlength": ""
                                 },
                                 {
+                                    "key": "field_649d184d0ef79",
+                                    "label": "裝飾標題",
+                                    "name": "deco_title",
+                                    "type": "text",
+                                    "instructions": "使用逗號斷行，ex: RAINBOW,MANOR\r\n若此欄未填則顯示數字",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
                                     "key": "field_648994f10b02f",
                                     "label": "描述文字",
                                     "name": "des",
@@ -993,14 +1012,14 @@
                     "key": "layout_648995a923602",
                     "name": "full_bg",
                     "label": "滿版底圖",
-                    "display": "table",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_648995d423603",
                             "label": "裝飾標題",
                             "name": "deco_title",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "使用逗號斷行，ex: RAINBOW,MANOR",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1018,7 +1037,7 @@
                             "key": "field_648995dc23604",
                             "label": "標題",
                             "name": "title",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1029,9 +1048,10 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "",
+                            "acfe_textarea_code": 0
                         },
                         {
                             "key": "field_648995e423605",
@@ -1136,7 +1156,7 @@
                             "label": "裝飾標題",
                             "name": "deco_title",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "使用逗號斷行，ex: RAINBOW,MANOR",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1238,7 +1258,7 @@
                             "label": "裝飾標題",
                             "name": "deco_title",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "使用逗號斷行，ex: RAINBOW,MANOR",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1389,5 +1409,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1687941122
+    "modified": 1688019301
 }
