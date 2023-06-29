@@ -7,17 +7,36 @@
                     <span>ROOMS</span>
                </div>
                <div class="page-rooms__wrap-cate">
-                    <div class="btn">
+                    <div
+                        class="btn"
+                        :class="{'-active': roomType === 'all'}"
+                        @click="roomType = 'all'"
+                    >
                         所有房型
                     </div>
-                    <div class="btn" v-if="pagePage?.twins?.title.title">
+                    <div
+                        v-if="pagePage?.twins?.title.title"
+                        class="btn"
+                        :class="{'-active': roomType === 'twins'}"
+                        @click="roomType = 'twins'"
+                    >
                         {{ pagePage?.twins?.title.title }}
                     </div>
-                    <div class="btn" v-if="pagePage?.triple?.title.title">
+                    <div
+                        v-if="pagePage?.triple?.title.title"
+                        class="btn"
+                        :class="{'-active': roomType === 'triple'}"
+                        @click="roomType = 'triple'"
+                    >
                         {{ pagePage?.triple?.title.title }}
                     </div>
-                    <div class="btn" v-if="pagePage?.twins?.title.title">
-                        {{ pagePage?.twins?.title.title }}
+                    <div
+                        v-if="pagePage?.quadruple?.title.title"
+                        class="btn"
+                        :class="{'-active': roomType === 'quadruple'}"
+                        @click="roomType = 'quadruple'"
+                    >
+                        {{ pagePage?.quadruple?.title.title }}
                     </div>
                </div>
             </div>
@@ -27,7 +46,7 @@
                 <!-- 雙人房 -->
                 <div 
                     class="page-rooms__wrap__room__list"
-                    v-if="pagePage?.twins"
+                    v-if="pagePage?.twins?.rooms.length && roomType === 'all' || roomType === 'twins'"
                 >
                     <div class="page-rooms__wrap__room__list-title">
                         <span v-if="pagePage?.twins?.title.deco_title">
@@ -51,7 +70,7 @@
                 <!-- 三人房 -->
                 <div 
                     class="page-rooms__wrap__room__list"
-                    v-if="pagePage?.triple"
+                    v-if="pagePage?.triple?.rooms.length && roomType === 'all' || roomType === 'triple'"
                 >
                     <div class="page-rooms__wrap__room__list-title">
                         <span v-if="pagePage?.triple?.title.deco_title">
@@ -64,6 +83,30 @@
                     <div class="page-rooms__wrap__room__list-item">
                         <ElementsRoomCard 
                             v-for="(room, key) in pagePage?.triple?.rooms"
+                            :key="key"
+                            v-inview
+                            v-fade
+                            :data="room" 
+                        />
+                    </div>
+                </div>
+
+                <!-- 四人房 -->
+                <div 
+                    class="page-rooms__wrap__room__list"
+                    v-if="pagePage?.quadruple?.rooms.length && roomType === 'all' || roomType === 'quad'"
+                >
+                    <div class="page-rooms__wrap__room__list-title">
+                        <span v-if="pagePage?.quadruple?.title.deco_title">
+                            {{ pagePage?.quadruple?.title.deco_title }}
+                        </span>
+                        <h3 v-if="pagePage?.quadruple?.title.title">
+                            {{ pagePage?.quadruple?.title.title }}
+                        </h3>
+                    </div>
+                    <div class="page-rooms__wrap__room__list-item">
+                        <ElementsRoomCard 
+                            v-for="(room, key) in pagePage?.quadruple?.rooms"
                             :key="key"
                             v-inview
                             v-fade
@@ -89,6 +132,8 @@
     // } else {
     //     navigateTo('/404')
     // }
+
+    const roomType = ref('all')
 
     const { data: pagePage } = await useAsyncData(
         'get_page_cate',
@@ -133,6 +178,12 @@
                     border-radius: 8rem;
                     border: 1px solid map-get($colors, brand-3);
                     transition: background-color .3s ease-in-out, color .3s ease-in-out;
+                    cursor: pointer;
+
+                    &.-active {
+                        background-color: map-get($colors, brand-3);
+                        color: map-get($colors, white);
+                    }
 
                     @include media-breakpoint-up(medium) {
                         &:hover {
@@ -157,7 +208,13 @@
 
                         display: flex;
                         flex-wrap: wrap;
-                        justify-content: space-between;
+                        justify-content: center;
+
+                        .elements-room-card {
+                            &:not(:last-child) {
+                                margin-right: 4rem;
+                            }
+                        }
                     }
 
                     &-title {
