@@ -3,7 +3,9 @@
         class="elements-deco-title"
         :class="{
             '-hero': hero,
-            'large': large
+            '-large': large,
+            '-small': small,
+            '-center': center,
         }"
         v-inview
     >
@@ -30,6 +32,14 @@
             type: Boolean,
             default: false,
         },
+        small: {
+            type: Boolean,
+            default: false,
+        },
+        center: {
+            type: Boolean,
+            default: false,
+        },
     })
 </script>
 <style lang="scss">
@@ -48,9 +58,23 @@
             }
         }
 
-        &.large {
+        &.-large {
             > span {
                 @include typo('display', 140);
+            }
+        }
+
+        &.-small {
+            > span {
+                @include typo('heading', 48);
+            }
+        }
+
+        &.-center {
+            > span {
+                > h1 {
+                    text-align: center;
+                }
             }
         }
 
@@ -78,6 +102,8 @@
 
             > h1 {
                 transform: translateY(100%);
+                line-height: 1.1;
+                text-transform: uppercase;
             }
         }
     }

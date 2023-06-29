@@ -1,7 +1,7 @@
 <template>
     <div class="elements-room-card">
         <figure>
-            <img :src="data.fields.key_visual?.slider[0].url" alt="">
+            <img :src="data.fields.key_visual?.slider[0]?.url" alt="">
         </figure>
         <div class="elements-room-card-info">
             <h3>{{ data.title }}</h3>

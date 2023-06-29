@@ -14,9 +14,8 @@
             v-if="data?.link"
             :to="data?.link?.url"
             :target="data?.link?.target"
-            v-text="data?.link?.title"
         >
-
+            {{ data.link.title }}
         </nuxt-link>
     </div>
 </template>
@@ -65,6 +64,7 @@
             margin-bottom: 3.2rem;
             z-index: 1;
             text-align: center;
+            white-space: pre-line;
         }
 
         > p {
@@ -83,6 +83,14 @@
             border-radius: 5rem;
             z-index: 1;
             margin-top: 3.2rem;
+            transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+            @include media-breakpoint-up(medium) {
+                &:hover {
+                    background-color: map-get($colors, white);
+                    color: map-get($colors, brand-3);
+                }
+            }
         }
     }
 </style>

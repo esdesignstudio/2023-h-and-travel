@@ -12,6 +12,7 @@
                 <ElementsDecoTitle
                     :data="data?.deco_title"
                     :hero="true"
+                    :center="true"
                 />
             </div>
             <div class="elements-key-visual__typea-icon">
@@ -35,7 +36,11 @@
         >
             <h2 v-text="data?.title"></h2>
             <div class="elements-key-visual__typeb-title">
-                <ElementsDecoTitle :data="data?.deco_title"/>
+                <ElementsDecoTitle
+                    :data="data?.deco_title"
+                    :hero="true"
+                    :center="true"
+                />
             </div>
             <figure class="elements-key-visual__typeb-bg">
                 <img
