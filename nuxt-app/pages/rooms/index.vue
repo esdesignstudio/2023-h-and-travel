@@ -37,14 +37,12 @@
                             {{ pagePage?.twins?.title.title }}
                         </h3>
                     </div>
-                    <div
-                        class="page-rooms__wrap__room__list-item"
-                        v-for="(room, key) in pagePage?.twins?.rooms"
-                        :key="key"
-                        v-inview
-                        v-fade
-                    >
+                    <div class="page-rooms__wrap__room__list-item">
                         <ElementsRoomCard 
+                            v-for="(room, key) in pagePage?.twins?.rooms"
+                            :key="key"
+                            v-inview
+                            v-fade
                             :data="room" 
                         />
                     </div>
@@ -63,14 +61,12 @@
                             {{ pagePage?.triple?.title.title }}
                         </h3>
                     </div>
-                    <div
-                        class="page-rooms__wrap__room__list-item"
-                        v-for="(room, key) in pagePage?.triple?.rooms"
-                        :key="key"
-                        v-inview
-                        v-fade
-                    >
+                    <div class="page-rooms__wrap__room__list-item">
                         <ElementsRoomCard 
+                            v-for="(room, key) in pagePage?.triple?.rooms"
+                            :key="key"
+                            v-inview
+                            v-fade
                             :data="room" 
                         />
                     </div>
@@ -152,12 +148,24 @@
 
                 &__list {
                     padding: 5rem 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    &-item {
+                        @include set-col(10, 12, 0);
+
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    }
 
                     &-title {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        gap: 1rem;
+                        gap: 3rem;
+                        padding: 8rem 0;
 
                         span {
                             @include typo('heading', 48);

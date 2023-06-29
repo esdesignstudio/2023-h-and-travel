@@ -1,11 +1,10 @@
 <template>
     <div class="elements-room-card">
         <figure>
-            <img :src="data.key_visual?.slider[0].url" alt="">
+            <img :src="data.fields.key_visual?.slider[0].url" alt="">
         </figure>
         <div class="elements-room-card-info">
-            <h3 v-text="data.title"></h3>
-            <h4 v-text="data.key_visual?.deco_title"></h4>
+            <h3>{{ data.title }}</h3>
             <nuxt-link :to="'/rooms/' + data.slug">
                 查看房型
                 <nuxt-icon name="arrow_right"/>
@@ -53,15 +52,9 @@
             border-bottom: 1px solid map-get($colors, gray-line);
 
             > h3 {
-                @include typo('heading', 32);
-            
-                margin-bottom: 0.8rem;
-            }
-            
-            > h4 {
                 @include typo('body', 20);
             
-                margin-bottom: 1rem;
+                margin-bottom: 0.8rem;
             }
             
             > a {
