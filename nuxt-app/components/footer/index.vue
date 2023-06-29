@@ -1,30 +1,261 @@
 <template>
     <div class="footer">
-        <div class="container">
-            <div class="footer__wrap">
-                <div class="footer__logo">
-                    <NuxtLink to="/">
-                        ES Design
-                    </NuxtLink>
+        <div class="footer__top container">
+            <div class="footer__top-wrapper">
+                <figure class="footer__top-wrapper-logo">
+                    <img
+                        :src="global.footer?.logo?.url"
+                        :alt="global.footer?.logo?.alt"
+                        v-inview
+                        v-fade
+                    >
+                </figure>
+                <div class="footer__top-wrapper-info">
+                    <div class="footer__top-wrapper-info-left">
+                        <p v-inview v-fade>聯絡資訊</p>
+                        <p v-inview v-fade v-if="global.footer.phone" v-text="`電話｜${global.footer.phone}`"></p>
+                        <p v-inview v-fade v-if="global.footer.address" v-text="`地址｜${global.footer.address}`"></p>
+                        <p v-inview v-fade v-if="global.footer.email" v-text="`信箱｜${global.footer.email}`"></p>
+                    </div>
+                    <div class="footer__top-wrapper-info-right">
+                        <p v-inview v-fade>追蹤我們</p>
+                        <nuxt-link
+                            v-for="(item, key) in global?.footer?.socials"
+                            :key="key"
+                            :to="item.link?.url"
+                            :target="item.link?.target"
+                            v-inview
+                            v-fade
+                        >
+                            <p v-text="item.link.title"></p>
+                            <nuxt-icon name="arrow_right" />
+                        </nuxt-link>
+                    </div>
                 </div>
-                <div class="footer__navigation">
-                    <FooterNavigation />
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-wrapper" v-inview v-fade>
+                    <span>
+                        <a href="">Cookie Policy</a>
+                        <a href="">Privacy Policy</a>
+                    </span>
+                    <p v-text="global.footer?.copyright"></p>
+                </div>
+            </div>
+            <div
+                class="footer__bottom-marquee"
+                ref="marqueeRef"
+                v-inview
+                v-fade
+            >
+                <div
+                    class="footer__bottom-marquee-group"
+                    v-for="(item, key) in 3"
+                    :key="key"
+                    ref="marqueeGroupRef"
+                >
+                    <p
+                        v-for="(item, key) in 3"
+                        :key="key"
+                        v-text="global.footer?.marquee"
+                    >
+
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script setup>
-    
+    import gsap from "gsap"
+
+    const global = useGlobal()
+    const marqueeRef = ref()
+    const marqueeGroupRef = ref()
+    let timeline
+    let groupWidth
+
+    const init = () => {
+        timeline = gsap.timeline()
+        
+        setTimeline()
+    }
+
+    const setTimeline = () => {
+        timeline.add(createMarquee(marqueeRef.value), 0)
+    }
+
+    const createMarquee = (element) => {
+        const distance = groupWidth
+        return gsap.timeline().to(element, {
+                duration: 80,
+                ease: 'none',
+                x: -distance,
+                onComplete() {
+                    timeline.play(0)
+                },
+                onReverseComplete() {
+                    timeline.reverse(0)
+                },
+            },
+        )
+    }
+
+    onMounted(() => {
+        nextTick(() => {
+            groupWidth = marqueeGroupRef.value[0].clientWidth
+            init()
+            
+        })
+    })
 </script>
 <style lang="scss">
 $class-name: footer;
 .#{$class-name} {
-    padding: 3rem 0;
-    &__wrap {
+    @include size(100vw, auto);
+
+    color: map-get($colors, brand-2);
+    background-color: map-get($colors, brand-1);
+    overflow: hidden;
+
+    &__top {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        padding-top: 12rem;
+        padding-bottom: 17rem;
+        border-bottom: 1px solid map-get($colors, gray-line);
+
+        &-wrapper {
+            @include set-col(10, 12, 0);
+
+            display: flex;
+            flex-direction: column;
+
+            &-logo {
+                @include set-col(1, 10, 1);
+
+                margin-bottom: 1.6rem;
+
+                > img {
+                    @include size(100%, auto);
+                }
+            }
+
+            &-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &-left {
+                    display: flex;
+                    flex-direction: column;
+
+                    > p {
+                        @include typo('body', 20);
+
+                        &:not(:last-child) {
+                            margin-bottom: 1.2rem;
+                        }
+                    }
+                }
+
+                &-right {
+                    @include set-col(2, 10, 0);
+
+                    display: flex;
+                    flex-direction: column;
+
+                    > p {
+                        @include typo('body', 20);
+
+                        margin-bottom: 1.2rem;
+                    }
+
+                    > a {
+                        display: flex;
+                        align-items: center;
+
+                        &:not(:last-child) {
+                            margin-bottom: .4rem;
+                        }
+
+                        > p {
+                            @include typo('body', 20);
+
+                            margin-right: 2rem;
+                        }
+
+                        > span {
+                            @include size(2rem, auto);
+
+                            > svg {
+                                @include size(100%, auto);
+
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
+    &__bottom {
+        @include size(100%, auto);
+
+        display: flex;
+        flex-direction: column;
+
+        .container {
+            @include size(100%, auto);
+        }
+
+        &-wrapper {
+            @include set-col(11, 12, 0);
+            @include set-col-offset(1, 12, 1);
+            
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            margin-bottom: 6rem;
+
+            > span {
+                display: flex;
+
+                > a {
+                    @include typo('body', 16);
+
+                    &:not(:last-child) {
+                        margin-right: 3.2rem;
+                    }
+                }
+            }
+
+            > p {
+                @include set-col(3, 12, 1);
+                @include typo('body', 16);
+            }
+        }
+
+        &-marquee {
+            display: flex;
+            justify-content: center;
+
+            &-group {
+                display: flex;
+                flex: 0 0 auto;
+
+                > p {
+                    @include typo('display', 180);
+
+                    flex: 0 0 auto;
+                    margin-right: 4rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
 }
 </style>

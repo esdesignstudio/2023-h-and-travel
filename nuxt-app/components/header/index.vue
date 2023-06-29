@@ -18,9 +18,14 @@
                 >
                     <img :src="global.logo.url" :alt="global.logo.alt">
                 </NuxtLink>
-                <div class="header-index__right">
-                    測試右邊
-                </div>
+                <NuxtLink
+                    class="header-index__right"
+                    :to="global.right_top_link?.url"
+                    :target="global.right_top_link?.target"
+                >
+                    <nuxt-icon name="reserve" />
+                    {{ global.right_top_link.title }}
+                </NuxtLink>
             </div>
         </div>
     </header>
@@ -36,6 +41,8 @@
             isScrolled.value = false
         })
     })
+
+    console.log(global)
 </script>
 <style lang="scss">
 $class-name: header-index;
@@ -52,16 +59,49 @@ $class-name: header-index;
         position: relative;
         justify-content: space-between;
 
-        span {
+        > span {
             margin-right: 1rem;
             display: inline-block
         }
     }
+
     &__logo {
         @include size(auto, 4rem);
         left: 50%;
         transform: translateX(-50%);
         position: absolute;
+
+        > img {
+            @include size(auto, 100%);
+        }
+    }
+
+    &__right {
+        @include typo('body', 16);
+
+        display: flex;
+        align-items: center;
+        padding: .4rem 1.6rem;
+        border-radius: 5rem;
+        color: map-get($colors, white);
+        background-color: map-get($colors, brand-1);
+        transition: background-color .3s ease-in-out;
+
+        @include media-breakpoint-up(medium) {
+            &:hover {
+                background-color: map-get($colors, brand-3);
+            }
+        }
+
+        > span {
+            @include size(1.6rem, auto);
+
+            margin-right: 0.6rem;
+
+            > svg {
+                @include size(1.6rem, auto);
+            }
+        }
     }
 }
 </style>
