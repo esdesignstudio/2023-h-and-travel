@@ -38,8 +38,8 @@
             <div class="container">
                 <div class="footer__bottom-wrapper" v-inview v-fade>
                     <span>
-                        <a href="">Cookie Policy</a>
-                        <a href="">Privacy Policy</a>
+                        <nuxt-link to="/privacy-policy">Cookie Policy</nuxt-link>
+                        <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
                     </span>
                     <p v-text="global.footer?.copyright"></p>
                 </div>
@@ -47,8 +47,6 @@
             <div
                 class="footer__bottom-marquee"
                 ref="marqueeRef"
-                v-inview
-                v-fade
             >
                 <div
                     class="footer__bottom-marquee-group"
