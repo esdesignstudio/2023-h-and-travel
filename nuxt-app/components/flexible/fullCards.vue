@@ -47,6 +47,10 @@
             &-sticky {
                 position: sticky;
                 top: map-get($header-height, desktop);
+
+                @include media-breakpoint-down(medium) {
+                    top: map-get($header-height, mobile);
+                }
             }
         }
     }

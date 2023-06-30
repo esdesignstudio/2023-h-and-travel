@@ -1,5 +1,25 @@
 
 export const usePageLoaded = () => useState<boolean>('isPageloaded', () => false)
+export const useMenuOpen = () => useState<boolean>('isMenuOpen', () => false)
+
+export const useViewport = () => useState<Object>('viewport', () => {
+    return {
+        width: process.client ? window.innerWidth : 0,
+        height: process.client ? window.innerHeight : 0,
+        isMobile: process.client ? window.innerWidth < 768 : false,
+        isTablet: process.client ? window.innerWidth >= 768 && window.innerWidth < 1200 : false,
+        isDesktop: process.client ? window.innerWidth >= 1200 : false,
+    }
+})
+
+export const useUpadteViewport = () => {
+    const viewport = useViewport()
+    viewport.value.width = window.innerWidth
+    viewport.value.height = window.innerHeight
+    viewport.value.isMobile = window.innerWidth < 768
+    viewport.value.isTablet = window.innerWidth >= 768 && window.innerWidth < 1200
+    viewport.value.isDesktop = window.innerWidth >= 1200
+}
 
 export const ESinit = (data:{ scroll: Function }) => {
     console.log("%c ★ Made by ES design ★ We are looking for awsome Front-End developer ↓", "font-weight:600;background:#ffe800;padding:5px 15px;border-radius:5px; color:#000000;font-size:14px;")

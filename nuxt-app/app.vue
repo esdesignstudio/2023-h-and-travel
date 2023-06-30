@@ -21,6 +21,8 @@
     
     onMounted(() => {
         ESinit()
+        useUpadteViewport()
+        window.addEventListener('resize', useUpadteViewport)
     })
 </script>
 <style lang="scss">

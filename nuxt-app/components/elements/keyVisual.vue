@@ -55,6 +55,7 @@
     import { gsap } from 'gsap'
     import ScrollTrigger from 'gsap/ScrollTrigger'
 
+    const viewport = useViewport()
     const props = defineProps({
         data: {
             type: Object,
@@ -64,6 +65,8 @@
 
     const keyVisualRef = ref(null)
     const imgRef = ref(null)
+
+    console.log(viewport.value.isDesktop)
 
     onMounted(() => {
         if (props.data.style === 'a') {
@@ -82,7 +85,7 @@
     
             tl.to(imgRef.value, {
                 width: window.innerWidth,
-                height: 'calc(100vh - 84px)',
+                height: viewport.value.isDesktop ? 'calc(100vh - 84px)' : 'calc(100vh - 64px)',
             })
         }
     })
@@ -104,6 +107,10 @@
     
                 margin-bottom: 2.4rem;
                 z-index: 1;
+
+                @include media-breakpoint-down(medium) {
+                    @include typo('body', 20);
+                }
             }
     
             &-title {
@@ -136,6 +143,10 @@
                 max-width: none !important;
                 top: map-get($header-height, desktop);
                 margin-top: -20rem;
+
+                @include media-breakpoint-down(medium) {
+                    top: map-get($header-height, mobile);
+                }
     
                 > figure {
                     @include size(100%);

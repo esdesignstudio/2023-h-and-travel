@@ -56,6 +56,10 @@
 
             > span {
                 @include typo('display', 180);
+
+                @include media-breakpoint-down(medium) {
+                    @include typo('heading', 48);
+                }
             }
         }
 
@@ -99,7 +103,12 @@
 
         > span {
             @include typo('display', 80);
+
             overflow: hidden;
+
+            @include media-breakpoint-down(medium) {
+                @include typo('heading', 28);
+            }
 
             > h1 {
                 transform: translateY(100%);

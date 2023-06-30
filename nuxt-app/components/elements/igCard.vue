@@ -28,7 +28,10 @@
                 <nuxt-icon name="save" />
             </div>
             <p v-text="`${data.like} likes`"></p>
-            <p v-text="data.text"></p>
+            <span>
+                <p v-text="data.text"></p>
+                <p>...more</p>
+            </span>
             <p v-text="data.s_text"></p>
         </div>
     </div>
@@ -158,15 +161,37 @@
                     margin-bottom: 0.6rem;
                 }
 
-                &:nth-child(3) {
-                    &::after {
-                        content: ' ...more';
-                        color: map-get($colors, gray-2);
-                    }
-                }
+                // &:nth-child(3) {
+                //     &::after {
+                //         content: ' ...more';
+                //         color: map-get($colors, gray-2);
+                //     }
+                // }
 
                 &:last-child {
                     color: map-get($colors, gray-2);
+                }
+            }
+
+            > span {
+                @include size(100%, auto);
+                display: flex;
+
+                > p {
+                    @include typo('small', 12);
+
+                    &:first-child {
+                        @include text-ellipsis(1);
+
+                        flex: 1;
+                    }
+
+                    &:last-child {
+                        color: map-get($colors, gray-2);
+
+                        margin-left: 1rem;
+                        flex:  0 0 auto;
+                    }
                 }
             }
         }
