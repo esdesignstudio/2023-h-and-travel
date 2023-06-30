@@ -473,4 +473,4 @@ _sfc_main.setup = (props, ctx) => {
 const __nuxt_component_7 = _sfc_main;
 
 export { __nuxt_component_0$1 as _, __nuxt_component_1$1 as a, __nuxt_component_2 as b, __nuxt_component_3 as c, __nuxt_component_4 as d, __nuxt_component_5 as e, __nuxt_component_6 as f, __nuxt_component_7 as g };
-//# sourceMappingURL=titleBigImg-e1d7addb.mjs.map
+//# sourceMappingURL=titleBigImg-43dd49eb.mjs.map
