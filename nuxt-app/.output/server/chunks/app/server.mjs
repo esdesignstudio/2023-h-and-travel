@@ -410,7 +410,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/404-d689efe0.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/404-563066d7.mjs').then((m) => m.default || m)
   },
   {
     name: "slug",
@@ -419,7 +419,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-43383972.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-2e1027d2.mjs').then((m) => m.default || m)
   },
   {
     name: "form",
@@ -428,7 +428,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/form-a307d624.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/form-efd372fc.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -437,7 +437,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-e0e88076.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-659dab6f.mjs').then((m) => m.default || m)
   },
   {
     name: "room-slug",
@@ -446,7 +446,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-46576e62.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-7477a131.mjs').then((m) => m.default || m)
   },
   {
     name: "room",
@@ -455,7 +455,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-09fd06f7.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-d4a15e1e.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -5298,7 +5298,7 @@ const _wrapIf = (component, props2, slots) => {
   return { default: () => props2 ? h(component, props2 === true ? {} : props2, slots) : h(Fragment, {}, slots) };
 };
 const layouts = {
-  default: () => import('./_nuxt/default-348673c4.mjs').then((m) => m.default || m)
+  default: () => import('./_nuxt/default-1fb95c05.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
@@ -5447,6 +5447,15 @@ const RouteProvider = /* @__PURE__ */ defineComponent({
   }
 });
 const usePageLoaded = () => useState("isPageloaded", () => false);
+const useViewport = () => useState("viewport", () => {
+  return {
+    width: 0,
+    height: 0,
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false
+  };
+});
 const useGlobal = () => useState("globalOption", () => {
   const { data } = useAsyncData(
     "get_globa_api",
@@ -5490,7 +5499,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-component-6e3b8899.mjs').then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-component-bf1773b7.mjs').then((r) => r.default || r));
     const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/island-renderer-2a1bf72a.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
@@ -5551,5 +5560,5 @@ const plugins = normalizePlugins(_plugins);
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { FormKitIcon as F, __nuxt_component_2 as _, useGlobal as a, useRouter as b, createError as c, useRoute as d, entry$1 as default, useAsyncData as e, useRuntimeConfig as f, useNuxtApp as g, navigateTo as n, usePageLoaded as u };
+export { FormKitIcon as F, __nuxt_component_2 as _, useGlobal as a, useRouter as b, createError as c, useRoute as d, entry$1 as default, useAsyncData as e, useRuntimeConfig as f, useViewport as g, useNuxtApp as h, navigateTo as n, usePageLoaded as u };
 //# sourceMappingURL=server.mjs.map
