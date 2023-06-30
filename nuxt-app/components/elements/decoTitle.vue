@@ -8,6 +8,7 @@
             '-center': center,
         }"
         v-inview
+        v-if="data !== {} && !data"
     >
         <span
             v-for="(item, key) in data?.split(',')"
