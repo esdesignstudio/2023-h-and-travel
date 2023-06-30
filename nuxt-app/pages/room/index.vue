@@ -155,7 +155,7 @@
                 text-align: center;
 
                 h1 {
-                    @include typo('heading', 64);
+                    @include typo('heading', 32);
 
                     padding: 0 0 1rem;
                 }
