@@ -178,7 +178,7 @@ function defineGetter$1(obj, key, val) {
 }
 const components = {
   NuxtIcon: /* @__PURE__ */ defineAsyncComponent(() => import(
-    './_nuxt/nuxt-icon-e392c362.mjs'
+    './_nuxt/nuxt-icon-503afd00.mjs'
     /* webpackChunkName: "components/nuxt-icon" */
   ).then((c) => c.default || c))
 };
@@ -410,7 +410,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/404-d689efe0.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/404-a9a459ae.mjs').then((m) => m.default || m)
   },
   {
     name: "slug",
@@ -419,7 +419,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-6635ceba.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-8ddec02e.mjs').then((m) => m.default || m)
   },
   {
     name: "form",
@@ -428,7 +428,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/form-a307d624.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/form-2a5a5b8a.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -437,7 +437,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-d99d968d.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-d024f4ac.mjs').then((m) => m.default || m)
   },
   {
     name: "room-slug",
@@ -446,7 +446,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-ffa21ce9.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-6b67ec1e.mjs').then((m) => m.default || m)
   },
   {
     name: "room",
@@ -455,7 +455,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-ad66f8b8.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-4fe96d00.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -5269,7 +5269,7 @@ const inview_MEYjQpHFM5 = defineNuxtPlugin((nuxtApp) => {
         window.addEventListener("resize", () => {
           checkInView(el);
         });
-      }, 701);
+      }, 300);
     },
     updated(el, binding) {
     }
@@ -5298,7 +5298,7 @@ const _wrapIf = (component, props2, slots) => {
   return { default: () => props2 ? h(component, props2 === true ? {} : props2, slots) : h(Fragment, {}, slots) };
 };
 const layouts = {
-  default: () => import('./_nuxt/default-a8e18bae.mjs').then((m) => m.default || m)
+  default: () => import('./_nuxt/default-73e649ea.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
@@ -5447,6 +5447,16 @@ const RouteProvider = /* @__PURE__ */ defineComponent({
   }
 });
 const usePageLoaded = () => useState("isPageloaded", () => false);
+const useMenuOpen = () => useState("isMenuOpen", () => false);
+const useViewport = () => useState("viewport", () => {
+  return {
+    width: 0,
+    height: 0,
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false
+  };
+});
 const useGlobal = () => useState("globalOption", () => {
   const { data } = useAsyncData(
     "get_globa_api",
@@ -5490,7 +5500,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-component-38a86d50.mjs').then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-component-bf1773b7.mjs').then((r) => r.default || r));
     const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/island-renderer-2a1bf72a.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
@@ -5551,5 +5561,5 @@ const plugins = normalizePlugins(_plugins);
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { FormKitIcon as F, __nuxt_component_2 as _, useGlobal as a, useRouter as b, createError as c, useRoute as d, entry$1 as default, useAsyncData as e, useRuntimeConfig as f, useNuxtApp as g, navigateTo as n, usePageLoaded as u };
+export { FormKitIcon as F, __nuxt_component_2 as _, useGlobal as a, useRouter as b, createError as c, useRoute as d, entry$1 as default, useAsyncData as e, useRuntimeConfig as f, useViewport as g, useNuxtApp as h, useMenuOpen as i, navigateTo as n, usePageLoaded as u };
 //# sourceMappingURL=server.mjs.map
