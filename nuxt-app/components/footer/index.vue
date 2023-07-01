@@ -119,6 +119,8 @@ $class-name: footer;
     color: map-get($colors, brand-2);
     background-color: map-get($colors, brand-1);
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 
     &__top {
         display: flex;

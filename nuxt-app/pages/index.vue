@@ -9,6 +9,7 @@
             class="page-index__flex"
             v-for="(flex, key) in pageData?.data?.flex"
             :key="key"
+            :class="{isbg: flex.acf_fc_layout === 'ig_show'}"
         >
             <FlexibleFullCards
                 v-if="flex.acf_fc_layout === 'full_cards'"
@@ -89,11 +90,22 @@
     .#{$class-name} {
         &__kv {
             @include size(100%, auto);
+            z-index: 2;
+            position: relative;
+            background-color: map-get($colors, brand-2);
         }
 
         &__flex {
+            z-index: 1;
+            position: relative;
             display: flex;
             flex-direction: column;
+            background-color: map-get($colors, brand-2);
+
+
+            &.isbg {
+                z-index: 0;
+            }
 
             &-full {
                 @include size(100%, auto);

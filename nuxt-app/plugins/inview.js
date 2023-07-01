@@ -26,7 +26,7 @@ export default defineNuxtPlugin( nuxtApp => {
                 window.addEventListener('resize', () => {
                     checkInView(el)
                 })
-            }, 701)
+            }, 300)
 
         },
         updated (el, binding) {

@@ -1,6 +1,10 @@
 <template>
-    <div class="flexible-ig-show container" :style="{ backgroundImage: 'url(' + data?.bg_img?.url + ')' }">
-        <div class="flexible-ig-show__bg"></div>
+    <div class="flexible-ig-show container" ref="sectionRef">
+        <div 
+            class="flexible-ig-show__bg" 
+            :style="{ backgroundImage: 'url(' + data?.bg_img?.url + ')' }"
+            :class="{ '-show': showbg }"
+        ></div>
         <div class="flexible-ig-show__wrapper">
             <div class="flexible-ig-show__wrapper-title">
                 <p
@@ -65,6 +69,9 @@
         },
     })
 
+    const sectionRef= ref()
+    const showbg = ref(false)
+
     const swiper = ref(null)
     const swiperRef = ref()
     const swiperIndex = ref(0)
@@ -78,6 +85,16 @@
                     swiperIndex.value = this.realIndex
                 },
             },
+        })
+
+        // 只有在區域進入畫面時才顯示
+        window.addEventListener('scroll', () => {
+            const { top, bottom } = sectionRef.value.getBoundingClientRect()
+            const vHeight = window.innerHeight || document.documentElement.clientHeight
+
+            top > vHeight || bottom < 0 - vHeight ?
+                showbg.value = false :
+                showbg.value = true
         })
     })
 </script>
@@ -93,7 +110,6 @@
         padding-top: 20rem;
         padding-bottom: 12rem;
         color: map-get($colors, white);
-        background-attachment: fixed;
 
         @include media-breakpoint-down(medium) {
             padding-top: 6.4rem;
@@ -102,15 +118,23 @@
         }
 
         &__bg {
-            @include size(100%);
+            @include size(100vw, 100vh);
 
-            position: absolute;
+            position: fixed;
+            z-index: 0;
             top: 0;
             left: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+
+            &.-show {
+                opacity: 1;
+            }
 
             &::after {
                 @include size(100%);
