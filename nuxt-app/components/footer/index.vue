@@ -4,18 +4,19 @@
             <div class="footer__top-wrapper">
                 <figure class="footer__top-wrapper-logo">
                     <img
-                        :src="global.footer?.logo?.url"
-                        :alt="global.footer?.logo?.alt"
+                        :src="global?.footer?.logo?.url"
+                        :alt="global?.footer?.logo?.alt"
                         v-inview
                         v-fade
                     >
                 </figure>
+                <p v-text="global?.footer?.copyright"></p>
                 <div class="footer__top-wrapper-info">
                     <div class="footer__top-wrapper-info-left">
                         <p v-inview v-fade>聯絡資訊</p>
-                        <p v-inview v-fade v-if="global.footer.phone" v-text="`電話｜${global.footer.phone}`"></p>
-                        <p v-inview v-fade v-if="global.footer.address" v-text="`地址｜${global.footer.address}`"></p>
-                        <p v-inview v-fade v-if="global.footer.email" v-text="`信箱｜${global.footer.email}`"></p>
+                        <p v-inview v-fade v-if="global?.footer.phone" v-text="`電話｜${global?.footer.phone}`"></p>
+                        <p v-inview v-fade v-if="global?.footer.address" v-text="`地址｜${global?.footer.address}`"></p>
+                        <p v-inview v-fade v-if="global?.footer.email" v-text="`信箱｜${global?.footer.email}`"></p>
                     </div>
                     <div class="footer__top-wrapper-info-right">
                         <p v-inview v-fade>追蹤我們</p>
@@ -41,7 +42,7 @@
                         <nuxt-link to="/privacy-policy">Cookie Policy</nuxt-link>
                         <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
                     </span>
-                    <p v-text="global.footer?.copyright"></p>
+                    <p v-text="global?.footer?.copyright"></p>
                 </div>
             </div>
             <div
@@ -57,7 +58,7 @@
                     <p
                         v-for="(item, key) in 3"
                         :key="key"
-                        v-text="global.footer?.marquee"
+                        v-text="global?.footer?.marquee"
                     >
 
                     </p>
@@ -103,9 +104,10 @@
 
     onMounted(() => {
         nextTick(() => {
-            groupWidth = marqueeGroupRef.value[0].clientWidth
-            init()
-            
+            setTimeout(() => {
+                groupWidth = marqueeGroupRef.value[0].clientWidth
+                init()
+            }, 701);
         })
     })
 </script>
@@ -125,19 +127,53 @@ $class-name: footer;
         padding-bottom: 17rem;
         border-bottom: 1px solid map-get($colors, gray-line);
 
+        @include media-breakpoint-down(medium) {
+            padding-top: 4.5rem;
+            padding-bottom: 4.7rem;
+        }
+
         &-wrapper {
             @include set-col(10, 12, 0);
 
             display: flex;
             flex-direction: column;
 
+            @include media-breakpoint-down(medium) {
+                @include size(100%, auto);
+            }
+
             &-logo {
                 @include set-col(1, 10, 1);
 
                 margin-bottom: 1.6rem;
 
+                @include media-breakpoint-down(medium) {
+                    @include size(100%, auto);
+
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 2rem;
+                }
+
                 > img {
                     @include size(100%, auto);
+
+                    @include media-breakpoint-down(medium) {
+                        @include size(9.6rem, auto);
+                    }
+                }
+            }
+
+            > p {
+                display: none;
+
+                @include media-breakpoint-down(medium) {
+                    @include typo('small', 10);
+                    @include size(100%, auto);
+
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 4.2rem;
                 }
             }
 
@@ -146,15 +182,29 @@ $class-name: footer;
                 justify-content: space-between;
                 align-items: center;
 
+                @include media-breakpoint-down(medium) {
+                    flex-direction: column;
+                }
+
                 &-left {
                     display: flex;
                     flex-direction: column;
+
+                    @include media-breakpoint-down(medium) {
+                        @include size(100%, auto);
+
+                        margin-bottom: 3.2rem;
+                    }
 
                     > p {
                         @include typo('body', 20);
 
                         &:not(:last-child) {
                             margin-bottom: 1.2rem;
+                        }
+
+                        @include media-breakpoint-down(medium) {
+                            @include typo('body', 16);
                         }
                     }
                 }
@@ -165,10 +215,18 @@ $class-name: footer;
                     display: flex;
                     flex-direction: column;
 
+                    @include media-breakpoint-down(medium) {
+                        @include size(100%, auto);
+                    }
+
                     > p {
                         @include typo('body', 20);
 
                         margin-bottom: 1.2rem;
+
+                        @include media-breakpoint-down(medium) {
+                            @include typo('body', 16);
+                        }
                     }
 
                     > a {
@@ -183,10 +241,20 @@ $class-name: footer;
                             @include typo('body', 20);
 
                             margin-right: 2rem;
+
+                            @include media-breakpoint-down(medium) {
+                                @include typo('body', 16);
+
+                                margin-right: 1.2rem;
+                            }
                         }
 
                         > span {
                             @include size(2rem, auto);
+
+                            @include media-breakpoint-down(medium) {
+                                @include size(1.2rem, auto);
+                            }
 
                             > svg {
                                 @include size(100%, auto);
@@ -219,8 +287,21 @@ $class-name: footer;
             margin-top: 2rem;
             margin-bottom: 6rem;
 
+            @include media-breakpoint-down(medium) {
+                @include size(100%, auto);
+
+                margin-left: 0;
+                margin-bottom: 2rem;
+            }
+
             > span {
                 display: flex;
+
+                @include media-breakpoint-down(medium) {
+                    @include size(100%, auto);
+
+                    justify-content: space-between;
+                }
 
                 > a {
                     @include typo('body', 16);
@@ -234,6 +315,10 @@ $class-name: footer;
             > p {
                 @include set-col(3, 12, 1);
                 @include typo('body', 16);
+
+                @include media-breakpoint-down(medium) {
+                    display: none;
+                }
             }
         }
 
@@ -251,6 +336,12 @@ $class-name: footer;
                     flex: 0 0 auto;
                     margin-right: 4rem;
                     text-transform: uppercase;
+
+                    @include media-breakpoint-down(medium) {
+                        @include typo('display', 80);
+
+                        margin-right: 2rem;
+                    }
                 }
             }
         }

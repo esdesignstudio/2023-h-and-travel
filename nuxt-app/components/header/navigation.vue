@@ -47,9 +47,22 @@ $class-name: navigation-main;
         display: flex;
         gap: 1rem;
 
+        @include media-breakpoint-down(medium) {
+            @include size(100%, auto);
+
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
         li {
             a {
                 padding: 3rem 0;
+
+                @include media-breakpoint-down(medium) {
+                    padding: 0;
+                }
+
                 &:hover {
                     opacity: .5;
                 }

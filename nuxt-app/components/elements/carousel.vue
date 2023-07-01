@@ -81,6 +81,12 @@
             justify-content: center;
             align-items: center;
             gap: 3rem;
+
+            .swiper-button-prev, .swiper-button-next {
+                @include media-breakpoint-down(medium) {
+                    @include size(3.2rem, auto);
+                }
+            }
         }
 
         .swiper {

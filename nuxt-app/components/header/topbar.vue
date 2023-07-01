@@ -34,6 +34,10 @@
         .#{$class-name} {
             margin-top: -6rem;
             // transform: translateY(-102%);
+
+            @include media-breakpoint-down(medium) {
+                margin-top: -5.6rem;
+            }
         }
     }
 </style>

@@ -36,6 +36,10 @@
         position: relative;
         color: map-get($colors, white);
 
+        @include media-breakpoint-down(medium) {
+            @include size(100vw, calc(100vh - map-get($header-height, mobile)));
+        }
+
         &__bg {
             @include size(100%);
 
@@ -75,18 +79,37 @@
             padding-top: 10rem;
             padding-bottom: 20rem;
 
+            @include media-breakpoint-down(medium) {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+                justify-content: flex-start;
+            }
+
             &-title {
                 @include set-col-offset(1, 12, 1);
 
                 display: flex;
                 flex-direction: column;
 
+                @include media-breakpoint-down(medium) {
+                    margin-left: 0;
+                    margin-bottom: 1.2rem;
+                }
+
                 &-deco {
                     margin-bottom: 2rem;
+
+                    @include media-breakpoint-down(medium) {
+                        margin-bottom: 1.2rem;
+                    }
                 }
 
                 > h3 {
                     @include typo('heading', 32);
+
+                    @include media-breakpoint-down(medium) {
+                        @include typo('body', 20);
+                    }
                 }
             }
 
@@ -96,6 +119,12 @@
                 @include typo('body', 16);
 
                 white-space: pre-line;
+
+                @include media-breakpoint-down(medium) {
+                    @include size(100%, auto);
+
+                    margin-left: 0;
+                }
             }
         }
     }

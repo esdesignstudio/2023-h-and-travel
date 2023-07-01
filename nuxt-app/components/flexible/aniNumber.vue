@@ -76,16 +76,30 @@
         align-items: center;
         justify-content: center;
 
+        @include media-breakpoint-down(medium) {
+            @include size(100%, auto);
+
+            padding: 8rem 0;
+        }
+
         > p {
             @include typo('heading', 32);
 
             margin-bottom: 2rem;
+
+            @include media-breakpoint-down(medium) {
+                @include typo('body', 20);
+            }
         }
 
         > h2 {
             @include typo('heading', 48);
 
             margin-bottom: 7.2rem;
+
+            @include media-breakpoint-down(medium) {
+                margin-bottom: 4rem;
+            }
         }
 
         &__row {
@@ -99,6 +113,10 @@
 
                 &:not(:last-child) {
                     margin-right: 14.4rem;
+
+                    @include media-breakpoint-down(medium) {
+                        margin-right: 1.6rem;
+                    }
                 }
 
                 > figure {
@@ -109,6 +127,10 @@
                     justify-content: center;
                     align-items: center;
                     overflow: hidden;
+
+                    @include media-breakpoint-down(medium) {
+                        @include size(auto, 2.5rem);
+                    }
 
                     > img {
                         @include size(auto, 100%);
@@ -121,10 +143,18 @@
                     margin-top: 3.2rem;
                     margin-bottom: 3.2rem;
                     color: map-get($colors, brand-3);
+
+                    @include media-breakpoint-down(medium) {
+                        @include typo('display', 60);
+                    }
                 }
 
                 > p {
                     @include typo('body', 20);
+
+                    @include media-breakpoint-down(medium) {
+                        @include typo('body', 16);
+                    }
                 }
             }
         }
