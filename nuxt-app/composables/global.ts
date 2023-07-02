@@ -45,6 +45,8 @@ export const ESinit = (data:{ scroll: Function }) => {
         deep: true,
         immediate: true
     })
+
+    
 //     watch(route, () => {
 //         data.value.destroy()
 //     })

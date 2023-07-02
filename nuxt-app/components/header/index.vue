@@ -82,6 +82,12 @@
             isScrolled.value = false
         })
     })
+
+    const router = useRouter()
+
+    router.beforeEach((to, from) => {
+        menuOpen.value = false
+    })
 </script>
 <style lang="scss">
 $class-name: header-index;
