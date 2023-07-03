@@ -93,6 +93,10 @@
                     @include typo('heading', 64);
     
                     padding: 0 0 1rem;
+
+                    @include media-breakpoint-down(medium) {
+                        @include typo('heading', 32);
+                    }
                 }
             }
             
@@ -106,6 +110,10 @@
             &__hero {
                 padding: 8rem 0;
                 text-align:center;
+
+                @include media-breakpoint-down(medium) {
+                    padding: 4rem 0;
+                }
 
                 > div {
                     padding: 0 0 2rem;

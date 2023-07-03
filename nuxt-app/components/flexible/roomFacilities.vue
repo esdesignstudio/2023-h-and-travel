@@ -234,6 +234,7 @@
 
                 display: flex;
                 flex-direction: column;
+                align-items: flex-start;
 
                 > figure {
                     @include size(100%, auto);
@@ -244,6 +245,7 @@
                     justify-content: center;
                     align-items: center;
                     overflow: hidden;
+                    margin-bottom: 1.2rem;
 
                     > img {
                         @include size(100%);
@@ -251,6 +253,10 @@
                         position: absolute;
                         object-fit: cover;
                     }
+                }
+
+                > p {
+                    @include typo('body', 16);
                 }
             }
 

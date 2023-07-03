@@ -5,7 +5,7 @@
         <main id="mainBox">
             <NuxtPage />
         </main>
-        <!-- <PageDev/> -->
+        <PageDev/>
     </div>
 </template>
 
