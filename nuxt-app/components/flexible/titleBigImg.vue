@@ -17,6 +17,15 @@
                 </figure>
             </nuxt-link>
         </div>
+        <nuxt-link
+            v-if="data?.link?.title && data?.link?.url"
+            class="flexible-title-big-img__btn"
+            :to="data?.link?.url"
+            :target="data?.link?.target"
+            v-text="data?.link?.title"
+        >
+            
+        </nuxt-link>
     </div>
 </template>
 <script setup>
@@ -39,14 +48,29 @@
         background-color: map-get($colors, white);
         z-index: 1;
 
+        @include media-breakpoint-down(medium) {
+            padding: 6.4rem 0;
+        }
+
         &__title {
             margin-bottom: 3.6rem;
+
+            @include media-breakpoint-down(medium) {
+                display: flex;
+                flex-direction: column-reverse;
+            }
 
             > h3 {
                 @include typo('heading', 32);
 
                 margin-bottom: 2rem;
                 text-align: center;
+
+                @include media-breakpoint-down(medium) {
+                    @include typo('body', 20);
+
+                    margin-top: 0.8rem;
+                }
             }
         }
 
@@ -67,6 +91,10 @@
                     }
                 }
 
+                @include media-breakpoint-down(medium) {
+                    @include size(100%, auto);
+                }
+
                 > figure {
                     @include size(100%, auto);
 
@@ -79,6 +107,28 @@
                         transition: transform 0.3s ease;
                     }
                 }
+            }
+        }
+
+        &__btn {
+            @include typo('heading', 32);
+
+            padding: 0.8rem 3.2rem;
+            border: 1px solid map-get($colors, white);
+            border-radius: 5rem;
+            z-index: 1;
+            margin-top: 3.2rem;
+            transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+            @include media-breakpoint-up(medium) {
+                &:hover {
+                    background-color: map-get($colors, white);
+                    color: map-get($colors, brand-3);
+                }
+            }
+
+            @include media-breakpoint-down(medium) {
+                @include typo('body', 16);
             }
         }
     }

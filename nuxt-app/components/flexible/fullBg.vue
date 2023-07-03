@@ -6,10 +6,10 @@
         }"
     >
         <div class="flexible-full-bg__title">
-            <ElementsDecoTitle :data="data?.deco_title"/>
+            <ElementsDecoTitle v-if="data?.deco_title" :data="data?.deco_title"/>
         </div>
-        <h3 v-text="data?.title"></h3>
-        <p v-text="data?.des"></p>
+        <h3 v-if="data?.title" v-text="data?.title"></h3>
+        <p v-if="data?.des" v-text="data?.des"></p>
         <nuxt-link
             v-if="data?.link"
             :to="data?.link?.url"
@@ -42,6 +42,10 @@
         background-attachment: fixed;
         color: map-get($colors, white);
 
+        @include media-breakpoint-down(medium) {
+            padding: 20.8rem map-get($container-padding, mobile) 16.8rem;
+        }
+
         &::after {
             @include size(100%);
 
@@ -54,7 +58,7 @@
 
         &__title {
             display: flex;
-            margin: 3.2rem;
+            margin-bottom: 3.2rem;
             z-index: 1;
         }
 
@@ -65,6 +69,10 @@
             z-index: 1;
             text-align: center;
             white-space: pre-line;
+
+            @include media-breakpoint-down(medium) {
+                @include typo('body', 20);
+            }
         }
 
         > p {
@@ -73,6 +81,11 @@
             white-space: pre-line;
             z-index: 1;
             text-align: center;
+            margin-bottom: 3.2rem;
+
+            @include media-breakpoint-down(medium) {
+                @include typo('body', 16);
+            }
         }
 
         > a {
@@ -82,7 +95,6 @@
             border: 1px solid map-get($colors, white);
             border-radius: 5rem;
             z-index: 1;
-            margin-top: 3.2rem;
             transition: background-color .3s ease-in-out, color .3s ease-in-out;
 
             @include media-breakpoint-up(medium) {
@@ -90,6 +102,10 @@
                     background-color: map-get($colors, white);
                     color: map-get($colors, brand-3);
                 }
+            }
+
+            @include media-breakpoint-down(medium) {
+                @include typo('body', 16);
             }
         }
     }

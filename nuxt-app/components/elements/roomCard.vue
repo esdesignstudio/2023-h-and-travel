@@ -27,6 +27,12 @@
 
         margin-bottom: 6.4rem;
 
+        @include media-breakpoint-down(medium) {
+            @include size(100%, auto);
+
+            margin-bottom: 0;
+        }
+
         > figure {
             @include size(100%, auto);
             @include aspect(1.18);

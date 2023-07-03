@@ -13,6 +13,7 @@
         <span
             v-for="(item, key) in data?.split(',')"
             :key="key"
+            class="-en"
         >
             <h1 v-text="item"></h1>
         </span>
@@ -66,12 +67,20 @@
         &.-large {
             > span {
                 @include typo('display', 140);
+
+                @include media-breakpoint-down(medium) {
+                    @include typo('heading', 32);
+                }
             }
         }
 
         &.-small {
             > span {
                 @include typo('heading', 48);
+
+                @include media-breakpoint-down(medium) {
+                    @include typo('heading', 32);
+                }
             }
         }
 
@@ -107,7 +116,7 @@
             overflow: hidden;
 
             @include media-breakpoint-down(medium) {
-                @include typo('heading', 28);
+                @include typo('heading', 32);
             }
 
             > h1 {

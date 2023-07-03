@@ -5,6 +5,7 @@
                 <div class="flexible-title-double__top-title">
                     <h3 v-text="data?.title"></h3>
                     <ElementsDecoTitle
+                        v-if="data?.deco_title"
                         :data="data?.deco_title"
                         :large="true"
                     />
@@ -51,12 +52,21 @@
         padding-top: 9.6rem;
         padding-bottom: 19.5rem;
 
+        @include media-breakpoint-down(medium) {
+            padding-top: 6rem;
+            padding-bottom: 12.2rem;
+        }
+
         &__wrapper {
             @include set-col(10, 12, 0);
 
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            @include media-breakpoint-down(medium) {
+                @include size(100%, auto);
+            }
         }
 
         &__top {
@@ -67,16 +77,30 @@
             align-items: center;
             margin-bottom: 6.4rem;
 
+            @include media-breakpoint-down(medium) {
+                margin-bottom: 9rem;
+            }
+
             &-title {
                 position: absolute;
                 display: flex;
                 flex-direction: column;
                 z-index: 1;
 
+                @include media-breakpoint-down(medium) {
+                    transform: translateY(-50%);
+                }
+
                 > h3 {
                     @include typo('heading', 32);
 
                     margin-bottom: 2rem;
+
+                    @include media-breakpoint-down(medium) {
+                        @include typo('body', 20);
+
+                        margin-bottom: 1.2rem;
+                    }
                 }
             }
 
@@ -88,6 +112,11 @@
                 justify-content: center;
                 padding-bottom: 7.5rem;
 
+                @include media-breakpoint-down(medium) {
+                    padding-bottom: 0;
+                    justify-content: flex-end;
+                }
+
                 > figure {
                     &:first-child {
                         @include set-col(4, 10, 1);
@@ -98,6 +127,12 @@
                         justify-content: center;
                         align-items: center;
                         overflow: hidden;
+
+                        @include media-breakpoint-down(medium) {
+                            @include set-col(3, 4, 0);
+                            @include set-col-offset(0, 4, 2, 'right');
+                            @include aspect(1.25);
+                        }
 
                         > img {
                             @include size(100%);
@@ -119,6 +154,12 @@
                         align-items: center;
                         overflow: hidden;
 
+                        @include media-breakpoint-down(medium) {
+                            @include set-col(1.5, 4, 0);
+
+                            margin-bottom: -4.2rem;
+                        }
+
                         > img {
                             @include size(100%);
 
@@ -133,8 +174,16 @@
         &__editor {
             @include set-col(6, 10, 0);
 
+            @include media-breakpoint-down(medium) {
+                @include size(100%, auto);
+            }
+
             > h1 {
                 @include typo('heading', 32);
+
+                @include media-breakpoint-down(medium) {
+                    @include typo('heading', 24);
+                }
 
                 &:not(:last-child) {
                     margin-bottom: 3.6rem;
@@ -144,6 +193,10 @@
             > h2 {
                 @include typo('heading', 24);
 
+                @include media-breakpoint-down(medium) {
+                    @include typo('body', 20);
+                }
+
                 &:not(:last-child) {
                     margin-bottom: 3.6rem;
                 }
@@ -151,6 +204,12 @@
 
             > h3 {
                 @include typo('body', 20);
+
+                @include media-breakpoint-down(medium) {
+                    @include typo('body', 16);
+
+                    font-size: 1.6rem !important;
+                }
 
                 &:not(:last-child) {
                     margin-bottom: 3.6rem;
@@ -185,6 +244,10 @@
                 color: map-get($colors, brand-3);
                 background-color: map-get($colors, white);
 
+                @include media-breakpoint-down(medium) {
+                    padding: 2.4rem 5.2rem;
+                }
+
                 &:not(:last-child) {
                     margin-bottom: 3.6rem;
                 }
@@ -196,6 +259,10 @@
                     display: flex;
                     align-items: center;
                     text-align: center;
+
+                    @include media-breakpoint-down(medium) {
+                        @include typo('body', 16);
+                    }
 
                     &::before {
                         position: absolute;

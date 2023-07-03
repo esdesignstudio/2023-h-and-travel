@@ -30,6 +30,7 @@
                     v-text="key + 1 > 9 ? key + 1 : `0${key + 1}`"
                     v-inview
                     v-fade
+                    class="-en"
                 ></span>
                 <p
                     v-if="item?.des"
@@ -70,12 +71,24 @@
         &__block {
             display: flex;
 
+            @include media-breakpoint-down(medium) {
+                flex-direction: column-reverse;
+            }
+
             &:nth-child(even) {
                 flex-direction: row-reverse;
+
+                @include media-breakpoint-down(medium) {
+                    flex-direction: column-reverse;
+                }
             }
 
             > figure {
                 @include size(50vw);
+
+                @include media-breakpoint-down(medium) {
+                    @include size(100%, auto);
+                }
     
                 > img {
                     @include size(100%);
@@ -92,11 +105,22 @@
                 align-items: center;
                 justify-content: center;
 
+                @include media-breakpoint-down(medium) {
+                    @include size(100%, auto);
+
+                    padding-top: 6.4rem;
+                    margin-bottom: 1.2rem;
+                }
+
                 > h3 {
                     @include typo('body', 20);
 
                     margin-bottom: 2.4rem;
                     max-width: 22vw;
+
+                    @include media-breakpoint-down(medium) {
+                        max-width: 100%;
+                    }
                 }
 
                 > span {
@@ -104,6 +128,10 @@
 
                     margin-bottom: 2.4rem;
                     color: map-get($colors, brand-3);
+
+                    @include media-breakpoint-down(medium) {
+                        @include typo('heading', 32);
+                    }
                 }
 
                 > p {
@@ -113,6 +141,11 @@
                     text-align: center;
                     margin-bottom: 5.2rem;
                     max-width: 22vw;
+
+                    @include media-breakpoint-down(medium) {
+                        padding: 0 map-get($container-padding, mobile);
+                        max-width: 100%;
+                    }
                 }
 
                 > figure {
@@ -124,6 +157,10 @@
                     justify-content: center;
                     align-items: center;
                     overflow: hidden;
+
+                    @include media-breakpoint-down(medium) {
+                        @include size(100%, auto);
+                    }
 
                     > img {
                         @include size(100%);
