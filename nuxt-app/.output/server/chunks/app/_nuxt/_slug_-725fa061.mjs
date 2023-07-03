@@ -1,10 +1,10 @@
-import { _ as __nuxt_component_0$1, a as __nuxt_component_1$1, b as __nuxt_component_2, c as __nuxt_component_3, d as __nuxt_component_4, e as __nuxt_component_5, f as __nuxt_component_6, g as __nuxt_component_7 } from './titleBigImg-2018a613.mjs';
-import { _ as __nuxt_component_4$1, a as __nuxt_component_3$1 } from './titleDouble-a2e32ecf.mjs';
+import { _ as __nuxt_component_0$1, a as __nuxt_component_1$1, b as __nuxt_component_2, c as __nuxt_component_3, d as __nuxt_component_4, e as __nuxt_component_5, f as __nuxt_component_6, g as __nuxt_component_7 } from './titleBigImg-31c9439e.mjs';
+import { _ as __nuxt_component_4$1, a as __nuxt_component_3$1 } from './titleDouble-cb04f0a1.mjs';
 import { _ as __nuxt_component_2$1 } from './index-3a78f033.mjs';
-import { e as useAsyncData, f as useRuntimeConfig, u as usePageLoaded, n as navigateTo } from '../server.mjs';
+import { d as useRoute, e as useAsyncData, f as useRuntimeConfig, u as usePageLoaded, n as navigateTo } from '../server.mjs';
 import { withAsyncContext, mergeProps, unref, useSSRContext } from 'vue';
 import { u as useHead } from './composables-b942f3cc.mjs';
-import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrRenderClass } from 'vue/server-renderer';
+import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList } from 'vue/server-renderer';
 import './nuxt-icon-503afd00.mjs';
 import './nuxt-link-660753fe.mjs';
 import 'ufo';
@@ -43,17 +43,18 @@ import 'node:url';
 import 'pathe';
 
 const _sfc_main = {
-  __name: "index",
+  __name: "[slug]",
   __ssrInlineRender: true,
   async setup(__props) {
     var _a, _b, _c, _d, _e, _f;
     let __temp, __restore;
+    const route = useRoute();
     const { data: pageData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
-      "get_page_home",
+      "get_page_custom",
       () => $fetch(useRuntimeConfig().apiUrl + "/get_page_custom", {
         method: "POST",
         body: {
-          slug: "/"
+          slug: route.params.slug
         }
       })
     )), __temp = await __temp, __restore(), __temp);
@@ -89,13 +90,13 @@ const _sfc_main = {
       const _component_FlexibleFullBg = __nuxt_component_4$1;
       const _component_FlexibleTitleDouble = __nuxt_component_3$1;
       const _component_Footer = __nuxt_component_2$1;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "page-index" }, _attrs))}><div class="page-index__kv">`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "page-slug" }, _attrs))}><div class="page-slug__kv">`);
       _push(ssrRenderComponent(_component_ElementsKeyVisual, {
         data: (_b2 = (_a2 = unref(pageData)) == null ? void 0 : _a2.data) == null ? void 0 : _b2.key_visual
       }, null, _parent));
       _push(`</div><!--[-->`);
       ssrRenderList((_d2 = (_c2 = unref(pageData)) == null ? void 0 : _c2.data) == null ? void 0 : _d2.flex, (flex, key) => {
-        _push(`<section class="${ssrRenderClass([{ isbg: flex.acf_fc_layout === "ig_show" }, "page-index__flex"])}">`);
+        _push(`<section class="page-slug__flex">`);
         if (flex.acf_fc_layout === "full_cards") {
           _push(ssrRenderComponent(_component_FlexibleFullCards, { data: flex }, null, _parent));
         } else {
@@ -152,9 +153,9 @@ const _sfc_main = {
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/[slug].vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-43223e94.mjs.map
+//# sourceMappingURL=_slug_-725fa061.mjs.map

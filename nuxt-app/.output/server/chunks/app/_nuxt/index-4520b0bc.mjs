@@ -97,13 +97,13 @@ const _sfc_main = {
     const pageloaded = usePageLoaded();
     pageloaded.value = true;
     const roomType = ref("all");
-    const { data: pagePage } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
+    const { data: pageData } = ([__temp, __restore] = withAsyncContext(() => useAsyncData(
       "get_page_cate",
       () => $fetch(useRuntimeConfig().apiUrl + "/get_rooms_by_cate", {
         method: "GET"
       })
     )), __temp = await __temp, __restore(), __temp);
-    console.log("pagePage", pagePage.value);
+    console.log("pageData", pageData.value);
     ref([]);
     ref();
     const twinsSwiperIndex = ref(0);
@@ -131,116 +131,116 @@ const _sfc_main = {
       const _directive_inview = resolveDirective("inview");
       const _directive_fade = resolveDirective("fade");
       _push(`<div${ssrRenderAttrs(mergeProps({ class: "page-rooms" }, _attrs))}><div class="container"><div class="page-rooms__wrap"><div class="page-rooms__wrap-title"><h1>\u623F\u578B\u4E00\u89BD</h1><span>ROOMS</span></div><div class="page-rooms__wrap-cate"><div class="${ssrRenderClass([{ "-active": unref(roomType) === "all" }, "btn"])}"> \u6240\u6709\u623F\u578B </div>`);
-      if ((_b2 = (_a2 = unref(pagePage)) == null ? void 0 : _a2.twins) == null ? void 0 : _b2.title.title) {
-        _push(`<div class="${ssrRenderClass([{ "-active": unref(roomType) === "twins" }, "btn"])}">${ssrInterpolate((_d2 = (_c2 = unref(pagePage)) == null ? void 0 : _c2.twins) == null ? void 0 : _d2.title.title)}</div>`);
+      if ((_b2 = (_a2 = unref(pageData)) == null ? void 0 : _a2.twins) == null ? void 0 : _b2.title.title) {
+        _push(`<div class="${ssrRenderClass([{ "-active": unref(roomType) === "twins" }, "btn"])}">${ssrInterpolate((_d2 = (_c2 = unref(pageData)) == null ? void 0 : _c2.twins) == null ? void 0 : _d2.title.title)}</div>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_f2 = (_e2 = unref(pagePage)) == null ? void 0 : _e2.triple) == null ? void 0 : _f2.title.title) {
-        _push(`<div class="${ssrRenderClass([{ "-active": unref(roomType) === "triple" }, "btn"])}">${ssrInterpolate((_h = (_g = unref(pagePage)) == null ? void 0 : _g.triple) == null ? void 0 : _h.title.title)}</div>`);
+      if ((_f2 = (_e2 = unref(pageData)) == null ? void 0 : _e2.triple) == null ? void 0 : _f2.title.title) {
+        _push(`<div class="${ssrRenderClass([{ "-active": unref(roomType) === "triple" }, "btn"])}">${ssrInterpolate((_h = (_g = unref(pageData)) == null ? void 0 : _g.triple) == null ? void 0 : _h.title.title)}</div>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_j = (_i = unref(pagePage)) == null ? void 0 : _i.quadruple) == null ? void 0 : _j.title.title) {
-        _push(`<div class="${ssrRenderClass([{ "-active": unref(roomType) === "quadruple" }, "btn"])}">${ssrInterpolate((_l = (_k = unref(pagePage)) == null ? void 0 : _k.quadruple) == null ? void 0 : _l.title.title)}</div>`);
+      if ((_j = (_i = unref(pageData)) == null ? void 0 : _i.quadruple) == null ? void 0 : _j.title.title) {
+        _push(`<div class="${ssrRenderClass([{ "-active": unref(roomType) === "quadruple" }, "btn"])}">${ssrInterpolate((_l = (_k = unref(pageData)) == null ? void 0 : _k.quadruple) == null ? void 0 : _l.title.title)}</div>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div></div></div><div class="page-rooms__wrap__room"><div class="container">`);
-      if (((_n = (_m = unref(pagePage)) == null ? void 0 : _m.twins) == null ? void 0 : _n.rooms.length) && unref(roomType) === "all" || unref(roomType) === "twins") {
+      if (((_n = (_m = unref(pageData)) == null ? void 0 : _m.twins) == null ? void 0 : _n.rooms.length) && unref(roomType) === "all" || unref(roomType) === "twins") {
         _push(`<div class="page-rooms__wrap__room__list"><div class="page-rooms__wrap__room__list-title">`);
-        if ((_p = (_o = unref(pagePage)) == null ? void 0 : _o.twins) == null ? void 0 : _p.title.deco_title) {
-          _push(`<span class="-en">${ssrInterpolate((_r = (_q = unref(pagePage)) == null ? void 0 : _q.twins) == null ? void 0 : _r.title.deco_title)}</span>`);
+        if ((_p = (_o = unref(pageData)) == null ? void 0 : _o.twins) == null ? void 0 : _p.title.deco_title) {
+          _push(`<span class="-en">${ssrInterpolate((_r = (_q = unref(pageData)) == null ? void 0 : _q.twins) == null ? void 0 : _r.title.deco_title)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        if ((_t = (_s = unref(pagePage)) == null ? void 0 : _s.twins) == null ? void 0 : _t.title.title) {
-          _push(`<h3>${ssrInterpolate((_v = (_u = unref(pagePage)) == null ? void 0 : _u.twins) == null ? void 0 : _v.title.title)}</h3>`);
+        if ((_t = (_s = unref(pageData)) == null ? void 0 : _s.twins) == null ? void 0 : _t.title.title) {
+          _push(`<h3>${ssrInterpolate((_v = (_u = unref(pageData)) == null ? void 0 : _u.twins) == null ? void 0 : _v.title.title)}</h3>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div><div class="page-rooms__wrap__room__list-item"><!--[-->`);
-        ssrRenderList((_x = (_w = unref(pagePage)) == null ? void 0 : _w.twins) == null ? void 0 : _x.rooms, (room, key) => {
+        ssrRenderList((_x = (_w = unref(pageData)) == null ? void 0 : _w.twins) == null ? void 0 : _x.rooms, (room, key) => {
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({
             key,
             data: room
           }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper"><div class="page-rooms__wrap__swiper-wrapper swiper-wrapper"><!--[-->`);
-        ssrRenderList((_z = (_y = unref(pagePage)) == null ? void 0 : _y.twins) == null ? void 0 : _z.rooms, (room, key) => {
+        ssrRenderList((_z = (_y = unref(pageData)) == null ? void 0 : _y.twins) == null ? void 0 : _z.rooms, (room, key) => {
           _push(`<div class="page-rooms__wrap__swiper-slide swiper-slide">`);
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({ data: room }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
           _push(`</div>`);
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper-navigation"><div class="page-rooms__wrap__swiper-navigation-prev">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
-        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(twinsSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_B = (_A = unref(pagePage)) == null ? void 0 : _A.twins) == null ? void 0 : _B.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
+        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(twinsSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_B = (_A = unref(pageData)) == null ? void 0 : _A.twins) == null ? void 0 : _B.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
         _push(`</div></div></div></div>`);
       } else {
         _push(`<!---->`);
       }
-      if (((_D = (_C = unref(pagePage)) == null ? void 0 : _C.triple) == null ? void 0 : _D.rooms.length) && unref(roomType) === "all" || unref(roomType) === "triple") {
+      if (((_D = (_C = unref(pageData)) == null ? void 0 : _C.triple) == null ? void 0 : _D.rooms.length) && unref(roomType) === "all" || unref(roomType) === "triple") {
         _push(`<div class="page-rooms__wrap__room__list"><div class="page-rooms__wrap__room__list-title">`);
-        if ((_F = (_E = unref(pagePage)) == null ? void 0 : _E.triple) == null ? void 0 : _F.title.deco_title) {
-          _push(`<span class="-en">${ssrInterpolate((_H = (_G = unref(pagePage)) == null ? void 0 : _G.triple) == null ? void 0 : _H.title.deco_title)}</span>`);
+        if ((_F = (_E = unref(pageData)) == null ? void 0 : _E.triple) == null ? void 0 : _F.title.deco_title) {
+          _push(`<span class="-en">${ssrInterpolate((_H = (_G = unref(pageData)) == null ? void 0 : _G.triple) == null ? void 0 : _H.title.deco_title)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        if ((_J = (_I = unref(pagePage)) == null ? void 0 : _I.triple) == null ? void 0 : _J.title.title) {
-          _push(`<h3>${ssrInterpolate((_L = (_K = unref(pagePage)) == null ? void 0 : _K.triple) == null ? void 0 : _L.title.title)}</h3>`);
+        if ((_J = (_I = unref(pageData)) == null ? void 0 : _I.triple) == null ? void 0 : _J.title.title) {
+          _push(`<h3>${ssrInterpolate((_L = (_K = unref(pageData)) == null ? void 0 : _K.triple) == null ? void 0 : _L.title.title)}</h3>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div><div class="page-rooms__wrap__room__list-item"><!--[-->`);
-        ssrRenderList((_N = (_M = unref(pagePage)) == null ? void 0 : _M.triple) == null ? void 0 : _N.rooms, (room, key) => {
+        ssrRenderList((_N = (_M = unref(pageData)) == null ? void 0 : _M.triple) == null ? void 0 : _N.rooms, (room, key) => {
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({
             key,
             data: room
           }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper"><div class="page-rooms__wrap__swiper-wrapper swiper-wrapper"><!--[-->`);
-        ssrRenderList((_P = (_O = unref(pagePage)) == null ? void 0 : _O.triple) == null ? void 0 : _P.rooms, (room, key) => {
+        ssrRenderList((_P = (_O = unref(pageData)) == null ? void 0 : _O.triple) == null ? void 0 : _P.rooms, (room, key) => {
           _push(`<div class="page-rooms__wrap__swiper-slide swiper-slide">`);
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({ data: room }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
           _push(`</div>`);
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper-navigation"><div class="page-rooms__wrap__swiper-navigation-prev">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
-        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(tripleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_R = (_Q = unref(pagePage)) == null ? void 0 : _Q.triple) == null ? void 0 : _R.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
+        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(tripleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_R = (_Q = unref(pageData)) == null ? void 0 : _Q.triple) == null ? void 0 : _R.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
         _push(`</div></div></div></div>`);
       } else {
         _push(`<!---->`);
       }
-      if (((_T = (_S = unref(pagePage)) == null ? void 0 : _S.quadruple) == null ? void 0 : _T.rooms.length) && unref(roomType) === "all" || unref(roomType) === "quad") {
+      if (((_T = (_S = unref(pageData)) == null ? void 0 : _S.quadruple) == null ? void 0 : _T.rooms.length) && unref(roomType) === "all" || unref(roomType) === "quad") {
         _push(`<div class="page-rooms__wrap__room__list"><div class="page-rooms__wrap__room__list-title">`);
-        if ((_V = (_U = unref(pagePage)) == null ? void 0 : _U.quadruple) == null ? void 0 : _V.title.deco_title) {
-          _push(`<span class="-en">${ssrInterpolate((_X = (_W = unref(pagePage)) == null ? void 0 : _W.quadruple) == null ? void 0 : _X.title.deco_title)}</span>`);
+        if ((_V = (_U = unref(pageData)) == null ? void 0 : _U.quadruple) == null ? void 0 : _V.title.deco_title) {
+          _push(`<span class="-en">${ssrInterpolate((_X = (_W = unref(pageData)) == null ? void 0 : _W.quadruple) == null ? void 0 : _X.title.deco_title)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        if ((_Z = (_Y = unref(pagePage)) == null ? void 0 : _Y.quadruple) == null ? void 0 : _Z.title.title) {
-          _push(`<h3>${ssrInterpolate((_$ = (__ = unref(pagePage)) == null ? void 0 : __.quadruple) == null ? void 0 : _$.title.title)}</h3>`);
+        if ((_Z = (_Y = unref(pageData)) == null ? void 0 : _Y.quadruple) == null ? void 0 : _Z.title.title) {
+          _push(`<h3>${ssrInterpolate((_$ = (__ = unref(pageData)) == null ? void 0 : __.quadruple) == null ? void 0 : _$.title.title)}</h3>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div><div class="page-rooms__wrap__room__list-item"><!--[-->`);
-        ssrRenderList((_ba = (_aa = unref(pagePage)) == null ? void 0 : _aa.quadruple) == null ? void 0 : _ba.rooms, (room, key) => {
+        ssrRenderList((_ba = (_aa = unref(pageData)) == null ? void 0 : _aa.quadruple) == null ? void 0 : _ba.rooms, (room, key) => {
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({
             key,
             data: room
           }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper"><div class="page-rooms__wrap__swiper-wrapper swiper-wrapper"><!--[-->`);
-        ssrRenderList((_da = (_ca = unref(pagePage)) == null ? void 0 : _ca.quadruple) == null ? void 0 : _da.rooms, (room, key) => {
+        ssrRenderList((_da = (_ca = unref(pageData)) == null ? void 0 : _ca.quadruple) == null ? void 0 : _da.rooms, (room, key) => {
           _push(`<div class="page-rooms__wrap__swiper-slide swiper-slide">`);
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({ data: room }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
           _push(`</div>`);
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper-navigation"><div class="page-rooms__wrap__swiper-navigation-prev">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
-        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(quadrupleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_fa = (_ea = unref(pagePage)) == null ? void 0 : _ea.quadruple) == null ? void 0 : _fa.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
+        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(quadrupleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_fa = (_ea = unref(pageData)) == null ? void 0 : _ea.quadruple) == null ? void 0 : _fa.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
         _push(`</div></div></div></div>`);
       } else {
@@ -260,4 +260,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-dd9fee3a.mjs.map
+//# sourceMappingURL=index-4520b0bc.mjs.map

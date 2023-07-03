@@ -200,4 +200,4 @@ _sfc_main.setup = (props, ctx) => {
 const __nuxt_component_3 = _sfc_main;
 
 export { __nuxt_component_4 as _, __nuxt_component_3 as a, __nuxt_component_0$1 as b, __nuxt_component_0 as c };
-//# sourceMappingURL=titleDouble-a2e32ecf.mjs.map
+//# sourceMappingURL=titleDouble-cb04f0a1.mjs.map

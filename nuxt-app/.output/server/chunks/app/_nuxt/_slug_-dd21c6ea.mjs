@@ -1,4 +1,4 @@
-import { c as __nuxt_component_0, a as __nuxt_component_3, _ as __nuxt_component_4, b as __nuxt_component_0$1$1 } from './titleDouble-a2e32ecf.mjs';
+import { c as __nuxt_component_0, a as __nuxt_component_3, _ as __nuxt_component_4, b as __nuxt_component_0$1$1 } from './titleDouble-cb04f0a1.mjs';
 import { _ as __nuxt_component_0$1 } from './nuxt-link-660753fe.mjs';
 import _sfc_main$2 from './nuxt-icon-503afd00.mjs';
 import { withAsyncContext, resolveDirective, mergeProps, unref, withCtx, createTextVNode, toDisplayString, useSSRContext, ref } from 'vue';
@@ -234,4 +234,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=_slug_-9fae1a1b.mjs.map
+//# sourceMappingURL=_slug_-dd21c6ea.mjs.map
