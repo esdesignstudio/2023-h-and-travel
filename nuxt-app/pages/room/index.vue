@@ -15,28 +15,28 @@
                         所有房型
                     </div>
                     <div
-                        v-if="pagePage?.twins?.title.title"
+                        v-if="pageData?.twins?.title.title"
                         class="btn"
                         :class="{'-active': roomType === 'twins'}"
                         @click="roomType = 'twins'"
                     >
-                        {{ pagePage?.twins?.title.title }}
+                        {{ pageData?.twins?.title.title }}
                     </div>
                     <div
-                        v-if="pagePage?.triple?.title.title"
+                        v-if="pageData?.triple?.title.title"
                         class="btn"
                         :class="{'-active': roomType === 'triple'}"
                         @click="roomType = 'triple'"
                     >
-                        {{ pagePage?.triple?.title.title }}
+                        {{ pageData?.triple?.title.title }}
                     </div>
                     <div
-                        v-if="pagePage?.quadruple?.title.title"
+                        v-if="pageData?.quadruple?.title.title"
                         class="btn"
                         :class="{'-active': roomType === 'quadruple'}"
                         @click="roomType = 'quadruple'"
                     >
-                        {{ pagePage?.quadruple?.title.title }}
+                        {{ pageData?.quadruple?.title.title }}
                     </div>
                </div>
             </div>
@@ -46,19 +46,19 @@
                 <!-- 雙人房 -->
                 <div 
                     class="page-rooms__wrap__room__list"
-                    v-if="pagePage?.twins?.rooms.length && roomType === 'all' || roomType === 'twins'"
+                    v-if="pageData?.twins?.rooms.length && roomType === 'all' || roomType === 'twins'"
                 >
                     <div class="page-rooms__wrap__room__list-title">
-                        <span class="-en" v-if="pagePage?.twins?.title.deco_title">
-                            {{ pagePage?.twins?.title.deco_title }}
+                        <span class="-en" v-if="pageData?.twins?.title.deco_title">
+                            {{ pageData?.twins?.title.deco_title }}
                         </span>
-                        <h3 v-if="pagePage?.twins?.title.title">
-                            {{ pagePage?.twins?.title.title }}
+                        <h3 v-if="pageData?.twins?.title.title">
+                            {{ pageData?.twins?.title.title }}
                         </h3>
                     </div>
                     <div class="page-rooms__wrap__room__list-item">
                         <ElementsRoomCard 
-                            v-for="(room, key) in pagePage?.twins?.rooms"
+                            v-for="(room, key) in pageData?.twins?.rooms"
                             :key="key"
                             v-inview
                             v-fade
@@ -72,7 +72,7 @@
                         <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
                             <div
                                 class="page-rooms__wrap__swiper-slide swiper-slide"
-                                v-for="(room, key) in pagePage?.twins?.rooms"
+                                v-for="(room, key) in pageData?.twins?.rooms"
                                 :key="key"
                             >
                                 <ElementsRoomCard
@@ -92,7 +92,7 @@
                             <div class="page-rooms__wrap__swiper-navigation-text">
                                 <span v-text="twinsSwiperIndex + 1"></span>
                                 <span>/</span>
-                                <span v-text="pagePage?.twins?.rooms.length"></span>
+                                <span v-text="pageData?.twins?.rooms.length"></span>
                             </div>
                             <div
                                 class="page-rooms__wrap__swiper-navigation-next"
@@ -107,19 +107,19 @@
                 <!-- 三人房 -->
                 <div 
                     class="page-rooms__wrap__room__list"
-                    v-if="pagePage?.triple?.rooms.length && roomType === 'all' || roomType === 'triple'"
+                    v-if="pageData?.triple?.rooms.length && roomType === 'all' || roomType === 'triple'"
                 >
                     <div class="page-rooms__wrap__room__list-title">
-                        <span class="-en" v-if="pagePage?.triple?.title.deco_title">
-                            {{ pagePage?.triple?.title.deco_title }}
+                        <span class="-en" v-if="pageData?.triple?.title.deco_title">
+                            {{ pageData?.triple?.title.deco_title }}
                         </span>
-                        <h3 v-if="pagePage?.triple?.title.title">
-                            {{ pagePage?.triple?.title.title }}
+                        <h3 v-if="pageData?.triple?.title.title">
+                            {{ pageData?.triple?.title.title }}
                         </h3>
                     </div>
                     <div class="page-rooms__wrap__room__list-item">
                         <ElementsRoomCard 
-                            v-for="(room, key) in pagePage?.triple?.rooms"
+                            v-for="(room, key) in pageData?.triple?.rooms"
                             :key="key"
                             v-inview
                             v-fade
@@ -133,7 +133,7 @@
                         <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
                             <div
                                 class="page-rooms__wrap__swiper-slide swiper-slide"
-                                v-for="(room, key) in pagePage?.triple?.rooms"
+                                v-for="(room, key) in pageData?.triple?.rooms"
                                 :key="key"
                             >
                                 <ElementsRoomCard
@@ -153,7 +153,7 @@
                             <div class="page-rooms__wrap__swiper-navigation-text">
                                 <span v-text="tripleSwiperIndex + 1"></span>
                                 <span>/</span>
-                                <span v-text="pagePage?.triple?.rooms.length"></span>
+                                <span v-text="pageData?.triple?.rooms.length"></span>
                             </div>
                             <div
                                 class="page-rooms__wrap__swiper-navigation-next"
@@ -168,19 +168,19 @@
                 <!-- 四人房 -->
                 <div 
                     class="page-rooms__wrap__room__list"
-                    v-if="pagePage?.quadruple?.rooms.length && roomType === 'all' || roomType === 'quad'"
+                    v-if="pageData?.quadruple?.rooms.length && roomType === 'all' || roomType === 'quad'"
                 >
                     <div class="page-rooms__wrap__room__list-title">
-                        <span class="-en" v-if="pagePage?.quadruple?.title.deco_title">
-                            {{ pagePage?.quadruple?.title.deco_title }}
+                        <span class="-en" v-if="pageData?.quadruple?.title.deco_title">
+                            {{ pageData?.quadruple?.title.deco_title }}
                         </span>
-                        <h3 v-if="pagePage?.quadruple?.title.title">
-                            {{ pagePage?.quadruple?.title.title }}
+                        <h3 v-if="pageData?.quadruple?.title.title">
+                            {{ pageData?.quadruple?.title.title }}
                         </h3>
                     </div>
                     <div class="page-rooms__wrap__room__list-item">
                         <ElementsRoomCard 
-                            v-for="(room, key) in pagePage?.quadruple?.rooms"
+                            v-for="(room, key) in pageData?.quadruple?.rooms"
                             :key="key"
                             v-inview
                             v-fade
@@ -194,7 +194,7 @@
                         <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
                             <div
                                 class="page-rooms__wrap__swiper-slide swiper-slide"
-                                v-for="(room, key) in pagePage?.quadruple?.rooms"
+                                v-for="(room, key) in pageData?.quadruple?.rooms"
                                 :key="key"
                             >
                                 <ElementsRoomCard
@@ -214,7 +214,7 @@
                             <div class="page-rooms__wrap__swiper-navigation-text">
                                 <span v-text="quadrupleSwiperIndex + 1"></span>
                                 <span>/</span>
-                                <span v-text="pagePage?.quadruple?.rooms.length"></span>
+                                <span v-text="pageData?.quadruple?.rooms.length"></span>
                             </div>
                             <div
                                 class="page-rooms__wrap__swiper-navigation-next"
@@ -250,13 +250,13 @@
 
     const roomType = ref('all')
 
-    const { data: pagePage } = await useAsyncData(
+    const { data: pageData } = await useAsyncData(
         'get_page_cate',
         () => $fetch( useRuntimeConfig().apiUrl + '/get_rooms_by_cate', {
             method: 'GET',
         })
     )
-    console.log('pagePage', pagePage.value)
+    console.log('pageData', pageData.value)
     
     const swiper = ref([])
 

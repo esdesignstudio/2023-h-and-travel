@@ -51,6 +51,7 @@
         justify-content: center;
         padding-top: 9.6rem;
         padding-bottom: 19.5rem;
+        background-color: map-get($colors, brand-2);
 
         @include media-breakpoint-down(medium) {
             padding-top: 6rem;
