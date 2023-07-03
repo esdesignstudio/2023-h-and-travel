@@ -1,6 +1,6 @@
 <template>
     <div class="page-carousel">
-        <div class="page-carousel__inner" ref="swiperRef">
+        <div class="page-carousel__inner container" ref="swiperRef">
             <div class="swiper-wrapper">
                 <figure 
                     class="swiper-slide" 
@@ -42,9 +42,8 @@
             setTimeout(() => {
                 if (props.data.length > 1) {
                     swiper.value = new Swiper(swiperRef.value, {
-                        slidesPerView: props.center ? 1.3 : 'auto',
+                        slidesPerView: 'auto',
                         spaceBetween: 25,
-                        slidesOffsetBefore: props.center ? false : window.innerWidth / 4,
                         loop: true,
                         centeredSlides: props.center,
                         pagination: {
@@ -57,7 +56,7 @@
                         },
                     })
                 }
-            }, 701);
+            }, 301);
         })
     })
 </script>
@@ -86,6 +85,11 @@
             align-items: center;
             gap: 3rem;
 
+            @include media-breakpoint-down(medium) {
+                bottom: 0%;
+                transform: translate(-50%, 50%);
+            }
+
             .swiper-button-prev, .swiper-button-next {
                 @include media-breakpoint-down(medium) {
                     @include size(3.2rem, auto);
@@ -95,11 +99,24 @@
 
         .swiper {
             &-slide {
-                @include size(100%, 45vw);
+                @include set-col(10, 12, 0);
+                @include aspect(0.52);
+
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                @include media-breakpoint-down(medium) {
+                    @include size(100vw, auto);
+                    @include aspect(0.78);
+                }
 
                 img {
                     @include size(100%);
 
+                    position: absolute;
                     object-fit: cover;
                 }
             }
@@ -125,6 +142,7 @@
             }
 
             &-button-prev, &-button-next {
+                cursor: pointer;
                 transition: all .3s;
 
                 &:hover {
