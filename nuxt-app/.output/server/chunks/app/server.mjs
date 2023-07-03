@@ -255,7 +255,7 @@ function createHead(initHeadObject, options) {
 }
 version.startsWith("2.");
 const appPageTransition = { "name": "page", "mode": "out-in" };
-const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "theme-color", "content": "#000000" }, { "name": "distribution", "content": "Taiwan Taipei" }, { "name": "copyright", "content": "ES Design 壹慎設計有限公司" }, { "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "name": "description", "content": "我們專注在【視覺設計、品牌識別、網頁設計、特效開發】全方位客製化設計解決方案，強調視覺與互動的細節體驗，讓內容可以超越形式的存在，嘗試打造突能破框架的品牌價值" }, { "property": "og:type", "content": "website" }, { "hid": "og:image", "property": "og:image", "content": "https://e-s.tw/wp-content/uploads/2022/10/socialshare.jpg" }, { "hid": "og:url", "property": "og:url", "content": "" }, { "hid": "og:site_name", "property": "og:site_name", "content": "ES Design" }, { "property": "og:image:width", "content": "1200" }, { "property": "og:image:height", "content": "630" }, { "name": "twitter:card", "content": "summary_large_image" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/favicon.ico" }, { "href": "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap", "rel": "stylesheet" }], "style": [], "script": [{ "src": "https://static.line-scdn.net/liff/edge/2/sdk.js" }], "noscript": [{ "children": "😚ES Design：此網站必須啟用 ✪ Javascript ✪" }], "htmlAttrs": { "lang": "zh-TW" }, "charset": "utf-8", "title": "ES Design", "titleTemplate": "%s ✷ ES Design" };
+const appHead = { "meta": [{ "charset": "utf-8" }, { "name": "theme-color", "content": "#000000" }, { "name": "distribution", "content": "Taiwan Taipei" }, { "name": "copyright", "content": "ES Design 壹慎設計有限公司" }, { "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "name": "description", "content": "我們專注在【視覺設計、品牌識別、網頁設計、特效開發】全方位客製化設計解決方案，強調視覺與互動的細節體驗，讓內容可以超越形式的存在，嘗試打造突能破框架的品牌價值" }, { "property": "og:type", "content": "website" }, { "hid": "og:image", "property": "og:image", "content": "https://e-s.tw/wp-content/uploads/2022/10/socialshare.jpg" }, { "hid": "og:url", "property": "og:url", "content": "" }, { "hid": "og:site_name", "property": "og:site_name", "content": "彩虹民宿" }, { "property": "og:image:width", "content": "1200" }, { "property": "og:image:height", "content": "630" }, { "name": "twitter:card", "content": "summary_large_image" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/favicon.ico" }, { "href": "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap", "rel": "stylesheet" }], "style": [], "script": [{ "src": "https://static.line-scdn.net/liff/edge/2/sdk.js" }], "noscript": [{ "children": "😚彩虹民宿：此網站必須啟用 ✪ Javascript ✪" }], "htmlAttrs": { "lang": "zh-TW" }, "charset": "utf-8", "title": "彩虹民宿", "titleTemplate": "%s ✷ 彩虹民宿" };
 const appLayoutTransition = false;
 const appKeepalive = false;
 const vueuse_head_plugin_D7WGfuP1A0 = defineNuxtPlugin((nuxtApp) => {
@@ -419,7 +419,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-725fa061.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-f3040bd3.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -428,7 +428,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-d8c01f20.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-5615ce69.mjs').then((m) => m.default || m)
   },
   {
     name: "room-slug",
@@ -437,7 +437,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-dd21c6ea.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-82f13ac0.mjs').then((m) => m.default || m)
   },
   {
     name: "room",
@@ -446,7 +446,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-4520b0bc.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-8aff203b.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -5289,7 +5289,7 @@ const _wrapIf = (component, props2, slots) => {
   return { default: () => props2 ? h(component, props2 === true ? {} : props2, slots) : h(Fragment, {}, slots) };
 };
 const layouts = {
-  default: () => import('./_nuxt/default-6ba95b60.mjs').then((m) => m.default || m)
+  default: () => import('./_nuxt/default-4810d6b6.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
