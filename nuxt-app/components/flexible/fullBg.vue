@@ -66,6 +66,7 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
+            z-index: -1;
 
             &.-show {
                 opacity: 1;
@@ -80,16 +81,6 @@
                 left: 0;
                 background-color: rgba(#484036, .4);
             }
-        }
-
-        &::after {
-            @include size(100%);
-
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgba(#484036, .4);
         }
 
         &__title {
