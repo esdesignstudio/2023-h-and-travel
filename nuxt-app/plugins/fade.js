@@ -16,7 +16,7 @@ export default defineNuxtPlugin( nuxtApp => {
                 const originTransition = getComputedStyle(el).transition
                 // el.style.transform = 'translateY(64px)'
                 // el.style.opacity = '0'
-                el.style.transition = `${originTransition}, opacity 0.6s 0.3s, transform 2s cubic-bezier(0.075, 0.82, 0.165, 1)`
+                el.style.transition = `${originTransition}, opacity 0.6s 0.1s, transform 2s cubic-bezier(0.075, 0.82, 0.165, 1)`
                 if ($LCscroll) {
                     $LCscroll.on('scroll', () => {
                         scrollAndShow(el)

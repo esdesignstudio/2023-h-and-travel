@@ -69,25 +69,29 @@
     console.log(viewport.value.isDesktop)
 
     onMounted(() => {
-        if (props.data.style === 'a') {
-            gsap.registerPlugin(ScrollTrigger)
-    
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: imgRef.value,
-                    start: 'top center',
-                    end: `bottom+=${window.innerHeight} center`,
-                    scrub: true,
-                    anticipatePin: 1,
-                    // markers: true,
+        nextTick(() => {
+            setTimeout(() => {
+                if (props.data.style === 'a') {
+                    gsap.registerPlugin(ScrollTrigger)
+            
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: imgRef.value,
+                            start: 'top center',
+                            end: `bottom+=${window.innerHeight} center`,
+                            scrub: true,
+                            anticipatePin: 1,
+                            // markers: true,
+                        }
+                    })
+            
+                    tl.to(imgRef.value, {
+                        width: window.innerWidth,
+                        height: viewport.value.isDesktop ? 'calc(100vh - 84px)' : 'calc(100vh - 64px)',
+                    })
                 }
-            })
-    
-            tl.to(imgRef.value, {
-                width: window.innerWidth,
-                height: viewport.value.isDesktop ? 'calc(100vh - 84px)' : 'calc(100vh - 64px)',
-            })
-        }
+            }, 701);
+        })
     })
 </script>
 <style lang="scss">

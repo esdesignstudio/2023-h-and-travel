@@ -13,7 +13,7 @@
         </div>
         <div class="page-carousel__tool" v-if="data.length > 1">
             <div class="swiper-button-prev"><FormKitIcon icon="arrowLeft" /></div>
-            <div class="swiper-pagination -en" :class="{'-larger' : !center}" />
+            <div class="swiper-pagination -en" :class="{'-larger' : !center}"></div>
             <div class="swiper-button-next"><FormKitIcon icon="arrowRight" /></div>
         </div>
     </div>
@@ -38,23 +38,27 @@
     const swiperRef = ref()
 
     onMounted(() => {
-        if (props.data.length > 1) {
-            swiper.value = new Swiper(swiperRef.value, {
-                slidesPerView: props.center ? 1.3 : 'auto',
-                spaceBetween: 25,
-                slidesOffsetBefore: props.center ? false : window.innerWidth / 4,
-                loop: true,
-                centeredSlides: props.center,
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'fraction',
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            })
-        }
+        nextTick(() => {
+            setTimeout(() => {
+                if (props.data.length > 1) {
+                    swiper.value = new Swiper(swiperRef.value, {
+                        slidesPerView: props.center ? 1.3 : 'auto',
+                        spaceBetween: 25,
+                        slidesOffsetBefore: props.center ? false : window.innerWidth / 4,
+                        loop: true,
+                        centeredSlides: props.center,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            type: 'fraction',
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                    })
+                }
+            }, 701);
+        })
     })
 </script>
 <style lang="scss">

@@ -35,6 +35,7 @@
 </template>
 <script setup>
     import { gsap } from 'gsap'
+    import ScrollTrigger from 'gsap/ScrollTrigger'
 
     const props = defineProps({
         data: {
@@ -46,6 +47,7 @@
     const numberRef = ref([])
 
     onMounted(() => {
+        gsap.registerPlugin(ScrollTrigger)
         numberRef.value.forEach((item, key) => {
             gsap.fromTo(item, {
                 innerHTML: 0,

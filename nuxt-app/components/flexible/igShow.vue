@@ -1,9 +1,11 @@
 <template>
-    <div class="flexible-ig-show container" ref="sectionRef">
+    <div
+        class="flexible-ig-show container"
+        v-inview
+    >
         <div 
             class="flexible-ig-show__bg" 
             :style="{ backgroundImage: 'url(' + data?.bg_img?.url + ')' }"
-            :class="{ '-show': showbg }"
         ></div>
         <div class="flexible-ig-show__wrapper">
             <div class="flexible-ig-show__wrapper-title">
@@ -69,9 +71,6 @@
         },
     })
 
-    const sectionRef= ref()
-    const showbg = ref(false)
-
     const swiper = ref(null)
     const swiperRef = ref()
     const swiperIndex = ref(0)
@@ -85,16 +84,6 @@
                     swiperIndex.value = this.realIndex
                 },
             },
-        })
-
-        // 只有在區域進入畫面時才顯示
-        window.addEventListener('scroll', () => {
-            const { top, bottom } = sectionRef.value.getBoundingClientRect()
-            const vHeight = window.innerHeight || document.documentElement.clientHeight
-
-            top > vHeight || bottom < 0 - vHeight ?
-                showbg.value = false :
-                showbg.value = true
         })
     })
 </script>
@@ -115,6 +104,12 @@
             padding-top: 6.4rem;
             padding-bottom: 6.4rem;
             overflow: hidden;
+        }
+
+        &.is-inview {
+            .#{$class-name}__bg {
+                opacity: 1;
+            }
         }
 
         &__bg {
