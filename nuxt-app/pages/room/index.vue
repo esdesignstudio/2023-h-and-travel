@@ -85,7 +85,7 @@
                         <div class="page-rooms__wrap__swiper-navigation">
                             <div
                                 class="page-rooms__wrap__swiper-navigation-prev"
-                                @click="swiper.slidePrev()"
+                                @click="twinsSwiper.slidePrev()"
                             >
                                 <nuxt-icon name="arrow_right"/>
                             </div>
@@ -96,7 +96,7 @@
                             </div>
                             <div
                                 class="page-rooms__wrap__swiper-navigation-next"
-                                @click="swiper.slideNext()"
+                                @click="twinsSwiper.slideNext()"
                             >
                                 <nuxt-icon name="arrow_right"/>
                             </div>
@@ -146,7 +146,7 @@
                         <div class="page-rooms__wrap__swiper-navigation">
                             <div
                                 class="page-rooms__wrap__swiper-navigation-prev"
-                                @click="swiper.slidePrev()"
+                                @click="tripleSwiper.slidePrev()"
                             >
                                 <nuxt-icon name="arrow_right"/>
                             </div>
@@ -157,7 +157,7 @@
                             </div>
                             <div
                                 class="page-rooms__wrap__swiper-navigation-next"
-                                @click="swiper.slideNext()"
+                                @click="tripleSwiper.slideNext()"
                             >
                                 <nuxt-icon name="arrow_right"/>
                             </div>
@@ -207,7 +207,7 @@
                         <div class="page-rooms__wrap__swiper-navigation">
                             <div
                                 class="page-rooms__wrap__swiper-navigation-prev"
-                                @click="swiper.slidePrev()"
+                                @click="quadrupleSwiper.slidePrev()"
                             >
                                 <nuxt-icon name="arrow_right"/>
                             </div>
@@ -218,7 +218,7 @@
                             </div>
                             <div
                                 class="page-rooms__wrap__swiper-navigation-next"
-                                @click="swiper.slideNext()"
+                                @click="quadrupleSwiper.slideNext()"
                             >
                                 <nuxt-icon name="arrow_right"/>
                             </div>
@@ -258,22 +258,24 @@
     )
     console.log('pageData', pageData.value)
     
-    const swiper = ref([])
-
-    // twin
+    
+    // twins
+    const twinsSwiper = ref()
     const twinsSwiperRef = ref()
     const twinsSwiperIndex = ref(0)
 
     // triple
+    const tripleSwiper = ref([])
     const tripleSwiperRef = ref()
     const tripleSwiperIndex = ref(0)
 
     // quadruple
+    const quadrupleSwiper = ref([])
     const quadrupleSwiperRef = ref()
     const quadrupleSwiperIndex = ref(0)
 
     onMounted(() => {
-        swiper.value.push(new Swiper(twinsSwiperRef.value, {
+        twinsSwiper.value = new Swiper(twinsSwiperRef.value, {
             slidesPerView: 'auto',
             spaceBetween: 20,
             on: {
@@ -281,8 +283,8 @@
                     twinsSwiperIndex.value = this.realIndex
                 },
             },
-        }))
-        swiper.value.push(new Swiper(tripleSwiperRef.value, {
+        })
+        tripleSwiper.value = new Swiper(tripleSwiperRef.value, {
             slidesPerView: 'auto',
             spaceBetween: 20,
             on: {
@@ -290,8 +292,8 @@
                     tripleSwiperIndex.value = this.realIndex
                 },
             },
-        }))
-        swiper.value.push(new Swiper(quadrupleSwiperRef.value, {
+        })
+        quadrupleSwiper.value = new Swiper(quadrupleSwiperRef.value, {
             slidesPerView: 'auto',
             spaceBetween: 20,
             on: {
@@ -299,7 +301,7 @@
                     quadrupleSwiperIndex.value = this.realIndex
                 },
             },
-        }))
+        })
     })
 
     // Meta
