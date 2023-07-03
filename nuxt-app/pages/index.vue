@@ -72,18 +72,19 @@
         navigateTo('/404')
     }
 
-    // const cardRef = ref([])
-    // const cardLength = ref(0)
-
-    // onMounted(() => {
-    //     cardLength.value = cardRef.value.length
-    //     cardRef.value.forEach((el, i) => {
-    //         if (i > 0) {
-    //             el.style.marginTop = - 100 * (cardLength.value - i) + 'vh'
-    //         }
-    //         el.style.height = 100 * (cardLength.value - i) + 'vh'
-    //     })
-    // })
+    // Meta
+    useHead({
+        title: pageData?.value?.og_title,
+        meta: [
+            { property: 'og:locale', content: 'zh' },
+            { name: 'description', content: pageData?.value?.meta_description },
+            { hid: 'og:title', property: 'og:title', content: pageData?.value?.og_title },
+            { hid: 'og:description', property: 'og:description', content: pageData?.value?.meta_description },
+            { hid: 'og:image', property: 'og:image', content: pageData?.value?.og_image?.url },
+            { property: 'og:image:width', content: '1200' },
+            { property: 'og:image:height', content: '630' },
+        ],
+    })
 </script>
 <style lang="scss">
     $class-name: page-index;
