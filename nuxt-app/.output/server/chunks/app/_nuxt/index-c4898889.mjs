@@ -104,11 +104,13 @@ const _sfc_main = {
       })
     )), __temp = await __temp, __restore(), __temp);
     console.log("pageData", pageData.value);
-    ref([]);
+    ref();
     ref();
     const twinsSwiperIndex = ref(0);
+    ref([]);
     ref();
     const tripleSwiperIndex = ref(0);
+    ref([]);
     ref();
     const quadrupleSwiperIndex = ref(0);
     useHead({
@@ -260,4 +262,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-8aff203b.mjs.map
+//# sourceMappingURL=index-c4898889.mjs.map
