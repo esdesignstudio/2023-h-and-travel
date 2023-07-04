@@ -36,6 +36,13 @@
             </div>
         </div>
         <div
+            class="header-index__menu-bg"
+            :class="{
+                '-active': menuOpen
+            }"
+            @click="menuOpen = false"
+        ></div>
+        <div
             class="header-index__menu container"
             :class="{
                 '-active': menuOpen
@@ -120,6 +127,23 @@ $class-name: header-index;
 
         @include media-breakpoint-up(medium) {
             display: none;
+        }
+
+        &-bg {
+            @include size(100vw, 100vh);
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .8);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+
+            &.-active {
+                opacity: 1;
+                pointer-events: auto;
+            }
         }
 
         &-top {
