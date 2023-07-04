@@ -1,10 +1,11 @@
 import { _ as __nuxt_component_0$1 } from './nuxt-link-660753fe.mjs';
 import _sfc_main$2 from './nuxt-icon-503afd00.mjs';
-import { ref, withAsyncContext, resolveDirective, mergeProps, unref, useSSRContext, withCtx, createTextVNode, createVNode } from 'vue';
+import { ref, withAsyncContext, watch, nextTick, resolveDirective, mergeProps, unref, useSSRContext, withCtx, createTextVNode, createVNode } from 'vue';
 import { ssrRenderAttrs, ssrRenderClass, ssrInterpolate, ssrRenderList, ssrRenderComponent, ssrGetDirectiveProps, ssrRenderAttr } from 'vue/server-renderer';
 import { _ as __nuxt_component_2 } from './index-3a78f033.mjs';
 import { u as usePageLoaded, e as useAsyncData, f as useRuntimeConfig } from '../server.mjs';
 import { u as useHead } from './composables-b942f3cc.mjs';
+import Swiper from 'swiper/bundle';
 import 'ufo';
 import 'ofetch';
 import 'hookable';
@@ -104,15 +105,38 @@ const _sfc_main = {
       })
     )), __temp = await __temp, __restore(), __temp);
     console.log("pageData", pageData.value);
-    ref();
-    ref();
+    const twinsSwiper = ref();
+    const twinsSwiperRef = ref();
     const twinsSwiperIndex = ref(0);
-    ref([]);
-    ref();
+    const tripleSwiper = ref();
+    const tripleSwiperRef = ref();
     const tripleSwiperIndex = ref(0);
-    ref([]);
-    ref();
+    const quadrupleSwiper = ref();
+    const quadrupleSwiperRef = ref();
     const quadrupleSwiperIndex = ref(0);
+    watch(() => roomType.value, (val) => {
+      nextTick(() => {
+        setTimeout(() => {
+          twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex);
+          tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex);
+          quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex);
+        }, 1);
+      });
+    });
+    const swiperInit = (ref2, indexRef) => {
+      if (ref2.value) {
+        return new Swiper(ref2.value, {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+          centeredSlides: ref2.value.querySelectorAll(".swiper-slide").length < 2 ? true : false,
+          on: {
+            slideChangeTransitionEnd: function() {
+              indexRef.value = this.realIndex;
+            }
+          }
+        });
+      }
+    };
     useHead({
       title: (_b = (_a = pageData == null ? void 0 : pageData.value) == null ? void 0 : _a.data) == null ? void 0 : _b.og_title,
       meta: [
@@ -148,7 +172,7 @@ const _sfc_main = {
       } else {
         _push(`<!---->`);
       }
-      _push(`</div></div></div><div class="page-rooms__wrap__room"><div class="container">`);
+      _push(`</div></div></div><div class="page-rooms__wrap__room"><div class="container"><!--[-->`);
       if (((_n = (_m = unref(pageData)) == null ? void 0 : _m.twins) == null ? void 0 : _n.rooms.length) && unref(roomType) === "all" || unref(roomType) === "twins") {
         _push(`<div class="page-rooms__wrap__room__list"><div class="page-rooms__wrap__room__list-title">`);
         if ((_p = (_o = unref(pageData)) == null ? void 0 : _o.twins) == null ? void 0 : _p.title.deco_title) {
@@ -248,7 +272,7 @@ const _sfc_main = {
       } else {
         _push(`<!---->`);
       }
-      _push(`</div></div>`);
+      _push(`<!--]--></div></div>`);
       _push(ssrRenderComponent(_component_Footer, null, null, _parent));
       _push(`</div>`);
     };
@@ -262,4 +286,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-c4898889.mjs.map
+//# sourceMappingURL=index-86bfb7d4.mjs.map
