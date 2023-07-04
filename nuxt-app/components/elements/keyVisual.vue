@@ -90,7 +90,7 @@
                         height: viewport.value.isDesktop ? 'calc(100vh - 84px)' : 'calc(100vh - 64px)',
                     })
                 }
-            }, 701);
+            }, 301);
         })
     })
 </script>
@@ -149,7 +149,10 @@
                 margin-top: -20rem;
 
                 @include media-breakpoint-down(medium) {
+                    @include size(72vw, auto);
+
                     top: map-get($header-height, mobile);
+                    margin-top: -15rem;
                 }
     
                 > figure {

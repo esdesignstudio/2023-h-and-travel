@@ -43,188 +43,190 @@
         </div>
         <div class="page-rooms__wrap__room">
             <div class="container">
-                <!-- 雙人房 -->
-                <div 
-                    class="page-rooms__wrap__room__list"
-                    v-if="pageData?.twins?.rooms.length && roomType === 'all' || roomType === 'twins'"
-                >
-                    <div class="page-rooms__wrap__room__list-title">
-                        <span class="-en" v-if="pageData?.twins?.title.deco_title">
-                            {{ pageData?.twins?.title.deco_title }}
-                        </span>
-                        <h3 v-if="pageData?.twins?.title.title">
-                            {{ pageData?.twins?.title.title }}
-                        </h3>
-                    </div>
-                    <div class="page-rooms__wrap__room__list-item">
-                        <ElementsRoomCard 
-                            v-for="(room, key) in pageData?.twins?.rooms"
-                            :key="key"
-                            v-inview
-                            v-fade
-                            :data="room" 
-                        />
-                    </div>
-                    <div
-                        class="page-rooms__wrap__swiper"
-                        ref="twinsSwiperRef"
+                <transition-group name="list">
+                    <!-- 雙人房 -->
+                    <div 
+                        class="page-rooms__wrap__room__list"
+                        v-if="pageData?.twins?.rooms.length && roomType === 'all' || roomType === 'twins'"
                     >
-                        <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
-                            <div
-                                class="page-rooms__wrap__swiper-slide swiper-slide"
+                        <div class="page-rooms__wrap__room__list-title">
+                            <span class="-en" v-if="pageData?.twins?.title.deco_title">
+                                {{ pageData?.twins?.title.deco_title }}
+                            </span>
+                            <h3 v-if="pageData?.twins?.title.title">
+                                {{ pageData?.twins?.title.title }}
+                            </h3>
+                        </div>
+                        <div class="page-rooms__wrap__room__list-item">
+                            <ElementsRoomCard 
                                 v-for="(room, key) in pageData?.twins?.rooms"
                                 :key="key"
-                            >
-                                <ElementsRoomCard
-                                    v-inview
-                                    v-fade
-                                    :data="room" 
-                                />
+                                v-inview
+                                v-fade
+                                :data="room" 
+                            />
+                        </div>
+                        <div
+                            class="page-rooms__wrap__swiper"
+                            ref="twinsSwiperRef"
+                        >
+                            <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
+                                <div
+                                    class="page-rooms__wrap__swiper-slide swiper-slide"
+                                    v-for="(room, key) in pageData?.twins?.rooms"
+                                    :key="key"
+                                >
+                                    <ElementsRoomCard
+                                        v-inview
+                                        v-fade
+                                        :data="room" 
+                                    />
+                                </div>
+                            </div>
+                            <div class="page-rooms__wrap__swiper-navigation">
+                                <div
+                                    class="page-rooms__wrap__swiper-navigation-prev"
+                                    @click="twinsSwiper.slidePrev()"
+                                >
+                                    <nuxt-icon name="arrow_right"/>
+                                </div>
+                                <div class="page-rooms__wrap__swiper-navigation-text">
+                                    <span v-text="twinsSwiperIndex + 1"></span>
+                                    <span>/</span>
+                                    <span v-text="pageData?.twins?.rooms.length"></span>
+                                </div>
+                                <div
+                                    class="page-rooms__wrap__swiper-navigation-next"
+                                    @click="twinsSwiper.slideNext()"
+                                >
+                                    <nuxt-icon name="arrow_right"/>
+                                </div>
                             </div>
                         </div>
-                        <div class="page-rooms__wrap__swiper-navigation">
-                            <div
-                                class="page-rooms__wrap__swiper-navigation-prev"
-                                @click="twinsSwiper.slidePrev()"
-                            >
-                                <nuxt-icon name="arrow_right"/>
-                            </div>
-                            <div class="page-rooms__wrap__swiper-navigation-text">
-                                <span v-text="twinsSwiperIndex + 1"></span>
-                                <span>/</span>
-                                <span v-text="pageData?.twins?.rooms.length"></span>
-                            </div>
-                            <div
-                                class="page-rooms__wrap__swiper-navigation-next"
-                                @click="twinsSwiper.slideNext()"
-                            >
-                                <nuxt-icon name="arrow_right"/>
-                            </div>
-                        </div>
                     </div>
-                </div>
-
-                <!-- 三人房 -->
-                <div 
-                    class="page-rooms__wrap__room__list"
-                    v-if="pageData?.triple?.rooms.length && roomType === 'all' || roomType === 'triple'"
-                >
-                    <div class="page-rooms__wrap__room__list-title">
-                        <span class="-en" v-if="pageData?.triple?.title.deco_title">
-                            {{ pageData?.triple?.title.deco_title }}
-                        </span>
-                        <h3 v-if="pageData?.triple?.title.title">
-                            {{ pageData?.triple?.title.title }}
-                        </h3>
-                    </div>
-                    <div class="page-rooms__wrap__room__list-item">
-                        <ElementsRoomCard 
-                            v-for="(room, key) in pageData?.triple?.rooms"
-                            :key="key"
-                            v-inview
-                            v-fade
-                            :data="room" 
-                        />
-                    </div>
-                    <div
-                        class="page-rooms__wrap__swiper"
-                        ref="tripleSwiperRef"
+    
+                    <!-- 三人房 -->
+                    <div 
+                        class="page-rooms__wrap__room__list"
+                        v-if="pageData?.triple?.rooms.length && roomType === 'all' || roomType === 'triple'"
                     >
-                        <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
-                            <div
-                                class="page-rooms__wrap__swiper-slide swiper-slide"
+                        <div class="page-rooms__wrap__room__list-title">
+                            <span class="-en" v-if="pageData?.triple?.title.deco_title">
+                                {{ pageData?.triple?.title.deco_title }}
+                            </span>
+                            <h3 v-if="pageData?.triple?.title.title">
+                                {{ pageData?.triple?.title.title }}
+                            </h3>
+                        </div>
+                        <div class="page-rooms__wrap__room__list-item">
+                            <ElementsRoomCard 
                                 v-for="(room, key) in pageData?.triple?.rooms"
                                 :key="key"
-                            >
-                                <ElementsRoomCard
-                                    v-inview
-                                    v-fade
-                                    :data="room" 
-                                />
+                                v-inview
+                                v-fade
+                                :data="room" 
+                            />
+                        </div>
+                        <div
+                            class="page-rooms__wrap__swiper"
+                            ref="tripleSwiperRef"
+                        >
+                            <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
+                                <div
+                                    class="page-rooms__wrap__swiper-slide swiper-slide"
+                                    v-for="(room, key) in pageData?.triple?.rooms"
+                                    :key="key"
+                                >
+                                    <ElementsRoomCard
+                                        v-inview
+                                        v-fade
+                                        :data="room" 
+                                    />
+                                </div>
+                            </div>
+                            <div class="page-rooms__wrap__swiper-navigation">
+                                <div
+                                    class="page-rooms__wrap__swiper-navigation-prev"
+                                    @click="tripleSwiper.slidePrev()"
+                                >
+                                    <nuxt-icon name="arrow_right"/>
+                                </div>
+                                <div class="page-rooms__wrap__swiper-navigation-text">
+                                    <span v-text="tripleSwiperIndex + 1"></span>
+                                    <span>/</span>
+                                    <span v-text="pageData?.triple?.rooms.length"></span>
+                                </div>
+                                <div
+                                    class="page-rooms__wrap__swiper-navigation-next"
+                                    @click="tripleSwiper.slideNext()"
+                                >
+                                    <nuxt-icon name="arrow_right"/>
+                                </div>
                             </div>
                         </div>
-                        <div class="page-rooms__wrap__swiper-navigation">
-                            <div
-                                class="page-rooms__wrap__swiper-navigation-prev"
-                                @click="tripleSwiper.slidePrev()"
-                            >
-                                <nuxt-icon name="arrow_right"/>
-                            </div>
-                            <div class="page-rooms__wrap__swiper-navigation-text">
-                                <span v-text="tripleSwiperIndex + 1"></span>
-                                <span>/</span>
-                                <span v-text="pageData?.triple?.rooms.length"></span>
-                            </div>
-                            <div
-                                class="page-rooms__wrap__swiper-navigation-next"
-                                @click="tripleSwiper.slideNext()"
-                            >
-                                <nuxt-icon name="arrow_right"/>
-                            </div>
-                        </div>
                     </div>
-                </div>
-
-                <!-- 四人房 -->
-                <div 
-                    class="page-rooms__wrap__room__list"
-                    v-if="pageData?.quadruple?.rooms.length && roomType === 'all' || roomType === 'quad'"
-                >
-                    <div class="page-rooms__wrap__room__list-title">
-                        <span class="-en" v-if="pageData?.quadruple?.title.deco_title">
-                            {{ pageData?.quadruple?.title.deco_title }}
-                        </span>
-                        <h3 v-if="pageData?.quadruple?.title.title">
-                            {{ pageData?.quadruple?.title.title }}
-                        </h3>
-                    </div>
-                    <div class="page-rooms__wrap__room__list-item">
-                        <ElementsRoomCard 
-                            v-for="(room, key) in pageData?.quadruple?.rooms"
-                            :key="key"
-                            v-inview
-                            v-fade
-                            :data="room" 
-                        />
-                    </div>
-                    <div
-                        class="page-rooms__wrap__swiper"
-                        ref="quadrupleSwiperRef"
+    
+                    <!-- 四人房 -->
+                    <div 
+                        class="page-rooms__wrap__room__list"
+                        v-if="pageData?.quadruple?.rooms.length && roomType === 'all' || roomType === 'quad'"
                     >
-                        <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
-                            <div
-                                class="page-rooms__wrap__swiper-slide swiper-slide"
+                        <div class="page-rooms__wrap__room__list-title">
+                            <span class="-en" v-if="pageData?.quadruple?.title.deco_title">
+                                {{ pageData?.quadruple?.title.deco_title }}
+                            </span>
+                            <h3 v-if="pageData?.quadruple?.title.title">
+                                {{ pageData?.quadruple?.title.title }}
+                            </h3>
+                        </div>
+                        <div class="page-rooms__wrap__room__list-item">
+                            <ElementsRoomCard 
                                 v-for="(room, key) in pageData?.quadruple?.rooms"
                                 :key="key"
-                            >
-                                <ElementsRoomCard
-                                    v-inview
-                                    v-fade
-                                    :data="room" 
-                                />
-                            </div>
+                                v-inview
+                                v-fade
+                                :data="room" 
+                            />
                         </div>
-                        <div class="page-rooms__wrap__swiper-navigation">
-                            <div
-                                class="page-rooms__wrap__swiper-navigation-prev"
-                                @click="quadrupleSwiper.slidePrev()"
-                            >
-                                <nuxt-icon name="arrow_right"/>
+                        <div
+                            class="page-rooms__wrap__swiper"
+                            ref="quadrupleSwiperRef"
+                        >
+                            <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
+                                <div
+                                    class="page-rooms__wrap__swiper-slide swiper-slide"
+                                    v-for="(room, key) in pageData?.quadruple?.rooms"
+                                    :key="key"
+                                >
+                                    <ElementsRoomCard
+                                        v-inview
+                                        v-fade
+                                        :data="room" 
+                                    />
+                                </div>
                             </div>
-                            <div class="page-rooms__wrap__swiper-navigation-text">
-                                <span v-text="quadrupleSwiperIndex + 1"></span>
-                                <span>/</span>
-                                <span v-text="pageData?.quadruple?.rooms.length"></span>
-                            </div>
-                            <div
-                                class="page-rooms__wrap__swiper-navigation-next"
-                                @click="quadrupleSwiper.slideNext()"
-                            >
-                                <nuxt-icon name="arrow_right"/>
+                            <div class="page-rooms__wrap__swiper-navigation">
+                                <div
+                                    class="page-rooms__wrap__swiper-navigation-prev"
+                                    @click="quadrupleSwiper.slidePrev()"
+                                >
+                                    <nuxt-icon name="arrow_right"/>
+                                </div>
+                                <div class="page-rooms__wrap__swiper-navigation-text">
+                                    <span v-text="quadrupleSwiperIndex + 1"></span>
+                                    <span>/</span>
+                                    <span v-text="pageData?.quadruple?.rooms.length"></span>
+                                </div>
+                                <div
+                                    class="page-rooms__wrap__swiper-navigation-next"
+                                    @click="quadrupleSwiper.slideNext()"
+                                >
+                                    <nuxt-icon name="arrow_right"/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </transition-group>
             </div>    
         </div>
         <Footer />
@@ -265,42 +267,45 @@
     const twinsSwiperIndex = ref(0)
 
     // triple
-    const tripleSwiper = ref([])
+    const tripleSwiper = ref()
     const tripleSwiperRef = ref()
     const tripleSwiperIndex = ref(0)
 
     // quadruple
-    const quadrupleSwiper = ref([])
+    const quadrupleSwiper = ref()
     const quadrupleSwiperRef = ref()
     const quadrupleSwiperIndex = ref(0)
 
+    watch(() => roomType.value, (val) => {
+        nextTick(() => {
+            setTimeout(() => {
+                twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex);
+                tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex);
+                quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex);
+            }, 1);
+        })
+    })
+
+    const swiperInit = (ref, indexRef) => {
+        if (ref.value) {
+            return new Swiper(ref.value, {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                centeredSlides: ref.value.querySelectorAll('.swiper-slide').length < 2 ? true : false,
+                on: {
+                    slideChangeTransitionEnd: function () {
+                        indexRef.value = this.realIndex;
+                    },
+                },
+            })
+        }
+    }
+
     onMounted(() => {
-        twinsSwiper.value = new Swiper(twinsSwiperRef.value, {
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            on: {
-                slideChangeTransitionEnd: function () {
-                    twinsSwiperIndex.value = this.realIndex
-                },
-            },
-        })
-        tripleSwiper.value = new Swiper(tripleSwiperRef.value, {
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            on: {
-                slideChangeTransitionEnd: function () {
-                    tripleSwiperIndex.value = this.realIndex
-                },
-            },
-        })
-        quadrupleSwiper.value = new Swiper(quadrupleSwiperRef.value, {
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            on: {
-                slideChangeTransitionEnd: function () {
-                    quadrupleSwiperIndex.value = this.realIndex
-                },
-            },
+        nextTick(() => {
+            twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex)
+            tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex)
+            quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex)
         })
     })
 
