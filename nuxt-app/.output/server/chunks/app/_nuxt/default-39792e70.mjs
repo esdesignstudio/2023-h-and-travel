@@ -300,6 +300,8 @@ const _sfc_main$1 = {
       }, _parent));
       _push(`<div class="header-index__wrap-hamburger"><span></span><span></span></div></div></div><div class="${ssrRenderClass([{
         "-active": unref(menuOpen)
+      }, "header-index__menu-bg"])}"></div><div class="${ssrRenderClass([{
+        "-active": unref(menuOpen)
       }, "header-index__menu container"])}"><div class="header-index__menu-top">`);
       _push(ssrRenderComponent(_component_NuxtLink, {
         to: "/",
@@ -383,4 +385,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=default-6ba95b60.mjs.map
+//# sourceMappingURL=default-39792e70.mjs.map
