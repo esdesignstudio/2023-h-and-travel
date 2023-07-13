@@ -166,6 +166,8 @@
                     figure {
                         @include size(2rem);
 
+                        display: flex;
+
                         > img {
                             @include size(100%);
                             
