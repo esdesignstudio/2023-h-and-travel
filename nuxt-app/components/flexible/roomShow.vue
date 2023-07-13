@@ -71,7 +71,7 @@
         </div>
         <nuxt-link
             class="flexible-room-show__btn"
-            to="/rooms"
+            to="/room"
             v-inview
             v-fade
         >
