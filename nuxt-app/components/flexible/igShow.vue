@@ -186,7 +186,7 @@
                 }
 
                 &-wrapper {
-                    @include set-col(3, 10, 1);
+                    @include set-col(3.33, 10, 0);
 
                     margin-bottom: 4.8rem;
 
@@ -198,8 +198,8 @@
                         padding-top: 26.4rem;
                     }
 
-                    &:not(:nth-child(3)) {
-                        margin-right: 4.5rem;
+                    &:not(:first-child) {
+                        @include set-col-offset(0, 10, 2);
                     }
 
                 }
