@@ -62,7 +62,7 @@ services:
         build: ./nuxt-app
         image: reich-pharm
         ports:
-            - $NUXT_APP_POST:3000
+            - $NUXT_APP_PORT:3000
         depends_on:
             - nginx
         networks:
