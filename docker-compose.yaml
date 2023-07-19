@@ -11,7 +11,7 @@ services:
         depends_on:
             - wordpress
         networks:
-            - mynetwork
+            - ${COMPOSE_PROJECT_NAME}-network
 
     wordpress:
         container_name: ${COMPOSE_PROJECT_NAME}_wordpress
@@ -30,7 +30,7 @@ services:
                 define('WP_SITEURL', '$WP_URL');
                 define('WP_HOME', '$WP_URL');
         networks:
-            - mynetwork
+            - ${COMPOSE_PROJECT_NAME}-network
 
     phpmyadmin:
         container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
@@ -55,7 +55,7 @@ services:
             MYSQL_USER: $WP_MYSQL_USERNAME
             MYSQL_PASSWORD: $WP_MYSQL_PASSWORD
         networks:
-            - mynetwork
+            - ${COMPOSE_PROJECT_NAME}-network
         
     nuxt-app:
         container_name: ${COMPOSE_PROJECT_NAME}_app
@@ -66,7 +66,7 @@ services:
         depends_on:
             - nginx
         networks:
-            - mynetwork
+            - ${COMPOSE_PROJECT_NAME}-network
 networks:
-    mynetwork:
+    ${COMPOSE_PROJECT_NAME}-network:
         
