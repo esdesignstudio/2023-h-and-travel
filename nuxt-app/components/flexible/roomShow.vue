@@ -22,7 +22,7 @@
                 <div class="flexible-room-show__rooms-item-info">
                     <h3 class="-en" v-text="room.room_type?.deco_title"></h3>
                     <h4 v-text="room.room_type?.name"></h4>
-                    <nuxt-link :to="`/room`">
+                    <nuxt-link :to="`/room?roomType=${room.room_type?.deco_title.toLowerCase()}`">
                         查看房型
                         <nuxt-icon name="arrow_right"/>
                     </nuxt-link>
@@ -42,7 +42,7 @@
                     <div class="flexible-room-show__swiper-wrapper-slide-info">
                         <h3 class="-en" v-text="room.room_type?.deco_title"></h3>
                         <h4 v-text="room.room_type?.name"></h4>
-                        <nuxt-link>
+                        <nuxt-link :to="`/room`">
                             查看房型
                             <nuxt-icon name="arrow_right"/>
                         </nuxt-link>
@@ -71,7 +71,7 @@
         </div>
         <nuxt-link
             class="flexible-room-show__btn"
-            to="/rooms"
+            to="/room"
             v-inview
             v-fade
         >

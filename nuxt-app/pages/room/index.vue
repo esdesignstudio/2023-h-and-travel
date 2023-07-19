@@ -236,6 +236,7 @@
     import Swiper from 'swiper/bundle'
     import 'swiper/css'
 
+    const route = useRoute()
     const props = defineProps({
         template: {
             type: Object,
@@ -303,6 +304,7 @@
 
     onMounted(() => {
         nextTick(() => {
+            route.query.roomType && (roomType.value = route.query.roomType)
             twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex)
             tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex)
             quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex)
