@@ -48,7 +48,7 @@ services:
         container_name: ${COMPOSE_PROJECT_NAME}_mysql-maria
         image: mariadb:10.5
         volumes: 
-            - ./db/default:/docker-entrypoint-initdb.d
+            - ./db/production:/docker-entrypoint-initdb.d
         environment:
             MYSQL_ROOT_PASSWORD: $WP_MYSQL_ROOT_PASSWORD
             MYSQL_DATABASE: $WP_MYSQL_DATABASE
@@ -61,8 +61,6 @@ services:
         container_name: ${COMPOSE_PROJECT_NAME}_app
         build: ./nuxt-app
         image: reich-pharm
-        ports:
-            - $NUXT_APP_PORT:3000
         depends_on:
             - nginx
         networks:
