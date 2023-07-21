@@ -1,7 +1,7 @@
 import { b as __nuxt_component_0$1$1, c as __nuxt_component_0$3 } from './titleDouble-08fa6a9a.mjs';
 import _sfc_main$a from './nuxt-icon-503afd00.mjs';
 import { g as useViewport } from '../server.mjs';
-import { useSSRContext, ref, mergeProps, resolveDirective, unref, withCtx, createTextVNode, createVNode } from 'vue';
+import { useSSRContext, ref, mergeProps, resolveDirective, unref, withCtx, createTextVNode, createVNode, toDisplayString } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent, ssrRenderAttr, ssrRenderList, ssrGetDirectiveProps, ssrRenderStyle } from 'vue/server-renderer';
 import { _ as __nuxt_component_0$2 } from './nuxt-link-660753fe.mjs';
 
@@ -160,15 +160,75 @@ const _sfc_main$5 = {
     }
   },
   setup(__props) {
+    const props = __props;
+    console.log(props.data);
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b, _c, _d, _e, _f, _g, _h, _i;
+      var _a;
+      const _component_nuxt_link = __nuxt_component_0$2;
       const _component_nuxt_icon = _sfc_main$a;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "elements-ig-card" }, _attrs))}><div class="elements-ig-card__top"><figure><img${ssrRenderAttr("src", (_b = (_a = __props.data) == null ? void 0 : _a.user_img) == null ? void 0 : _b.url)}${ssrRenderAttr("alt", (_d = (_c = __props.data) == null ? void 0 : _c.user_img) == null ? void 0 : _d.alt)}></figure><p>${ssrInterpolate((_e = __props.data) == null ? void 0 : _e.user_name)}</p><div class="elements-ig-card__top-dot"><span></span><span></span><span></span></div></div><figure><img${ssrRenderAttr("src", (_g = (_f = __props.data) == null ? void 0 : _f.image) == null ? void 0 : _g.url)}${ssrRenderAttr("alt", (_i = (_h = __props.data) == null ? void 0 : _h.image) == null ? void 0 : _i.alt)}></figure><div class="elements-ig-card__bottom"><div class="elements-ig-card__bottom-top">`);
-      _push(ssrRenderComponent(_component_nuxt_icon, { name: "heart" }, null, _parent));
-      _push(ssrRenderComponent(_component_nuxt_icon, { name: "comment" }, null, _parent));
-      _push(ssrRenderComponent(_component_nuxt_icon, { name: "share" }, null, _parent));
-      _push(ssrRenderComponent(_component_nuxt_icon, { name: "save" }, null, _parent));
-      _push(`</div><p>${ssrInterpolate(`${__props.data.like} likes`)}</p><span><p>${ssrInterpolate(__props.data.text)}</p><p>...more</p></span><p>${ssrInterpolate(__props.data.s_text)}</p></div></div>`);
+      _push(ssrRenderComponent(_component_nuxt_link, mergeProps({
+        class: "elements-ig-card",
+        to: (_a = __props.data) == null ? void 0 : _a.url,
+        target: "_blank"
+      }, _attrs), {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          var _a2, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r;
+          if (_push2) {
+            _push2(`<div class="elements-ig-card__top"${_scopeId}><figure${_scopeId}><img${ssrRenderAttr("src", (_b = (_a2 = __props.data) == null ? void 0 : _a2.user_img) == null ? void 0 : _b.url)}${ssrRenderAttr("alt", (_d = (_c = __props.data) == null ? void 0 : _c.user_img) == null ? void 0 : _d.alt)}${_scopeId}></figure><p${_scopeId}>${ssrInterpolate((_e = __props.data) == null ? void 0 : _e.user_name)}</p><div class="elements-ig-card__top-dot"${_scopeId}><span${_scopeId}></span><span${_scopeId}></span><span${_scopeId}></span></div></div><figure${_scopeId}><img${ssrRenderAttr("src", (_g = (_f = __props.data) == null ? void 0 : _f.image) == null ? void 0 : _g.url)}${ssrRenderAttr("alt", (_i = (_h = __props.data) == null ? void 0 : _h.image) == null ? void 0 : _i.alt)}${_scopeId}></figure><div class="elements-ig-card__bottom"${_scopeId}><div class="elements-ig-card__bottom-top"${_scopeId}>`);
+            _push2(ssrRenderComponent(_component_nuxt_icon, { name: "heart" }, null, _parent2, _scopeId));
+            _push2(ssrRenderComponent(_component_nuxt_icon, { name: "comment" }, null, _parent2, _scopeId));
+            _push2(ssrRenderComponent(_component_nuxt_icon, { name: "share" }, null, _parent2, _scopeId));
+            _push2(ssrRenderComponent(_component_nuxt_icon, { name: "save" }, null, _parent2, _scopeId));
+            _push2(`</div><p${_scopeId}>${ssrInterpolate(`${__props.data.like} likes`)}</p><span${_scopeId}><p${_scopeId}>${ssrInterpolate(__props.data.text)}</p><p${_scopeId}>...more</p></span><p${_scopeId}>${ssrInterpolate(__props.data.s_text)}</p></div>`);
+          } else {
+            return [
+              createVNode("div", { class: "elements-ig-card__top" }, [
+                createVNode("figure", null, [
+                  createVNode("img", {
+                    src: (_k = (_j = __props.data) == null ? void 0 : _j.user_img) == null ? void 0 : _k.url,
+                    alt: (_m = (_l = __props.data) == null ? void 0 : _l.user_img) == null ? void 0 : _m.alt
+                  }, null, 8, ["src", "alt"])
+                ]),
+                createVNode("p", {
+                  textContent: toDisplayString((_n = __props.data) == null ? void 0 : _n.user_name)
+                }, null, 8, ["textContent"]),
+                createVNode("div", { class: "elements-ig-card__top-dot" }, [
+                  createVNode("span"),
+                  createVNode("span"),
+                  createVNode("span")
+                ])
+              ]),
+              createVNode("figure", null, [
+                createVNode("img", {
+                  src: (_p = (_o = __props.data) == null ? void 0 : _o.image) == null ? void 0 : _p.url,
+                  alt: (_r = (_q = __props.data) == null ? void 0 : _q.image) == null ? void 0 : _r.alt
+                }, null, 8, ["src", "alt"])
+              ]),
+              createVNode("div", { class: "elements-ig-card__bottom" }, [
+                createVNode("div", { class: "elements-ig-card__bottom-top" }, [
+                  createVNode(_component_nuxt_icon, { name: "heart" }),
+                  createVNode(_component_nuxt_icon, { name: "comment" }),
+                  createVNode(_component_nuxt_icon, { name: "share" }),
+                  createVNode(_component_nuxt_icon, { name: "save" })
+                ]),
+                createVNode("p", {
+                  textContent: toDisplayString(`${__props.data.like} likes`)
+                }, null, 8, ["textContent"]),
+                createVNode("span", null, [
+                  createVNode("p", {
+                    textContent: toDisplayString(__props.data.text)
+                  }, null, 8, ["textContent"]),
+                  createVNode("p", null, "...more")
+                ]),
+                createVNode("p", {
+                  textContent: toDisplayString(__props.data.s_text)
+                }, null, 8, ["textContent"])
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
     };
   }
 };
@@ -488,4 +548,4 @@ _sfc_main.setup = (props, ctx) => {
 const __nuxt_component_7 = _sfc_main;
 
 export { __nuxt_component_0$1 as _, __nuxt_component_1$1 as a, __nuxt_component_2 as b, __nuxt_component_3 as c, __nuxt_component_4 as d, __nuxt_component_5 as e, __nuxt_component_6 as f, __nuxt_component_7 as g };
-//# sourceMappingURL=titleBigImg-10bfe61a.mjs.map
+//# sourceMappingURL=titleBigImg-e7c8acbf.mjs.map

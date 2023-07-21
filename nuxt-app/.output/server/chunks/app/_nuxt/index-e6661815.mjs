@@ -1,4 +1,4 @@
-import { _ as __nuxt_component_0$1, a as __nuxt_component_1$1, b as __nuxt_component_2, c as __nuxt_component_3, d as __nuxt_component_4, e as __nuxt_component_5, f as __nuxt_component_6, g as __nuxt_component_7 } from './titleBigImg-10bfe61a.mjs';
+import { _ as __nuxt_component_0$1, a as __nuxt_component_1$1, b as __nuxt_component_2, c as __nuxt_component_3, d as __nuxt_component_4, e as __nuxt_component_5, f as __nuxt_component_6, g as __nuxt_component_7 } from './titleBigImg-e7c8acbf.mjs';
 import { _ as __nuxt_component_4$1, a as __nuxt_component_3$1 } from './titleDouble-08fa6a9a.mjs';
 import { _ as __nuxt_component_2$1 } from './index-3a78f033.mjs';
 import { e as useAsyncData, f as useRuntimeConfig, u as usePageLoaded, n as navigateTo } from '../server.mjs';
@@ -157,4 +157,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-959505aa.mjs.map
+//# sourceMappingURL=index-e6661815.mjs.map
