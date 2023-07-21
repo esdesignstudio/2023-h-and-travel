@@ -419,7 +419,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-4d5a7b79.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-a3dbee9a.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -428,7 +428,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-dfcebdc3.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-959505aa.mjs').then((m) => m.default || m)
   },
   {
     name: "room-slug",
