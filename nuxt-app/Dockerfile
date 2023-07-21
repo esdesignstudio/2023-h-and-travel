@@ -1,7 +1,7 @@
 FROM node:16
 
 # 安装 PM2
-# RUN yarn global add pm2
+RUN yarn global add pm2
 
 WORKDIR /app
 
@@ -15,12 +15,12 @@ RUN yarn install
 COPY . .
 
 # build 
-RUN yarn build
+# RUN yarn build
 
 # 設定對外端口
 # EXPOSE 3000
 # 注意！！！因為pm2設定檔裡有指定port，所以這裡開的port要跟ecosystem.config.js中指定的port一樣
 
 # 用pm2啟動
-# CMD pm2-runtime start ecosystem.config.js --env prod
-CMD yarn start
+CMD pm2-runtime start ecosystem.config.js --env prod
+# CMD yarn start
