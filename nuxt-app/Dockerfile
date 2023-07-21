@@ -18,7 +18,7 @@ COPY . .
 # RUN yarn build
 
 # 設定對外端口
-# EXPOSE 3000
+EXPOSE 4000
 # 注意！！！因為pm2設定檔裡有指定port，所以這裡開的port要跟ecosystem.config.js中指定的port一樣
 
 # 用pm2啟動
