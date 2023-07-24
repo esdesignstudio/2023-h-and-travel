@@ -38,6 +38,14 @@
                     >
                         {{ pageData?.quadruple?.title.title }}
                     </div>
+                    <div
+                        v-if="pageData?.quintuple?.title.title"
+                        class="btn"
+                        :class="{'-active': roomType === 'quintuple'}"
+                        @click="roomType = 'quintuple'"
+                    >
+                        {{ pageData?.quintuple?.title.title }}
+                    </div>
                </div>
             </div>
         </div>
@@ -169,7 +177,7 @@
                     <!-- 四人房 -->
                     <div 
                         class="page-rooms__wrap__room__list"
-                        v-if="pageData?.quadruple?.rooms.length && roomType === 'all' || roomType === 'quad'"
+                        v-if="pageData?.quadruple?.rooms.length && roomType === 'all' || roomType === 'quadruple'"
                     >
                         <div class="page-rooms__wrap__room__list-title">
                             <span class="-en" v-if="pageData?.quadruple?.title.deco_title">
@@ -220,6 +228,67 @@
                                 <div
                                     class="page-rooms__wrap__swiper-navigation-next"
                                     @click="quadrupleSwiper.slideNext()"
+                                >
+                                    <nuxt-icon name="arrow_right"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 五人房 -->
+                    <div 
+                        class="page-rooms__wrap__room__list"
+                        v-if="pageData?.quintuple?.rooms.length && roomType === 'all' || roomType === 'quintuple'"
+                    >
+                        <div class="page-rooms__wrap__room__list-title">
+                            <span class="-en" v-if="pageData?.quintuple?.title.deco_title">
+                                {{ pageData?.quintuple?.title.deco_title }}
+                            </span>
+                            <h3 v-if="pageData?.quintuple?.title.title">
+                                {{ pageData?.quintuple?.title.title }}
+                            </h3>
+                        </div>
+                        <div class="page-rooms__wrap__room__list-item">
+                            <ElementsRoomCard 
+                                v-for="(room, key) in pageData?.quintuple?.rooms"
+                                :key="key"
+                                v-inview
+                                v-fade
+                                :data="room" 
+                            />
+                        </div>
+                        <div
+                            class="page-rooms__wrap__swiper"
+                            ref="quintupleSwiperRef"
+                        >
+                            <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
+                                <div
+                                    class="page-rooms__wrap__swiper-slide swiper-slide"
+                                    v-for="(room, key) in pageData?.quintuple?.rooms"
+                                    :key="key"
+                                >
+                                    <ElementsRoomCard
+                                        v-inview
+                                        v-fade
+                                        :data="room" 
+                                    />
+                                </div>
+                            </div>
+                            <div class="page-rooms__wrap__swiper-navigation">
+                                <div
+                                    class="page-rooms__wrap__swiper-navigation-prev"
+                                    @click="quintupleSwiper.slidePrev()"
+                                >
+                                    <nuxt-icon name="arrow_right"/>
+                                </div>
+                                <div class="page-rooms__wrap__swiper-navigation-text">
+                                    <span v-text="quintupleSwiperIndex + 1"></span>
+                                    <span>/</span>
+                                    <span v-text="pageData?.quintuple?.rooms.length"></span>
+                                </div>
+                                <div
+                                    class="page-rooms__wrap__swiper-navigation-next"
+                                    @click="quintupleSwiper.slideNext()"
                                 >
                                     <nuxt-icon name="arrow_right"/>
                                 </div>
@@ -277,12 +346,18 @@
     const quadrupleSwiperRef = ref()
     const quadrupleSwiperIndex = ref(0)
 
+    // quintuple
+    const quintupleSwiper = ref()
+    const quintupleSwiperRef = ref()
+    const quintupleSwiperIndex = ref(0)
+
     watch(() => roomType.value, (val) => {
         nextTick(() => {
             setTimeout(() => {
                 twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex);
                 tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex);
                 quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex);
+                quintupleSwiper.value = swiperInit(quintupleSwiperRef, quintupleSwiperIndex);
             }, 1);
         })
     })
@@ -308,6 +383,7 @@
             twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex)
             tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex)
             quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex)
+            quintupleSwiper.value = swiperInit(quintupleSwiperRef, quintupleSwiperIndex)
         })
     })
 
