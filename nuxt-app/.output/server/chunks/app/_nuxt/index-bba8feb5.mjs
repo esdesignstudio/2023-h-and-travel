@@ -115,12 +115,16 @@ const _sfc_main = {
     const quadrupleSwiper = ref();
     const quadrupleSwiperRef = ref();
     const quadrupleSwiperIndex = ref(0);
+    const quintupleSwiper = ref();
+    const quintupleSwiperRef = ref();
+    const quintupleSwiperIndex = ref(0);
     watch(() => roomType.value, (val) => {
       nextTick(() => {
         setTimeout(() => {
           twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex);
           tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex);
           quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex);
+          quintupleSwiper.value = swiperInit(quintupleSwiperRef, quintupleSwiperIndex);
         }, 1);
       });
     });
@@ -151,7 +155,7 @@ const _sfc_main = {
       ]
     });
     return (_ctx, _push, _parent, _attrs) => {
-      var _a2, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _Z, __, _$, _aa, _ba, _ca, _da, _ea, _fa;
+      var _a2, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _Z, __, _$, _aa, _ba, _ca, _da, _ea, _fa, _ga, _ha, _ia, _ja, _ka, _la, _ma, _na, _oa, _pa, _qa, _ra, _sa, _ta, _ua, _va, _wa, _xa, _ya, _za;
       const _component_ElementsRoomCard = __nuxt_component_0;
       const _component_nuxt_icon = _sfc_main$2;
       const _component_Footer = __nuxt_component_2;
@@ -173,101 +177,139 @@ const _sfc_main = {
       } else {
         _push(`<!---->`);
       }
+      if ((_n = (_m = unref(pageData)) == null ? void 0 : _m.quintuple) == null ? void 0 : _n.title.title) {
+        _push(`<div class="${ssrRenderClass([{ "-active": unref(roomType) === "quintuple" }, "btn"])}">${ssrInterpolate((_p = (_o = unref(pageData)) == null ? void 0 : _o.quintuple) == null ? void 0 : _p.title.title)}</div>`);
+      } else {
+        _push(`<!---->`);
+      }
       _push(`</div></div></div><div class="page-rooms__wrap__room"><div class="container"><!--[-->`);
-      if (((_n = (_m = unref(pageData)) == null ? void 0 : _m.twins) == null ? void 0 : _n.rooms.length) && unref(roomType) === "all" || unref(roomType) === "twins") {
+      if (((_r = (_q = unref(pageData)) == null ? void 0 : _q.twins) == null ? void 0 : _r.rooms.length) && unref(roomType) === "all" || unref(roomType) === "twins") {
         _push(`<div class="page-rooms__wrap__room__list"><div class="page-rooms__wrap__room__list-title">`);
-        if ((_p = (_o = unref(pageData)) == null ? void 0 : _o.twins) == null ? void 0 : _p.title.deco_title) {
-          _push(`<span class="-en">${ssrInterpolate((_r = (_q = unref(pageData)) == null ? void 0 : _q.twins) == null ? void 0 : _r.title.deco_title)}</span>`);
+        if ((_t = (_s = unref(pageData)) == null ? void 0 : _s.twins) == null ? void 0 : _t.title.deco_title) {
+          _push(`<span class="-en">${ssrInterpolate((_v = (_u = unref(pageData)) == null ? void 0 : _u.twins) == null ? void 0 : _v.title.deco_title)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        if ((_t = (_s = unref(pageData)) == null ? void 0 : _s.twins) == null ? void 0 : _t.title.title) {
-          _push(`<h3>${ssrInterpolate((_v = (_u = unref(pageData)) == null ? void 0 : _u.twins) == null ? void 0 : _v.title.title)}</h3>`);
+        if ((_x = (_w = unref(pageData)) == null ? void 0 : _w.twins) == null ? void 0 : _x.title.title) {
+          _push(`<h3>${ssrInterpolate((_z = (_y = unref(pageData)) == null ? void 0 : _y.twins) == null ? void 0 : _z.title.title)}</h3>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div><div class="page-rooms__wrap__room__list-item"><!--[-->`);
-        ssrRenderList((_x = (_w = unref(pageData)) == null ? void 0 : _w.twins) == null ? void 0 : _x.rooms, (room, key) => {
+        ssrRenderList((_B = (_A = unref(pageData)) == null ? void 0 : _A.twins) == null ? void 0 : _B.rooms, (room, key) => {
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({
             key,
             data: room
           }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper"><div class="page-rooms__wrap__swiper-wrapper swiper-wrapper"><!--[-->`);
-        ssrRenderList((_z = (_y = unref(pageData)) == null ? void 0 : _y.twins) == null ? void 0 : _z.rooms, (room, key) => {
+        ssrRenderList((_D = (_C = unref(pageData)) == null ? void 0 : _C.twins) == null ? void 0 : _D.rooms, (room, key) => {
           _push(`<div class="page-rooms__wrap__swiper-slide swiper-slide">`);
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({ data: room }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
           _push(`</div>`);
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper-navigation"><div class="page-rooms__wrap__swiper-navigation-prev">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
-        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(twinsSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_B = (_A = unref(pageData)) == null ? void 0 : _A.twins) == null ? void 0 : _B.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
+        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(twinsSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_F = (_E = unref(pageData)) == null ? void 0 : _E.twins) == null ? void 0 : _F.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
         _push(`</div></div></div></div>`);
       } else {
         _push(`<!---->`);
       }
-      if (((_D = (_C = unref(pageData)) == null ? void 0 : _C.triple) == null ? void 0 : _D.rooms.length) && unref(roomType) === "all" || unref(roomType) === "triple") {
+      if (((_H = (_G = unref(pageData)) == null ? void 0 : _G.triple) == null ? void 0 : _H.rooms.length) && unref(roomType) === "all" || unref(roomType) === "triple") {
         _push(`<div class="page-rooms__wrap__room__list"><div class="page-rooms__wrap__room__list-title">`);
-        if ((_F = (_E = unref(pageData)) == null ? void 0 : _E.triple) == null ? void 0 : _F.title.deco_title) {
-          _push(`<span class="-en">${ssrInterpolate((_H = (_G = unref(pageData)) == null ? void 0 : _G.triple) == null ? void 0 : _H.title.deco_title)}</span>`);
+        if ((_J = (_I = unref(pageData)) == null ? void 0 : _I.triple) == null ? void 0 : _J.title.deco_title) {
+          _push(`<span class="-en">${ssrInterpolate((_L = (_K = unref(pageData)) == null ? void 0 : _K.triple) == null ? void 0 : _L.title.deco_title)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        if ((_J = (_I = unref(pageData)) == null ? void 0 : _I.triple) == null ? void 0 : _J.title.title) {
-          _push(`<h3>${ssrInterpolate((_L = (_K = unref(pageData)) == null ? void 0 : _K.triple) == null ? void 0 : _L.title.title)}</h3>`);
+        if ((_N = (_M = unref(pageData)) == null ? void 0 : _M.triple) == null ? void 0 : _N.title.title) {
+          _push(`<h3>${ssrInterpolate((_P = (_O = unref(pageData)) == null ? void 0 : _O.triple) == null ? void 0 : _P.title.title)}</h3>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div><div class="page-rooms__wrap__room__list-item"><!--[-->`);
-        ssrRenderList((_N = (_M = unref(pageData)) == null ? void 0 : _M.triple) == null ? void 0 : _N.rooms, (room, key) => {
+        ssrRenderList((_R = (_Q = unref(pageData)) == null ? void 0 : _Q.triple) == null ? void 0 : _R.rooms, (room, key) => {
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({
             key,
             data: room
           }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper"><div class="page-rooms__wrap__swiper-wrapper swiper-wrapper"><!--[-->`);
-        ssrRenderList((_P = (_O = unref(pageData)) == null ? void 0 : _O.triple) == null ? void 0 : _P.rooms, (room, key) => {
+        ssrRenderList((_T = (_S = unref(pageData)) == null ? void 0 : _S.triple) == null ? void 0 : _T.rooms, (room, key) => {
           _push(`<div class="page-rooms__wrap__swiper-slide swiper-slide">`);
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({ data: room }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
           _push(`</div>`);
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper-navigation"><div class="page-rooms__wrap__swiper-navigation-prev">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
-        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(tripleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_R = (_Q = unref(pageData)) == null ? void 0 : _Q.triple) == null ? void 0 : _R.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
+        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(tripleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_V = (_U = unref(pageData)) == null ? void 0 : _U.triple) == null ? void 0 : _V.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
         _push(`</div></div></div></div>`);
       } else {
         _push(`<!---->`);
       }
-      if (((_T = (_S = unref(pageData)) == null ? void 0 : _S.quadruple) == null ? void 0 : _T.rooms.length) && unref(roomType) === "all" || unref(roomType) === "quad") {
+      if (((_X = (_W = unref(pageData)) == null ? void 0 : _W.quadruple) == null ? void 0 : _X.rooms.length) && unref(roomType) === "all" || unref(roomType) === "quadruple") {
         _push(`<div class="page-rooms__wrap__room__list"><div class="page-rooms__wrap__room__list-title">`);
-        if ((_V = (_U = unref(pageData)) == null ? void 0 : _U.quadruple) == null ? void 0 : _V.title.deco_title) {
-          _push(`<span class="-en">${ssrInterpolate((_X = (_W = unref(pageData)) == null ? void 0 : _W.quadruple) == null ? void 0 : _X.title.deco_title)}</span>`);
+        if ((_Z = (_Y = unref(pageData)) == null ? void 0 : _Y.quadruple) == null ? void 0 : _Z.title.deco_title) {
+          _push(`<span class="-en">${ssrInterpolate((_$ = (__ = unref(pageData)) == null ? void 0 : __.quadruple) == null ? void 0 : _$.title.deco_title)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        if ((_Z = (_Y = unref(pageData)) == null ? void 0 : _Y.quadruple) == null ? void 0 : _Z.title.title) {
-          _push(`<h3>${ssrInterpolate((_$ = (__ = unref(pageData)) == null ? void 0 : __.quadruple) == null ? void 0 : _$.title.title)}</h3>`);
+        if ((_ba = (_aa = unref(pageData)) == null ? void 0 : _aa.quadruple) == null ? void 0 : _ba.title.title) {
+          _push(`<h3>${ssrInterpolate((_da = (_ca = unref(pageData)) == null ? void 0 : _ca.quadruple) == null ? void 0 : _da.title.title)}</h3>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div><div class="page-rooms__wrap__room__list-item"><!--[-->`);
-        ssrRenderList((_ba = (_aa = unref(pageData)) == null ? void 0 : _aa.quadruple) == null ? void 0 : _ba.rooms, (room, key) => {
+        ssrRenderList((_fa = (_ea = unref(pageData)) == null ? void 0 : _ea.quadruple) == null ? void 0 : _fa.rooms, (room, key) => {
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({
             key,
             data: room
           }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper"><div class="page-rooms__wrap__swiper-wrapper swiper-wrapper"><!--[-->`);
-        ssrRenderList((_da = (_ca = unref(pageData)) == null ? void 0 : _ca.quadruple) == null ? void 0 : _da.rooms, (room, key) => {
+        ssrRenderList((_ha = (_ga = unref(pageData)) == null ? void 0 : _ga.quadruple) == null ? void 0 : _ha.rooms, (room, key) => {
           _push(`<div class="page-rooms__wrap__swiper-slide swiper-slide">`);
           _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({ data: room }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
           _push(`</div>`);
         });
         _push(`<!--]--></div><div class="page-rooms__wrap__swiper-navigation"><div class="page-rooms__wrap__swiper-navigation-prev">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
-        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(quadrupleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_fa = (_ea = unref(pageData)) == null ? void 0 : _ea.quadruple) == null ? void 0 : _fa.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
+        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(quadrupleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_ja = (_ia = unref(pageData)) == null ? void 0 : _ia.quadruple) == null ? void 0 : _ja.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
+        _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
+        _push(`</div></div></div></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (((_la = (_ka = unref(pageData)) == null ? void 0 : _ka.quintuple) == null ? void 0 : _la.rooms.length) && unref(roomType) === "all" || unref(roomType) === "quintuple") {
+        _push(`<div class="page-rooms__wrap__room__list"><div class="page-rooms__wrap__room__list-title">`);
+        if ((_na = (_ma = unref(pageData)) == null ? void 0 : _ma.quintuple) == null ? void 0 : _na.title.deco_title) {
+          _push(`<span class="-en">${ssrInterpolate((_pa = (_oa = unref(pageData)) == null ? void 0 : _oa.quintuple) == null ? void 0 : _pa.title.deco_title)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if ((_ra = (_qa = unref(pageData)) == null ? void 0 : _qa.quintuple) == null ? void 0 : _ra.title.title) {
+          _push(`<h3>${ssrInterpolate((_ta = (_sa = unref(pageData)) == null ? void 0 : _sa.quintuple) == null ? void 0 : _ta.title.title)}</h3>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div><div class="page-rooms__wrap__room__list-item"><!--[-->`);
+        ssrRenderList((_va = (_ua = unref(pageData)) == null ? void 0 : _ua.quintuple) == null ? void 0 : _va.rooms, (room, key) => {
+          _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({
+            key,
+            data: room
+          }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
+        });
+        _push(`<!--]--></div><div class="page-rooms__wrap__swiper"><div class="page-rooms__wrap__swiper-wrapper swiper-wrapper"><!--[-->`);
+        ssrRenderList((_xa = (_wa = unref(pageData)) == null ? void 0 : _wa.quintuple) == null ? void 0 : _xa.rooms, (room, key) => {
+          _push(`<div class="page-rooms__wrap__swiper-slide swiper-slide">`);
+          _push(ssrRenderComponent(_component_ElementsRoomCard, mergeProps({ data: room }, ssrGetDirectiveProps(_ctx, _directive_inview), ssrGetDirectiveProps(_ctx, _directive_fade)), null, _parent));
+          _push(`</div>`);
+        });
+        _push(`<!--]--></div><div class="page-rooms__wrap__swiper-navigation"><div class="page-rooms__wrap__swiper-navigation-prev">`);
+        _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
+        _push(`</div><div class="page-rooms__wrap__swiper-navigation-text"><span>${ssrInterpolate(unref(quintupleSwiperIndex) + 1)}</span><span>/</span><span>${ssrInterpolate((_za = (_ya = unref(pageData)) == null ? void 0 : _ya.quintuple) == null ? void 0 : _za.rooms.length)}</span></div><div class="page-rooms__wrap__swiper-navigation-next">`);
         _push(ssrRenderComponent(_component_nuxt_icon, { name: "arrow_right" }, null, _parent));
         _push(`</div></div></div></div>`);
       } else {
@@ -287,4 +329,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-f606de05.mjs.map
+//# sourceMappingURL=index-bba8feb5.mjs.map
