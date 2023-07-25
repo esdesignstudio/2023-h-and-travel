@@ -15,36 +15,13 @@
                         所有房型
                     </div>
                     <div
-                        v-if="pageData?.twins?.title.title"
+                        v-for="(item, key) in pageData"
+                        :key="key"
                         class="btn"
-                        :class="{'-active': roomType === 'twins'}"
-                        @click="roomType = 'twins'"
+                        :class="{'-active': roomType === key}"
+                        @click="roomType = key"
                     >
-                        {{ pageData?.twins?.title.title }}
-                    </div>
-                    <div
-                        v-if="pageData?.triple?.title.title"
-                        class="btn"
-                        :class="{'-active': roomType === 'triple'}"
-                        @click="roomType = 'triple'"
-                    >
-                        {{ pageData?.triple?.title.title }}
-                    </div>
-                    <div
-                        v-if="pageData?.quadruple?.title.title"
-                        class="btn"
-                        :class="{'-active': roomType === 'quadruple'}"
-                        @click="roomType = 'quadruple'"
-                    >
-                        {{ pageData?.quadruple?.title.title }}
-                    </div>
-                    <div
-                        v-if="pageData?.quintuple?.title.title"
-                        class="btn"
-                        :class="{'-active': roomType === 'quintuple'}"
-                        @click="roomType = 'quintuple'"
-                    >
-                        {{ pageData?.quintuple?.title.title }}
+                        {{ item?.title.title }}
                     </div>
                </div>
             </div>
@@ -52,248 +29,14 @@
         <div class="page-rooms__wrap__room">
             <div class="container">
                 <transition-group name="list">
-                    <!-- 雙人房 -->
-                    <div 
-                        class="page-rooms__wrap__room__list"
-                        v-if="pageData?.twins?.rooms.length && roomType === 'all' || roomType === 'twins'"
+                    <div
+                        v-for="(item, key) in pageData"
+                        :key="key"    
                     >
-                        <div class="page-rooms__wrap__room__list-title">
-                            <span class="-en" v-if="pageData?.twins?.title.deco_title">
-                                {{ pageData?.twins?.title.deco_title }}
-                            </span>
-                            <h3 v-if="pageData?.twins?.title.title">
-                                {{ pageData?.twins?.title.title }}
-                            </h3>
-                        </div>
-                        <div class="page-rooms__wrap__room__list-item">
-                            <ElementsRoomCard 
-                                v-for="(room, key) in pageData?.twins?.rooms"
-                                :key="key"
-                                v-inview
-                                v-fade
-                                :data="room" 
-                            />
-                        </div>
-                        <div
-                            class="page-rooms__wrap__swiper"
-                            ref="twinsSwiperRef"
-                        >
-                            <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
-                                <div
-                                    class="page-rooms__wrap__swiper-slide swiper-slide"
-                                    v-for="(room, key) in pageData?.twins?.rooms"
-                                    :key="key"
-                                >
-                                    <ElementsRoomCard
-                                        v-inview
-                                        v-fade
-                                        :data="room" 
-                                    />
-                                </div>
-                            </div>
-                            <div class="page-rooms__wrap__swiper-navigation">
-                                <div
-                                    class="page-rooms__wrap__swiper-navigation-prev"
-                                    @click="twinsSwiper.slidePrev()"
-                                >
-                                    <nuxt-icon name="arrow_right"/>
-                                </div>
-                                <div class="page-rooms__wrap__swiper-navigation-text">
-                                    <span v-text="twinsSwiperIndex + 1"></span>
-                                    <span>/</span>
-                                    <span v-text="pageData?.twins?.rooms.length"></span>
-                                </div>
-                                <div
-                                    class="page-rooms__wrap__swiper-navigation-next"
-                                    @click="twinsSwiper.slideNext()"
-                                >
-                                    <nuxt-icon name="arrow_right"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- 三人房 -->
-                    <div 
-                        class="page-rooms__wrap__room__list"
-                        v-if="pageData?.triple?.rooms.length && roomType === 'all' || roomType === 'triple'"
-                    >
-                        <div class="page-rooms__wrap__room__list-title">
-                            <span class="-en" v-if="pageData?.triple?.title.deco_title">
-                                {{ pageData?.triple?.title.deco_title }}
-                            </span>
-                            <h3 v-if="pageData?.triple?.title.title">
-                                {{ pageData?.triple?.title.title }}
-                            </h3>
-                        </div>
-                        <div class="page-rooms__wrap__room__list-item">
-                            <ElementsRoomCard 
-                                v-for="(room, key) in pageData?.triple?.rooms"
-                                :key="key"
-                                v-inview
-                                v-fade
-                                :data="room" 
-                            />
-                        </div>
-                        <div
-                            class="page-rooms__wrap__swiper"
-                            ref="tripleSwiperRef"
-                        >
-                            <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
-                                <div
-                                    class="page-rooms__wrap__swiper-slide swiper-slide"
-                                    v-for="(room, key) in pageData?.triple?.rooms"
-                                    :key="key"
-                                >
-                                    <ElementsRoomCard
-                                        v-inview
-                                        v-fade
-                                        :data="room" 
-                                    />
-                                </div>
-                            </div>
-                            <div class="page-rooms__wrap__swiper-navigation">
-                                <div
-                                    class="page-rooms__wrap__swiper-navigation-prev"
-                                    @click="tripleSwiper.slidePrev()"
-                                >
-                                    <nuxt-icon name="arrow_right"/>
-                                </div>
-                                <div class="page-rooms__wrap__swiper-navigation-text">
-                                    <span v-text="tripleSwiperIndex + 1"></span>
-                                    <span>/</span>
-                                    <span v-text="pageData?.triple?.rooms.length"></span>
-                                </div>
-                                <div
-                                    class="page-rooms__wrap__swiper-navigation-next"
-                                    @click="tripleSwiper.slideNext()"
-                                >
-                                    <nuxt-icon name="arrow_right"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- 四人房 -->
-                    <div 
-                        class="page-rooms__wrap__room__list"
-                        v-if="pageData?.quadruple?.rooms.length && roomType === 'all' || roomType === 'quadruple'"
-                    >
-                        <div class="page-rooms__wrap__room__list-title">
-                            <span class="-en" v-if="pageData?.quadruple?.title.deco_title">
-                                {{ pageData?.quadruple?.title.deco_title }}
-                            </span>
-                            <h3 v-if="pageData?.quadruple?.title.title">
-                                {{ pageData?.quadruple?.title.title }}
-                            </h3>
-                        </div>
-                        <div class="page-rooms__wrap__room__list-item">
-                            <ElementsRoomCard 
-                                v-for="(room, key) in pageData?.quadruple?.rooms"
-                                :key="key"
-                                v-inview
-                                v-fade
-                                :data="room" 
-                            />
-                        </div>
-                        <div
-                            class="page-rooms__wrap__swiper"
-                            ref="quadrupleSwiperRef"
-                        >
-                            <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
-                                <div
-                                    class="page-rooms__wrap__swiper-slide swiper-slide"
-                                    v-for="(room, key) in pageData?.quadruple?.rooms"
-                                    :key="key"
-                                >
-                                    <ElementsRoomCard
-                                        v-inview
-                                        v-fade
-                                        :data="room" 
-                                    />
-                                </div>
-                            </div>
-                            <div class="page-rooms__wrap__swiper-navigation">
-                                <div
-                                    class="page-rooms__wrap__swiper-navigation-prev"
-                                    @click="quadrupleSwiper.slidePrev()"
-                                >
-                                    <nuxt-icon name="arrow_right"/>
-                                </div>
-                                <div class="page-rooms__wrap__swiper-navigation-text">
-                                    <span v-text="quadrupleSwiperIndex + 1"></span>
-                                    <span>/</span>
-                                    <span v-text="pageData?.quadruple?.rooms.length"></span>
-                                </div>
-                                <div
-                                    class="page-rooms__wrap__swiper-navigation-next"
-                                    @click="quadrupleSwiper.slideNext()"
-                                >
-                                    <nuxt-icon name="arrow_right"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 五人房 -->
-                    <div 
-                        class="page-rooms__wrap__room__list"
-                        v-if="pageData?.quintuple?.rooms.length && roomType === 'all' || roomType === 'quintuple'"
-                    >
-                        <div class="page-rooms__wrap__room__list-title">
-                            <span class="-en" v-if="pageData?.quintuple?.title.deco_title">
-                                {{ pageData?.quintuple?.title.deco_title }}
-                            </span>
-                            <h3 v-if="pageData?.quintuple?.title.title">
-                                {{ pageData?.quintuple?.title.title }}
-                            </h3>
-                        </div>
-                        <div class="page-rooms__wrap__room__list-item">
-                            <ElementsRoomCard 
-                                v-for="(room, key) in pageData?.quintuple?.rooms"
-                                :key="key"
-                                v-inview
-                                v-fade
-                                :data="room" 
-                            />
-                        </div>
-                        <div
-                            class="page-rooms__wrap__swiper"
-                            ref="quintupleSwiperRef"
-                        >
-                            <div class="page-rooms__wrap__swiper-wrapper swiper-wrapper">
-                                <div
-                                    class="page-rooms__wrap__swiper-slide swiper-slide"
-                                    v-for="(room, key) in pageData?.quintuple?.rooms"
-                                    :key="key"
-                                >
-                                    <ElementsRoomCard
-                                        v-inview
-                                        v-fade
-                                        :data="room" 
-                                    />
-                                </div>
-                            </div>
-                            <div class="page-rooms__wrap__swiper-navigation">
-                                <div
-                                    class="page-rooms__wrap__swiper-navigation-prev"
-                                    @click="quintupleSwiper.slidePrev()"
-                                >
-                                    <nuxt-icon name="arrow_right"/>
-                                </div>
-                                <div class="page-rooms__wrap__swiper-navigation-text">
-                                    <span v-text="quintupleSwiperIndex + 1"></span>
-                                    <span>/</span>
-                                    <span v-text="pageData?.quintuple?.rooms.length"></span>
-                                </div>
-                                <div
-                                    class="page-rooms__wrap__swiper-navigation-next"
-                                    @click="quintupleSwiper.slideNext()"
-                                >
-                                    <nuxt-icon name="arrow_right"/>
-                                </div>
-                            </div>
-                        </div>
+                        <ElementsRoomList
+                            v-if="roomType === 'all' || roomType === key"
+                            :data="item"
+                        />
                     </div>
                 </transition-group>
             </div>    
@@ -302,9 +45,6 @@
     </div>
 </template>
 <script setup>
-    import Swiper from 'swiper/bundle'
-    import 'swiper/css'
-
     const route = useRoute()
     const props = defineProps({
         template: {
@@ -329,61 +69,10 @@
         })
     )
     console.log('pageData', pageData.value)
-    
-    
-    // twins
-    const twinsSwiper = ref()
-    const twinsSwiperRef = ref()
-    const twinsSwiperIndex = ref(0)
-
-    // triple
-    const tripleSwiper = ref()
-    const tripleSwiperRef = ref()
-    const tripleSwiperIndex = ref(0)
-
-    // quadruple
-    const quadrupleSwiper = ref()
-    const quadrupleSwiperRef = ref()
-    const quadrupleSwiperIndex = ref(0)
-
-    // quintuple
-    const quintupleSwiper = ref()
-    const quintupleSwiperRef = ref()
-    const quintupleSwiperIndex = ref(0)
-
-    watch(() => roomType.value, (val) => {
-        nextTick(() => {
-            setTimeout(() => {
-                twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex);
-                tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex);
-                quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex);
-                quintupleSwiper.value = swiperInit(quintupleSwiperRef, quintupleSwiperIndex);
-            }, 1);
-        })
-    })
-
-    const swiperInit = (ref, indexRef) => {
-        if (ref.value) {
-            return new Swiper(ref.value, {
-                slidesPerView: 'auto',
-                spaceBetween: 20,
-                centeredSlides: ref.value.querySelectorAll('.swiper-slide').length < 2 ? true : false,
-                on: {
-                    slideChangeTransitionEnd: function () {
-                        indexRef.value = this.realIndex;
-                    },
-                },
-            })
-        }
-    }
 
     onMounted(() => {
         nextTick(() => {
             route.query.roomType && (roomType.value = route.query.roomType)
-            twinsSwiper.value = swiperInit(twinsSwiperRef, twinsSwiperIndex)
-            tripleSwiper.value = swiperInit(tripleSwiperRef, tripleSwiperIndex)
-            quadrupleSwiper.value = swiperInit(quadrupleSwiperRef, quadrupleSwiperIndex)
-            quintupleSwiper.value = swiperInit(quintupleSwiperRef, quintupleSwiperIndex)
         })
     })
 
@@ -486,141 +175,6 @@
                 @include media-breakpoint-down(medium) {
                     background-color: transparent;
                     overflow: hidden;
-                }
-
-                &__list {
-                    padding: 5rem 0;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    @include media-breakpoint-down(medium) {
-                        padding: 0;
-                        margin-bottom: 8rem;
-                    }
-
-                    &-item {
-                        @include set-col(10, 12, 0);
-
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-
-                        .elements-room-card {
-                            &:not(:last-child) {
-                                margin-right: 4rem;
-                            }
-                        }
-
-                        @include media-breakpoint-down(medium) {
-                            display: none;
-                        }
-                    }
-
-                    &-title {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 3rem;
-                        padding: 8rem 0;
-
-                        @include media-breakpoint-down(medium) {
-                            gap: 1.2rem;
-                            padding: 0;
-                            margin-bottom: 4.2rem;
-                        }
-
-                        span {
-                            @include typo('heading', 48);
-
-                            @include media-breakpoint-down(medium) {
-                                @include typo('heading', 32);
-                            }
-                        }
-
-                        h3 {
-                            @include typo('body', 20);
-
-                            @include media-breakpoint-down(medium) {
-                                @include typo('body', 16);
-                            }
-                        }
-                    }
-                }
-            }
-
-            &__swiper {
-                @include size(100%, auto);
-                
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                @include media-breakpoint-up(medium) {
-                    display: none;
-                }
-
-                &-wrapper {
-                    @include size(100%, auto);
-
-                    display: flex;
-                }
-
-                &-slide {
-                    @include set-col(3.5, 4, 0);
-                }
-
-                &-navigation {
-                    display: flex;
-                    margin-top: 4.2rem;
-
-                    &-prev {
-                        @include size(2.6rem, auto);
-
-                        display: flex;
-
-                        > span {
-                            @include size(100%, auto);
-
-                            display: flex;
-
-                            > svg {
-                                @include size(100%, auto);
-
-                                transform: rotate(180deg);
-                            }
-                        }
-                    }
-
-                    &-next {
-                        @include size(2.6rem, auto);
-
-                        display: flex;
-
-                        > span {
-                            @include size(100%, auto);
-
-                            display: flex;
-
-                            > svg {
-                                @include size(100%, auto);
-                            }
-                        }
-                    }
-
-                    &-text {
-                        display: flex;
-                        align-items: baseline;
-                        margin: 0 3.2rem;
-
-                        > span {
-                            @include typo('heading', 28);
-
-                            &:first-child {
-                                @include typo('heading', 48);
-                            }
-                        }
-                    }
                 }
             }
         }
