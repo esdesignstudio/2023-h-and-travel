@@ -1,4 +1,4 @@
-import { _ as __nuxt_component_0$1, a as __nuxt_component_1$1, b as __nuxt_component_2, c as __nuxt_component_3, d as __nuxt_component_4, e as __nuxt_component_5, f as __nuxt_component_6, g as __nuxt_component_7 } from './titleBigImg-e7c8acbf.mjs';
+import { _ as __nuxt_component_0$1, a as __nuxt_component_1$1, b as __nuxt_component_2, c as __nuxt_component_3, d as __nuxt_component_4, e as __nuxt_component_5, f as __nuxt_component_6, g as __nuxt_component_7 } from './titleBigImg-0229bcf6.mjs';
 import { _ as __nuxt_component_4$1, a as __nuxt_component_3$1 } from './titleDouble-08fa6a9a.mjs';
 import { _ as __nuxt_component_1 } from './index-b3838fea.mjs';
 import { d as useRoute, e as useAsyncData, f as useRuntimeConfig, u as usePageLoaded, n as navigateTo } from '../server.mjs';
@@ -58,7 +58,6 @@ const _sfc_main = {
         }
       })
     )), __temp = await __temp, __restore(), __temp);
-    console.log("pageData", pageData.value);
     const pageloaded = usePageLoaded();
     if (pageData.value) {
       pageloaded.value = true;
@@ -158,4 +157,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=_slug_-f4747f97.mjs.map
+//# sourceMappingURL=_slug_-e8fefaac.mjs.map

@@ -15,10 +15,9 @@ const _sfc_main$9 = {
     }
   },
   setup(__props) {
-    const viewport = useViewport();
+    useViewport();
     const keyVisualRef = ref(null);
     ref(null);
-    console.log(viewport.value.isDesktop);
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m;
       const _component_ElementsDecoTitle = __nuxt_component_0$1$1;
@@ -160,8 +159,6 @@ const _sfc_main$5 = {
     }
   },
   setup(__props) {
-    const props = __props;
-    console.log(props.data);
     return (_ctx, _push, _parent, _attrs) => {
       var _a;
       const _component_nuxt_link = __nuxt_component_0$2;
@@ -548,4 +545,4 @@ _sfc_main.setup = (props, ctx) => {
 const __nuxt_component_7 = _sfc_main;
 
 export { __nuxt_component_0$1 as _, __nuxt_component_1$1 as a, __nuxt_component_2 as b, __nuxt_component_3 as c, __nuxt_component_4 as d, __nuxt_component_5 as e, __nuxt_component_6 as f, __nuxt_component_7 as g };
-//# sourceMappingURL=titleBigImg-e7c8acbf.mjs.map
+//# sourceMappingURL=titleBigImg-0229bcf6.mjs.map
