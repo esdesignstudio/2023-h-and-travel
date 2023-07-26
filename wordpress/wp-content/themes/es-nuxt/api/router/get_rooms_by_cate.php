@@ -6,6 +6,7 @@ function get_rooms_by_cate($request)
     $room_types = get_terms(array(
         'taxonomy' => 'room-type',
         'hide_empty' => false,
+        'orderby' => 'term_id',
     ));
 
     foreach ($room_types as $room_type) {
@@ -17,7 +18,8 @@ function get_rooms_by_cate($request)
                     'field' => 'term_id',
                     'terms' => $room_type->term_id
                 )
-            )
+            ),
+            'posts_per_page' => -1,
         );
 
         $posts = get_posts($args);

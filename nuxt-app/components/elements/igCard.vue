@@ -1,5 +1,9 @@
 <template>
-    <div class="elements-ig-card">
+    <nuxt-link
+        class="elements-ig-card"
+        :to="data?.url"
+        target="_blank"
+    >
         <div class="elements-ig-card__top">
             <figure>
                 <img
@@ -34,7 +38,7 @@
             </span>
             <p v-text="data.s_text"></p>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 <script setup>
     const props = defineProps({
@@ -43,12 +47,21 @@
             default: {},
         },
     })
+
+    console.log(props.data)
 </script>
 <style lang="scss">
     $class-name: elements-ig-card;
     .#{$class-name} {
         display: flex;
         flex-direction: column;
+        transition: transform 0.3s ease-in-out;
+
+        @include media-breakpoint-up(medium) {
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
 
         &__top {
             display: flex;
