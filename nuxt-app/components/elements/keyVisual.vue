@@ -66,7 +66,7 @@
     const keyVisualRef = ref(null)
     const imgRef = ref(null)
 
-    console.log(viewport.value.isDesktop)
+    // console.log(viewport.value.isDesktop)
 
     onMounted(() => {
         nextTick(() => {
