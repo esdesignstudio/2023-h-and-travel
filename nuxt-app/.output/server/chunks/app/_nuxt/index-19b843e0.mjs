@@ -162,7 +162,6 @@ const _sfc_main = {
         method: "GET"
       })
     )), __temp = await __temp, __restore(), __temp);
-    console.log("pageData", pageData.value);
     useHead({
       title: (_b = (_a = pageData == null ? void 0 : pageData.value) == null ? void 0 : _a.data) == null ? void 0 : _b.og_title,
       meta: [
@@ -206,4 +205,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-d053a7d7.mjs.map
+//# sourceMappingURL=index-19b843e0.mjs.map

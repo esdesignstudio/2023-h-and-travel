@@ -141,7 +141,6 @@ const _sfc_main = {
     } else {
       navigateTo("/404");
     }
-    console.log("pageData", pageData.value);
     useHead({
       title: (_b = (_a = pageData == null ? void 0 : pageData.value) == null ? void 0 : _a.data) == null ? void 0 : _b.og_title,
       meta: [
@@ -234,4 +233,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=_slug_-970bc673.mjs.map
+//# sourceMappingURL=_slug_-82f462ff.mjs.map
