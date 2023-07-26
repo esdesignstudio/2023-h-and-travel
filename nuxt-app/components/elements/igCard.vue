@@ -48,7 +48,7 @@
         },
     })
 
-    console.log(props.data)
+    // console.log(props.data)
 </script>
 <style lang="scss">
     $class-name: elements-ig-card;
