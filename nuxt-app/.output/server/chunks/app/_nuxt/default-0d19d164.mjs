@@ -2,7 +2,8 @@ import { mergeProps, useSSRContext, defineComponent, h, ref, computed, unref, wi
 import { _ as __nuxt_component_2, h as useNuxtApp, a as useGlobal, i as useMenuOpen, b as useRouter } from '../server.mjs';
 import { _ as __nuxt_component_0$2 } from './nuxt-link-660753fe.mjs';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderAttr, ssrInterpolate, ssrRenderClass, ssrRenderList } from 'vue/server-renderer';
-import _sfc_main$4 from './nuxt-icon-503afd00.mjs';
+import _sfc_main$5 from './nuxt-icon-503afd00.mjs';
+import { _ as _export_sfc } from './_plugin-vue_export-helper-cc2b3d55.mjs';
 import 'ofetch';
 import 'hookable';
 import 'unctx';
@@ -125,7 +126,7 @@ function useLoadingIndicator(opts) {
     clear
   };
 }
-const _sfc_main$3 = {
+const _sfc_main$4 = {
   __name: "topbar",
   __ssrInlineRender: true,
   props: {
@@ -164,14 +165,14 @@ const _sfc_main$3 = {
     };
   }
 };
-const _sfc_setup$3 = _sfc_main$3.setup;
-_sfc_main$3.setup = (props, ctx) => {
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/header/topbar.vue");
-  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
 };
-const __nuxt_component_0 = _sfc_main$3;
-const _sfc_main$2 = {
+const __nuxt_component_0 = _sfc_main$4;
+const _sfc_main$3 = {
   __name: "navigation",
   __ssrInlineRender: true,
   props: {
@@ -226,14 +227,14 @@ const _sfc_main$2 = {
     };
   }
 };
-const _sfc_setup$2 = _sfc_main$2.setup;
-_sfc_main$2.setup = (props, ctx) => {
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/header/navigation.vue");
-  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const __nuxt_component_1$1 = _sfc_main$2;
-const _sfc_main$1 = {
+const __nuxt_component_1$1 = _sfc_main$3;
+const _sfc_main$2 = {
   __name: "index",
   __ssrInlineRender: true,
   setup(__props) {
@@ -249,7 +250,7 @@ const _sfc_main$1 = {
       const _component_HeaderTopbar = __nuxt_component_0;
       const _component_HeaderNavigation = __nuxt_component_1$1;
       const _component_NuxtLink = __nuxt_component_0$2;
-      const _component_nuxt_icon = _sfc_main$4;
+      const _component_nuxt_icon = _sfc_main$5;
       _push(`<header${ssrRenderAttrs(mergeProps({
         id: "header",
         class: ["header-index", { "is-scrolled": unref(isScrolled) }]
@@ -350,13 +351,41 @@ const _sfc_main$1 = {
     };
   }
 };
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/header/index.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const __nuxt_component_1 = _sfc_main$2;
+const _sfc_main$1 = {};
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
+  _push(`<div${ssrRenderAttrs(mergeProps({
+    class: "dev container",
+    "data-scroll": "",
+    "data-scroll-sticky": "",
+    "data-scroll-target": "#wrapper"
+  }, _attrs))}><div class="dev__wrapper"><div class="dev__grid"><!--[-->`);
+  ssrRenderList(12, (num) => {
+    _push(`<div class="dev__grid-col -desktop"></div>`);
+  });
+  _push(`<!--]--><!--[-->`);
+  ssrRenderList(8, (num) => {
+    _push(`<div class="dev__grid-col -tablet"></div>`);
+  });
+  _push(`<!--]--><!--[-->`);
+  ssrRenderList(4, (num) => {
+    _push(`<div class="dev__grid-col -mobile"></div>`);
+  });
+  _push(`<!--]--></div></div></div>`);
+}
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/header/index.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/page/dev.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const __nuxt_component_1 = _sfc_main$1;
+const __nuxt_component_3 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender]]);
 const _sfc_main = {
   __name: "default",
   __ssrInlineRender: true,
@@ -365,6 +394,7 @@ const _sfc_main = {
       const _component_NuxtLoadingIndicator = __nuxt_component_0$1;
       const _component_Header = __nuxt_component_1;
       const _component_NuxtPage = __nuxt_component_2;
+      const _component_PageDev = __nuxt_component_3;
       _push(`<div${ssrRenderAttrs(mergeProps({
         id: "wrapper",
         class: "wrapper"
@@ -373,7 +403,9 @@ const _sfc_main = {
       _push(ssrRenderComponent(_component_Header, null, null, _parent));
       _push(`<main id="mainBox">`);
       _push(ssrRenderComponent(_component_NuxtPage, null, null, _parent));
-      _push(`</main></div>`);
+      _push(`</main>`);
+      _push(ssrRenderComponent(_component_PageDev, null, null, _parent));
+      _push(`</div>`);
     };
   }
 };
@@ -385,4 +417,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=default-39792e70.mjs.map
+//# sourceMappingURL=default-0d19d164.mjs.map

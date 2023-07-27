@@ -10,10 +10,11 @@ const styles = {
   "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": () => import('./_nuxt/error-500-styles.6b5b5ff2.mjs').then(interopDefault),
   "node_modules/nuxt-icons/dist/runtime/components/nuxt-icon.vue": () => import('./_nuxt/nuxt-icon-styles.1c599a35.mjs').then(interopDefault),
   "components/flexible/roomFacilities.vue": () => import('./_nuxt/roomFacilities-styles.3d496be0.mjs').then(interopDefault),
-  "components/elements/roomList.vue": () => import('./_nuxt/roomList-styles.0e405a58.mjs').then(interopDefault),
+  "components/elements/roomList.vue": () => import('./_nuxt/roomList-styles.54e5d12f.mjs').then(interopDefault),
   "layouts/default.vue": () => import('./_nuxt/default-styles.cd192ba1.mjs').then(interopDefault),
   "components/elements/roomCard.vue": () => import('./_nuxt/roomCard-styles.4e6a0f84.mjs').then(interopDefault),
   "components/header/index.vue": () => import('./_nuxt/index-styles.fcd8631c.mjs').then(interopDefault),
+  "components/page/dev.vue": () => import('./_nuxt/dev-styles.3666a8bb.mjs').then(interopDefault),
   "components/header/topbar.vue": () => import('./_nuxt/topbar-styles.fe4bac7d.mjs').then(interopDefault),
   "components/header/navigation.vue": () => import('./_nuxt/navigation-styles.899f9580.mjs').then(interopDefault)
 };

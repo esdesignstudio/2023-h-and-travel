@@ -446,7 +446,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-ca5dbbbe.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-7c10ef4c.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -5289,7 +5289,7 @@ const _wrapIf = (component, props2, slots) => {
   return { default: () => props2 ? h(component, props2 === true ? {} : props2, slots) : h(Fragment, {}, slots) };
 };
 const layouts = {
-  default: () => import('./_nuxt/default-39792e70.mjs').then((m) => m.default || m)
+  default: () => import('./_nuxt/default-0d19d164.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
