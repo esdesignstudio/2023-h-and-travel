@@ -114,7 +114,7 @@
             justify-content: center;
 
             .elements-room-card {
-                &:not(:last-child) {
+                &:not(:nth-child(3n)) {
                     margin-right: 4rem;
                 }
             }
