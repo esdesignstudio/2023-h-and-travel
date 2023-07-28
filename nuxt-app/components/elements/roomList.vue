@@ -114,8 +114,12 @@
             justify-content: center;
 
             .elements-room-card {
-                &:not(:last-child) {
-                    margin-right: 4rem;
+                &:not(:nth-child(3n)) {
+                    margin-right: calc((100% - (3 * (3 * ((100% - ((10 - 1) * 2.4rem)) / 10) + ((3 - 1) * 2.4rem) + (1 * 2.4rem))))/2);
+                }
+
+                &:last-child {
+                    margin-right: 0;
                 }
             }
 
