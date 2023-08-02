@@ -410,7 +410,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/404-a9a459ae.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/404-7cc9fdc8.mjs').then((m) => m.default || m)
   },
   {
     name: "slug",
@@ -419,7 +419,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-e8fefaac.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-45857fb9.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -428,7 +428,16 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-ab79d422.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-c0104e5b.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "privacy",
+    path: "/privacy",
+    children: [],
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import('./_nuxt/privacy-3be17c0f.mjs').then((m) => m.default || m)
   },
   {
     name: "room-slug",
@@ -437,7 +446,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_slug_-82f462ff.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_slug_-18c933a0.mjs').then((m) => m.default || m)
   },
   {
     name: "room",
@@ -446,7 +455,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-ba1b7880.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-29e51cd4.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
