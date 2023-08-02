@@ -39,8 +39,8 @@
             <div class="container">
                 <div class="footer__bottom-wrapper" v-inview v-fade>
                     <span>
-                        <nuxt-link to="/privacy-policy">Cookie Policy</nuxt-link>
-                        <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
+                        <nuxt-link to="/privacy">Cookie Policy</nuxt-link>
+                        <nuxt-link to="/privacy">Privacy Policy</nuxt-link>
                     </span>
                     <p v-text="global?.footer?.copyright"></p>
                 </div>
