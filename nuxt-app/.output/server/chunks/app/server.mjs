@@ -431,6 +431,15 @@ const _routes = [
     component: () => import('./_nuxt/index-ab79d422.mjs').then((m) => m.default || m)
   },
   {
+    name: "privacy",
+    path: "/privacy",
+    children: [],
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import('./_nuxt/privacy-a1681f39.mjs').then((m) => m.default || m)
+  },
+  {
     name: "room-slug",
     path: "/room/:slug",
     children: [],
@@ -5289,7 +5298,7 @@ const _wrapIf = (component, props2, slots) => {
   return { default: () => props2 ? h(component, props2 === true ? {} : props2, slots) : h(Fragment, {}, slots) };
 };
 const layouts = {
-  default: () => import('./_nuxt/default-39792e70.mjs').then((m) => m.default || m)
+  default: () => import('./_nuxt/default-0d19d164.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
