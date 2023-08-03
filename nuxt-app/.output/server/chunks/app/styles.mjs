@@ -15,8 +15,8 @@ const styles = {
   "layouts/default.vue": () => import('./_nuxt/default-styles.cd192ba1.mjs').then(interopDefault),
   "components/elements/roomCard.vue": () => import('./_nuxt/roomCard-styles.4e6a0f84.mjs').then(interopDefault),
   "components/header/index.vue": () => import('./_nuxt/index-styles.fcd8631c.mjs').then(interopDefault),
-  "components/header/navigation.vue": () => import('./_nuxt/navigation-styles.899f9580.mjs').then(interopDefault),
-  "components/header/topbar.vue": () => import('./_nuxt/topbar-styles.fe4bac7d.mjs').then(interopDefault)
+  "components/header/topbar.vue": () => import('./_nuxt/topbar-styles.fe4bac7d.mjs').then(interopDefault),
+  "components/header/navigation.vue": () => import('./_nuxt/navigation-styles.899f9580.mjs').then(interopDefault)
 };
 
 export { styles as default };

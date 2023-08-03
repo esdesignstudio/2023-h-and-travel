@@ -298,7 +298,7 @@ const client_manifest = {
     ],
     "dynamicImports": [
       "layouts/default.vue",
-      "virtual:nuxt:/Users/tommyliu/2023-h-and-travel/nuxt-app/.nuxt/error-component.mjs"
+      "virtual:nuxt:/Users/laitingyu/Desktop/es/2023-h-and-travel/nuxt-app/.nuxt/error-component.mjs"
     ],
     "file": "entry.6ba90fa7.js",
     "isEntry": true,
@@ -498,7 +498,7 @@ const client_manifest = {
     "file": "titleDouble.5bb6d3c6.css",
     "src": "titleDouble.css"
   },
-  "virtual:nuxt:/Users/tommyliu/2023-h-and-travel/nuxt-app/.nuxt/error-component.mjs": {
+  "virtual:nuxt:/Users/laitingyu/Desktop/es/2023-h-and-travel/nuxt-app/.nuxt/error-component.mjs": {
     "resourceType": "script",
     "module": true,
     "dynamicImports": [
@@ -510,7 +510,7 @@ const client_manifest = {
       "node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
-    "src": "virtual:nuxt:/Users/tommyliu/2023-h-and-travel/nuxt-app/.nuxt/error-component.mjs"
+    "src": "virtual:nuxt:/Users/laitingyu/Desktop/es/2023-h-and-travel/nuxt-app/.nuxt/error-component.mjs"
   }
 };
 
