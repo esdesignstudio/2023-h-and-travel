@@ -39,14 +39,26 @@ services:
             - UPLOAD_LIMIT=300M
         ports:
             - $WP_PORT_PHP_MY_ADMIN:80
-
+            
     mysql:
         container_name: ${COMPOSE_PROJECT_NAME}_mysql-maria
         image: mariadb:10.5
         volumes: 
-            - ./db/default:/docker-entrypoint-initdb.d
+            - ./db/production:/docker-entrypoint-initdb.d
+						- /db/${COMPOSE_PROJECT_NAME}:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: $WP_MYSQL_ROOT_PASSWORD
             MYSQL_DATABASE: $WP_MYSQL_DATABASE
             MYSQL_USER: $WP_MYSQL_USERNAME
             MYSQL_PASSWORD: $WP_MYSQL_PASSWORD
+        networks:
+            - nuxt-network
+
+    nuxt-app:
+        container_name: ${COMPOSE_PROJECT_NAME}_app
+        build: ./nuxt-app
+        image: ${COMPOSE_PROJECT_NAME}
+        depends_on:
+            - nginx
+        networks:
+            - nuxt-network
