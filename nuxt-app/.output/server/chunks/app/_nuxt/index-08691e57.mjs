@@ -150,7 +150,7 @@ const _sfc_main = {
     }
   },
   async setup(__props) {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k;
+    var _a, _b, _c, _d, _e, _f, _g;
     let __temp, __restore;
     useRoute();
     const pageloaded = usePageLoaded();
@@ -163,13 +163,13 @@ const _sfc_main = {
       })
     )), __temp = await __temp, __restore(), __temp);
     useHead({
-      title: (_b = (_a = pageData == null ? void 0 : pageData.value) == null ? void 0 : _a.data) == null ? void 0 : _b.og_title,
+      title: "\u623F\u578B\u4E00\u89BD",
       meta: [
         { property: "og:locale", content: "zh" },
-        { name: "description", content: (_d = (_c = pageData == null ? void 0 : pageData.value) == null ? void 0 : _c.data) == null ? void 0 : _d.meta_description },
-        { hid: "og:title", property: "og:title", content: (_f = (_e = pageData == null ? void 0 : pageData.value) == null ? void 0 : _e.data) == null ? void 0 : _f.og_title },
-        { hid: "og:description", property: "og:description", content: (_h = (_g = pageData == null ? void 0 : pageData.value) == null ? void 0 : _g.data) == null ? void 0 : _h.meta_description },
-        { hid: "og:image", property: "og:image", content: (_k = (_j = (_i = pageData == null ? void 0 : pageData.value) == null ? void 0 : _i.data) == null ? void 0 : _j.og_image) == null ? void 0 : _k.url },
+        { name: "description", content: (_b = (_a = pageData == null ? void 0 : pageData.value) == null ? void 0 : _a.data) == null ? void 0 : _b.meta_description },
+        { hid: "og:title", property: "og:title", content: "\u623F\u578B\u4E00\u89BD" },
+        { hid: "og:description", property: "og:description", content: (_d = (_c = pageData == null ? void 0 : pageData.value) == null ? void 0 : _c.data) == null ? void 0 : _d.meta_description },
+        { hid: "og:image", property: "og:image", content: (_g = (_f = (_e = pageData == null ? void 0 : pageData.value) == null ? void 0 : _e.data) == null ? void 0 : _f.og_image) == null ? void 0 : _g.url },
         { property: "og:image:width", content: "1200" },
         { property: "og:image:height", content: "630" }
       ]
@@ -205,4 +205,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-29e51cd4.mjs.map
+//# sourceMappingURL=index-08691e57.mjs.map
