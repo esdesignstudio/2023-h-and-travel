@@ -78,11 +78,11 @@
 
     // Meta
     useHead({
-        title: pageData?.value?.data?.og_title,
+        title: '房型一覽',
         meta: [
             { property: 'og:locale', content: 'zh' },
             { name: 'description', content: pageData?.value?.data?.meta_description },
-            { hid: 'og:title', property: 'og:title', content: pageData?.value?.data?.og_title },
+            { hid: 'og:title', property: 'og:title', content: '房型一覽' },
             { hid: 'og:description', property: 'og:description', content: pageData?.value?.data?.meta_description },
             { hid: 'og:image', property: 'og:image', content: pageData?.value?.data?.og_image?.url },
             { property: 'og:image:width', content: '1200' },
