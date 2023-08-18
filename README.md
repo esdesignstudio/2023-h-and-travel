@@ -7,7 +7,7 @@ ES 開發的 Nuxt3 x WordPress 版本，專門使用在客製化專案客戶。
 免費商用，請隨意下載。
 
 ## 環境
-- Node -- v16.16.0
+- Node -- v18.14.0
 - yarn -- 1.22.19
 
 ## 安裝步驟
@@ -19,6 +19,18 @@ ES 開發的 Nuxt3 x WordPress 版本，專門使用在客製化專案客戶。
 6. 專案啟動在
    nuxt localhost:3000,
    wordpress localhost:9000/wp-admin
+
+## 部署步驟參照
+[部署步驟說明文件](https://handy-drip-eac.notion.site/eec7bcd0f30540beb968e1e26ac127c6)
+
+
+## 後續更新步驟
+1. `master` 支線調整完 `git push`
+2. 切換到 `production` 分支，並且 merge 已修改的 `master`
+3. 在本機到資料夾 `/nuxt-app` 底下 `yarn build` ，並且推上 `production` 支線
+4. 連線到正式站主機 `cd ~/2023-h-and-travel` 然後 `git pull origin production`
+5. 停止運行中的 Container `sudo docker-compose down`
+6. 重新建置新的 Container `sudo docker-compose up -d --build nuxt-app`
 
 ## WordPress 主題
 ```
