@@ -410,7 +410,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/404-7cc9fdc8.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/404-d730ef72.mjs').then((m) => m.default || m)
   },
   {
     name: "slug",

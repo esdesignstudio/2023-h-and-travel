@@ -20,9 +20,9 @@ import 'node:fs';
 import 'node:url';
 import 'pathe';
 
-const _404_vue_vue_type_style_index_0_lang = "@font-face{font-family:Gambetta-Regular;src:url(" + buildAssetsURL("Gambetta-Regular.ad720b72.otf") + ")}";
+const _404_vue_vue_type_style_index_0_lang = "@font-face{font-family:Gambetta-Regular;src:url(" + buildAssetsURL("Gambetta-Regular.ad720b72.otf") + ")}.error-page .container-inner{align-items:center;display:flex;justify-content:center;min-height:80vh}.error-page .container-inner h1{font-size:5rem}";
 
-const _404Styles_0908303d = [_404_vue_vue_type_style_index_0_lang];
+const _404Styles_7c99d8f3 = [_404_vue_vue_type_style_index_0_lang];
 
-export { _404Styles_0908303d as default };
-//# sourceMappingURL=404-styles.0908303d.mjs.map
+export { _404Styles_7c99d8f3 as default };
+//# sourceMappingURL=404-styles.7c99d8f3.mjs.map

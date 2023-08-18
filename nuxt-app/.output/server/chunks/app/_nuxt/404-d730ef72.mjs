@@ -46,7 +46,7 @@ const _sfc_main = {
     usePageLoaded();
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Footer = __nuxt_component_1;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "error-page" }, _attrs))}><div class="container"><div class="container-inner error-page__wrap"><div><h1> 404 - Page Not Found </h1></div></div></div>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "error-page" }, _attrs))}><div class="container"><div class="container-inner error-page__wrap"><div><h1> 404 - \u6C92\u6709\u6B64\u9801\u9762 </h1></div></div></div>`);
       _push(ssrRenderComponent(_component_Footer, null, null, _parent));
       _push(`</div>`);
     };
@@ -60,4 +60,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=404-7cc9fdc8.mjs.map
+//# sourceMappingURL=404-d730ef72.mjs.map
